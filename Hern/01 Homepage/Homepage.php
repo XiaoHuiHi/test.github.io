@@ -171,7 +171,7 @@
         </div>
 
         <div class="order-time">
-            <span class="las la-clock"></span>30 mins
+            <span class="las la-clock"></span>20 mins
         </div>
 
         <div class="order-wrapper">
