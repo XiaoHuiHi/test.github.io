@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./Login.js"></script>
+    <script>
+        function validate()
+        {
+            var username,password;
+            var username_flag=false,password_flag=false;
+            username=document.form.user.value;
+            password=document.form.pass.value;
+            if(username.trim()=="")
+            {
+                document.getElementById("error_name").innerHTML ="Key in the correct username";
+            }
+            else
+            {
+                document.getElementById("error_name").innerHTML="&nbsp";
+                username_flag=true;
+            }
+            if(password.trim()=="")
+            {
+                document.getElementById("error_pass").innerHTML ="Key in the correct password";
+            }
+            else
+            {
+                document.getElementById("error_pass").innerHTML="&nbsp";
+                password_flag=true;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <span class="las la-search"></span>
+            <a href="#">Search</a>
+        </div>
+        <div class="sidebar-menu">
+            <span class="las la-home"></span>
+            <a href="#">Home</a>
+        </div>
+        <div class="sidebar-menu">
+            <span class="lab la-gratipay"></span>
+            <a href="#">Favs</a>
+        </div>
+        <div class="sidebar-menu">
+            <span class="las la-user"></span>
+            <a href="#">Profile</a>
+        </div>
+        <div class="sidebar-menu">
+            <span class="las la-sliders-h"></span>
+            <a href="#">Setting</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <form name="form" action="Login.php" method="post">
+            <h4>Login</h4>
+            <div class="box">
+                <div. name="login" class="login-input">
+                    <p class="user"><label><i class="fa fa-address-card-o "></i> Username:&nbsp;</label>
+                    <br><input maxlength="15" name="user" type="text" id="username"><br><span id="error_name"></span></p>
+
+                    <p class="pass"><label><i class="fa fa-lock"></i>&nbsp; &nbsp;Password :&nbsp;&nbsp;&nbsp;</label><br><input maxlength="10" name="pass" type="password" id="password"><br><span id="error_pass"></span></p>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" name="" id="remember"  name="rememberme" onclick="setcookie()"><span>Remember Me</span>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Login" onclick="validate()">
+                </div>
+                <br>
+                <div class="forgot">
+                    <a href="">Forgot Password ?</a>
+                </div>
+                
+                <hr>
+                <div class="login-img">
+                    <a href="#"><img src="/image/fb.png" width="30px"></a>
+                    <a href="#"><img src="/image/g.png" alt="" width="30px"></a>
+                </div>
+            </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

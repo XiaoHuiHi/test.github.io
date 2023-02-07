@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "*"
+    },
+    "repositories": {
+        "data-migration-tool": {
+            "type": "github",
+            "url": "https://github.com/magento/data-migration-tool"
+        }
+    }
+}
