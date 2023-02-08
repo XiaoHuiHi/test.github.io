@@ -39,7 +39,8 @@
 								$get_pro = "select * from product";
 								$run_pro = mysqli_query($conn,$get_pro);
 								
-								while($row_pro=mysqli_fetch_assoc($run_pro)){
+								while($row_pro=mysqli_fetch_assoc($run_pro))
+								{
 									$pro_id = $row_pro['Prod_ID'];
 									$pro_title = $row_pro['Prod_Name'];
 									$pro_img1 = $row_pro['Prod_cate'];
@@ -70,13 +71,13 @@
 								</td>
 							</tr>
 						</tbody>
-							<p><p>
-							<a href="add_prod.php"><?php echo $pro_id; ?>">
+							<!--<p><p>
+							<a href="add_prod.php">
 										<i class="fa fa-pen"></i> Add
-							</a>
+							</a>-->
 							
 							<?php 
-						} 
+								} 
 						?>
 
 </body>
