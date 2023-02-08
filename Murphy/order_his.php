@@ -1,35 +1,49 @@
-<?php include("config.php"); ?>
- 
+<?php 
+include("config.php"); 
+
+
+
+$get_order = "SELECT * FROM orderorder";
+$run_order = mysqli_query($conn, $get_order);
+
+if (mysqli_num_rows($run_order) > 0) {
+  while ($row_order = mysqli_fetch_assoc($run_order)) {
+    $food_ID = $row_order['foodid'];
+    $food_name = $row_order['foodname'];
+    $food_qty = $row_order['qty'];
+    $food_price = $row_order['price'];
+  }
+} else {
+  echo "No data found";
+}
+
+mysqli_close($conn);
+?>
+
 <html>
-<head><title>Order History</title>
-<style>
-    .middle
-    {
-        max-width: 800px;
-        margin: auto; 
+<head>
+  <title>Order History</title>
+  <style>
+    .middle {
+      max-width: 800px;
+      margin: auto; 
     }
-    *
-    {
+    * {
       font-size: 20px;
     }
-    fieldset
-    {
-        background-color: #f2f2f2;
+    fieldset {
+      background-color: #f2f2f2;
     }
-    a:hover
-    {
+    a:hover {
       color: red;
     }
-    sup
-    {
+    sup {
       color: red;
     }
-</style>
+  </style>
 </head>
 <body>
- 
-
-<div class="middle">
+  <div class="middle">
     <fieldset>
 
 		
@@ -80,4 +94,3 @@
             
 </body>
 </html>
- 
