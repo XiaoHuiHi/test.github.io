@@ -23,13 +23,12 @@
 		 
 			<p><label>Product Name:</label><input type="text" name="Prod_Name" size="10">
 			
-
-			<p><label>Product Category:</label>
+			<!--<p><label>Product Category:</label>
 				<select name="Prod_cate">
 					<option value="Food">Food</option>
 					<option value="Drink">Drink</option>
-				</select>
-			<!--<p><label>Product Category:</label><input type="text" name="Prod_cate" size="10">-->
+				</select>-->
+			<p><label>Product Category:</label><input type="text" name="Prod_cate" size="10">
 			
 			<p><label>Product Price:</label><input type="text" name="Prod_price" size="10">
 

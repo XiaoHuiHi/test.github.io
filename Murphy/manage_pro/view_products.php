@@ -10,6 +10,7 @@
     <title>Product</title>
 </head>
 <body>
+	<fieldset>
     <table class="table table-striped table-bordered table-hover" border="1px">
 						<thead>
 							<th> Product ID:</th>
@@ -60,14 +61,16 @@
 								</td>
 							</tr>
 						</tbody>
-							<!--<p><p>
-							<a href="add_prod.php">
-										<i class="fa fa-pen"></i> Add
-							</a>-->
-							
+								<br><br>
+								<a href="add_prod.php">
+										<i class="fa fa-edit"></i> Add
+								
+									</a>
+
 							<?php 
 								} 
 						?>
-
+	</table>
+	</fieldset>
 </body>
 </html>
