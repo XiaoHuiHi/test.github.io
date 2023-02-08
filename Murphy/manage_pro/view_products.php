@@ -23,18 +23,7 @@
 						
 						<tbody>
 							<?php 
-								$servername = "localhost";
-								$username = "root";
-								$password = "";
-								$dbname = "dwp_1coin_project";
 
-								// Create connection
-								$conn = mysqli_connect($servername, $username, $password, $dbname);
-								// Check connection
-								if (!$conn) {
-									die("Connection failed: " . mysqli_connect_error());
-								}
-              
 								$i=0;
 								$get_pro = "select * from product";
 								$run_pro = mysqli_query($conn,$get_pro);
