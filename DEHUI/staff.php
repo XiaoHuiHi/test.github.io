@@ -14,7 +14,7 @@ session_start();
             $targetPath = "./image/".$imageName;
             if(move_uploaded_file($imageTempName,$targetPath))
             {
-                $sql = "INSERT INTO staff(name,image) VALUES('$name','$imageName')";
+                $sql = "INSERT INTO `admin`(username,image) VALUES('$name','$imageName')";
                 $result = mysqli_query($conn,$sql);
                 if($result)
             {
@@ -493,7 +493,7 @@ nav:hover
 </html>
 
 <?php
-    $sql = "SELECT * FROM staff";
+    $sql = "SELECT * FROM `admin`";
     $query = mysqli_query($conn,$sql);
     if(mysqli_num_rows($query)>0)
     {
@@ -505,14 +505,14 @@ nav:hover
             <div class='img-box' >
             <img src="<?php echo "image/".$fetch['image'];?>" class='img-responsive'>
             <form action="" method="POST">
-            <input type="hidden" name="delete_id" value="<?php echo $fetch['id'];?>">
+            <input type="hidden" name="delete_id" value="<?php echo $fetch['username'];?>">
             <input type="hidden" name="del_image" value="<?php echo $fetch['image']?>">
                 <ul>
-                    <li><a href="delstaff.php?id=<?php echo $fetch['id']?>"><i class='fa fa-trash-o' ></i></a></li>
+                    <li><a href="delstaff.php?id=<?php echo $fetch['username']?>"><i class='fa fa-trash-o' ></i></a></li>
                     <li><a href=""><i class='fa fa-info-circle'></i></a></li>
                 </ul>
             </div>
-            <h2 style="padding: 20px; padding-top:0;"><?php echo $fetch['name']?></h2>
+            <h2 style="padding: 20px; padding-top:0;"><?php echo $fetch['username']?></h2>
             <h3 style="padding: 20px; padding-top:0;">Admin</h3>
             
             </form>
