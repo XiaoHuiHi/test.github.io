@@ -2,8 +2,14 @@
 
 <!DOCTYPE html>
 <html>
-<head><title>Add New Food/Drink</title>
-<link href="design.css" type="text/css" rel="stylesheet" />
+	<head><title>Add New Food/Drink</title>
+	<link href="design.css" type="text/css" rel="stylesheet" />
+	<style>
+		fieldset 
+		{
+      		background-color: #f2f2f2;
+    	}
+	</style>
 </head>
 <body>
 
@@ -14,7 +20,7 @@
 	</div>
 	
 	<div id="right">
-
+	<fieldset>
 		<h1>Insert New Food</h1>
 
 		<form name="addfrm" method="post" action="">
@@ -23,13 +29,12 @@
 		 
 			<p><label>Product Name:</label><input type="text" name="Prod_Name" size="10">
 			
-
-			<p><label>Product Category:</label>
+			<!--<p><label>Product Category:</label>
 				<select name="Prod_cate">
 					<option value="Food">Food</option>
 					<option value="Drink">Drink</option>
-				</select>
-			<!--<p><label>Product Category:</label><input type="text" name="Prod_cate" size="10">-->
+				</select>-->
+			<p><label>Product Category:</label><input type="text" name="Prod_cate" size="10">
 			
 			<p><label>Product Price:</label><input type="text" name="Prod_price" size="10">
 
@@ -38,7 +43,7 @@
 			<p><input type="submit" name="savebtn" value="Save_inv">
 
 		</form>
-	
+	</fieldset>
 	</div>
 	
 </div>

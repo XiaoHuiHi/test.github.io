@@ -8,8 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Product</title>
+	<style>
+		fieldset 
+		{
+      		background-color: #f2f2f2;
+    	}
+	</style>		
 </head>
 <body>
+	<fieldset>
     <table class="table table-striped table-bordered table-hover" border="1px">
 						<thead>
 							<th> Product ID:</th>
@@ -60,14 +67,16 @@
 								</td>
 							</tr>
 						</tbody>
-							<!--<p><p>
-							<a href="add_prod.php">
-										<i class="fa fa-pen"></i> Add
-							</a>-->
-							
+								<br><br>
+								<a href="add_prod.php">
+										<i class="fa fa-edit"></i> Add
+								
+									</a>
+
 							<?php 
 								} 
 						?>
-
+	</table>
+	</fieldset>
 </body>
 </html>
