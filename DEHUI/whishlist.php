@@ -351,12 +351,9 @@ nav:hover
 }
 </style>
 <?php
-        $host = "SELECT * FROM host";
+        $host = "SELECT * FROM user";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
-
-        
-        $image = $host_image['image'] 
 ?>
 
 <?php
@@ -367,8 +364,8 @@ nav:hover
         <nav>
             <ul>
                 <li>
-                    <a class="logo" href="#">
-                        <?php echo '<img src="'.$image.'" >'?>
+                    <a class="logo" href="">
+                        <?php echo '<img src='."image/".$host_image['Image'].' >'?>
                         <span class="nav-item"><?php echo $host_image['name']?></span>
                     </a>
                 </li>
@@ -381,16 +378,26 @@ nav:hover
                 <li>
                     <a href="#">
                         <i class="fa fa-cubes"></i>
-                        <span class="nav-item">Product</span>
+                        <span class="nav-item"></span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-clone"></i><span class="nav-item"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="logout">
+                    <a href="http://localhost/DWP_1Coin_Project/DEHUI/whishlist.php">
+                        <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/about us/About_us.php">
+                        <i class="fa fa-commenting"></i><span class="nav-item">About Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.php" class="logout">
                         <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
