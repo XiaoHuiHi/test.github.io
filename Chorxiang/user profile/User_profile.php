@@ -45,9 +45,9 @@
     <div class="middle">
         <fieldset>
             <?php
-
+            $id = $_GET['No'];
             // $login_no=$_REQUEST["no"];
-            $sql = "select * from user "; // put from the user check login  ( where no=$login_no )
+            $sql = "select * from user where No = '$id'"; // put from the user check login  ( where no=$login_no )
             $result = mysqli_query($conn,$sql);
            
             ?>

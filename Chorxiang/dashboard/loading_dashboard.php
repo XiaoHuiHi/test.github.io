@@ -122,6 +122,7 @@
         <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php"><i class="fa fa-info-circle"></i> Manage user</a>
         <a href="#"><i class="fa fa-wrench"></i> Staff</a>
         <a href="#"><i class="fa fa-book"></i> View report</a>
+        <a href="http://localhost/DWP_1Coin_Project/Hern//logout.php">LogOut</a>
     </div>
     <div class="main">
         <p><i class="fa fa-tasks"></i> My Dashboard</p>
