@@ -45,7 +45,8 @@
     <div class="middle">
         <fieldset>
             <?php
-            $sql = "select * from user "; // put from the user check login  ( where no=$login_no )
+            $login_no=req
+            $sql = "select * from user where no=$login_no"; // put from the user check login  ( where no=$login_no )
             $result = mysqli_query($conn,$sql);
            
             ?>
@@ -75,7 +76,7 @@
                 </div>
                 <?php echo "<br><br>";?>
                 <i class="fa fa-sign-out"></i>
-                <span><a href="main_page.php" >Sign Out</a></span>
+                <span><a href="#" >Back To Main Menu</a></span>
                 <i class="fa fa-times"></i> 
                 <span><a href="deleteprofile.php" >Delete Account</a></span>
             </form>
