@@ -35,7 +35,7 @@ session_start();
 ?>
 
 <?php
-        $host = "SELECT * FROM host";
+        $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
 ?>
@@ -411,7 +411,7 @@ nav:hover
                     <div class="sidebarlogo">
                     <a class="logo" href="#">
                         <img  src="<?php echo"image/".$host_image['image']?>">
-                        <span class="nav-item"><?php echo $host_image['name']?></span>
+                        <span class="nav-item"><?php echo $host_image['uesername']?></span>
                     </a>
                     </div>
                 </li>
