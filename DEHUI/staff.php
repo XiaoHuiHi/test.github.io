@@ -16,12 +16,14 @@ session_start();
             {
                 $sql = "INSERT INTO staff(name,image) VALUES('$name','$imageName')";
                 $result = mysqli_query($conn,$sql);
-            }
-            if($result)
+                if($result)
             {
-                header("Location: staff.php?successfully");
+                header("Location: staff.php");
             }
+            }
+            
         }
+        
 
         // if($query_run)
         // {
@@ -276,7 +278,7 @@ nav:hover
     color: #fff;
     font-size: 17px;
 }
-.img-box button
+.img-box a
 {
     border: none;
     background: transparent;
@@ -284,7 +286,7 @@ nav:hover
     font-size: 20px;
 }
 
-.img-box button:hover
+.img-box a:hover
 {
     cursor: pointer;
     color: #ff7b00;
@@ -390,6 +392,16 @@ nav:hover
     border-radius: 20px;
     text-align: center;
 }
+
+/* .remove a
+{
+    color: white;
+}
+.remove a:hover
+{
+    cursor: pointer;
+    color: #ff7b00;
+} */
 </style>
 <body>
     <div class="container">
@@ -496,8 +508,8 @@ nav:hover
             <input type="hidden" name="delete_id" value="<?php echo $fetch['id'];?>">
             <input type="hidden" name="del_image" value="<?php echo $fetch['image']?>">
                 <ul>
-                    <li><button type="submit" name="remove"><i class='fa fa-trash-o' ></i></button></li>
-                    <li><button type="submit"><i class='fa fa-info-circle'></i></button></li>
+                    <li><a href="delstaff.php?id=<?php echo $fetch['id']?>"><i class='fa fa-trash-o' ></i></a></li>
+                    <li><a href=""><i class='fa fa-info-circle'></i></a></li>
                 </ul>
             </div>
             <h2 style="padding: 20px; padding-top:0;"><?php echo $fetch['name']?></h2>
@@ -508,24 +520,6 @@ nav:hover
             <?php
             }
     }
-    if(isset($_POST['remove']))
-    {
-        $id = $_POST['delete_id'];
-        $image = $_POST['del_image'];
-
-        $query = "DELETE FROM staff WHERE id = '$id'";
-        $query_run = mysqli_query($conn,$query);
-
-        if($query_run)
-        {
-            // unlink("image/".$image);
-            $_SESSION['success']="Data is Deleted";
-            // header("location: staff.php?delete successfully");
-        }
-        else
-        {
-            $_SESSION['status']="Data is Not Deleted";
-        }
-    }
+    
 ?>
-<
+
