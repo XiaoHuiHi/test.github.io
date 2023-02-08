@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Product</title>
+	<style>
+		fieldset 
+		{
+      		background-color: #f2f2f2;
+    	}
+	</style>		
 </head>
 <body>
 	<fieldset>
