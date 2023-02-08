@@ -1,27 +1,10 @@
 <?php 
 include("config.php"); 
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
 
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
 
-$get_order = "SELECT * FROM orderorder";
-$run_order = mysqli_query($conn, $get_order);
 
-if (mysqli_num_rows($run_order) > 0) {
-  while ($row_order = mysqli_fetch_assoc($run_order)) {
-    $food_ID = $row_order['foodid'];
-    $food_name = $row_order['foodname'];
-    $food_qty = $row_order['qty'];
-    $food_price = $row_order['price'];
-  }
-} else {
-  echo "No data found";
-}
 
-mysqli_close($conn);
 ?>
 
 <html>
@@ -49,24 +32,49 @@ mysqli_close($conn);
 <body>
   <div class="middle">
     <fieldset>
-      <h1>Your Order</h1>
-      <table border="1px">
-        <thead>
-          <th>Food ID</th>
-          <th>Food Name</th>
-          <th>Quantity</th>
-          <th>Total Price</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><?php echo $food_ID; ?></td>
-            <th><?php echo $food_name; ?></td>
-            <td>RM <?php echo $food_qty; ?></td>
-            <td><?php echo $food_price; ?></td>
-          </tr>
-        </tbody>
-      </table>
-    </fieldset>
-  </div>
+
+		
+		<h1>Your Order</h1>
+        <table border="1px">
+            <thead>
+                <th>Food ID</th>
+                <th>Food Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </thead>
+            <tbody>
+                <?php
+   
+								
+
+   $sql = "SELECT * FROM orderorder";
+   $result = mysqli_query($conn,$sql);
+   
+   while($row = mysqli_fetch_array($result))
+   {
+
+                  ?>
+            
+            <tr>
+								
+								<td><?php echo $row['foodid']; ?></td>
+								<td><?php echo $row['foodname']; ?></td>
+								<td>RM <?php echo $row['qty']; ?></td>
+								<td><?php echo $row['price']; ?></td>
+								
+							</tr>
+					
+            </tbody>
+            <?php
+          }
+          ?>
+        </table>
+ 
+	   
+	</fieldset>
+	
+</div>
+ 
+            
 </body>
 </html>
