@@ -1,19 +1,102 @@
-<?php include("config.php"); ?>
+<?php
+session_start();
+
+if(!isset($_SESSION['login_user2'])){
+header("location: Login.php"); 
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+    <title>Homepage | 1 Coin Sandwich</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
     <!--Header-->
-    <input type="checkbox" id="cart">
+    <!-- <input type="checkbox" id="cart">
     <label for="cart" class="label-cart"><span class="las la-shopping-cart"></span></label>
-    <h3 class="logo">1 Coin Sandwich</h3>
+    <h3 class="logo">1 Coin Sandwich</h3> -->
+    <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="Homepage.php">1 Coin Sandwich'</a>
+        </div>
 
+        <div class="collapse navbar-collapse " id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="Homepage.php">Home</a></li>
+            <li><a href="About_us.php">About</a></li>
+            <li><a href="contactus.php">Contact Us</a></li>
+
+          </ul>
+
+<?php
+if(isset($_SESSION['login_user1'])){
+
+?>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="las la-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="loading_dashboard.php">ADMIN CONTROL PANEL</a></li>
+            <li><a href="adminlogout.php"><span class="las la-sign-out-alt"></span> Log Out </a></li>
+          </ul>
+<?php
+}
+else if (isset($_SESSION['login_user2'])) {
+  ?>
+           <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="las la-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li><a href="cart.php"><span class="las la-shopping-cart"></span> Cart (<?php
+              if(isset($_SESSION["cart"])){
+              $count = count($_SESSION["cart"]); 
+              echo "$count"; 
+            }
+              else
+                echo "0";
+              ?>) </a></li>
+            <li><a href="logoutuser.php"><span class="las la-sign-out-alt"></span> Log Out </a></li>
+          </ul>
+  <?php        
+}
+else {
+
+?>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="las la-user"></span> Sign Up <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+            <li> <a href="customersignup.php"> User Sign-up</a></li>
+            <li> <a href="managersignup.php"> Manager Sign-up</a></li>
+            <li> <a href="#"> Admin Sign-up</a></li>
+            </ul>
+        </li>
+    
+        <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="las la-sign-in-alt"></span> Login <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li> <a href="Login.php"> User Login</a></li>
+            <li> <a href="adminloginpage.php"> Admin Login</a></li>
+            <li> <a href="#"> Admin Login</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+<?php
+}
+?>
+        </div>
+
+</div>
+</nav>
+    
     <!--Sidebar-->
     <div class="sidebar">
         <div class="sidebar-menu">
@@ -39,7 +122,77 @@
     </div>
     
     <!--Home Page-->
-    <div class="homepage">
+    <?php
+
+require 'config.php';
+$conn = Connect();
+
+$sql = "SELECT * FROM foodmenu WHERE options = 'ENABLE' ORDER BY Food_ID";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0)
+{
+  $count=0;
+
+  while($row = mysqli_fetch_assoc($result)){
+    if ($count == 0)
+      echo "<div class='row'>";
+
+?>
+<div class="col-md-3">
+
+<form method="post" action="cart.php?action=add&id=<?php echo $row["Food_ID"]; ?>">
+<div class="mypanel" align="center";>
+<img src="<?php echo $row["images_path"]; ?>" class="img-responsive">
+<h4 class="text-dark"><?php echo $row["Food_Name"]; ?></h4>
+<h5 class="text-info"><?php echo $row["Food_Cat"]; ?></h5>
+<h5 class="text-danger">&#8377; <?php echo $row["Food_Price"]; ?>/-</h5>
+<h5 class="text-info">Quantity: <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> </h5>
+<input type="hidden" name="hidden_name" value="<?php echo $row["Food_Name"]; ?>">
+<input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
+<input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
+<input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+</div>
+</form>
+      
+     
+</div>
+
+<?php
+$count++;
+if($count==4)
+{
+  echo "</div>";
+  $count=0;
+}
+}
+?>
+
+</div>
+</div>
+<?php
+}
+else
+{
+  ?>
+
+  <div class="container">
+    <div class="jumbotron">
+      <center>
+         <label style="margin-left: 5px;color: red;"> <h1>Oops! No food is available.</h1> </label>
+        <p>Stay Hungry...! :P</p>
+      </center>
+       
+    </div>
+  </div>
+
+  <?php
+
+}
+
+?>
+
+    <!-- <div class="homepage">
         <div class="homepage-banner">
             <img src="Welcome.jpg"/>
         </div>
@@ -145,84 +298,6 @@
                 </div>
             </div> 
         </div>
-    </div>
-
-    <?php
-    // $conn = Connect();
-
-    $sql = "SELECT * FROM foodmenu WHERE Food_Stock > 1 ORDER BY Food_ID";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0)
-    {
-    $count=0;
-    }
-    while($row = mysqli_fetch_assoc($result)){
-        if ($count == 0)
-        echo "<div class='row'>";
-    }
-    ?>
-
-    <!--Cart-->
-    <div class="order">
-        <h3>Order Menu</h3>
-        <div class="table">
-            <p>Table B12</p>
-        </div>
-
-        <div class="order-time">
-            <span class="las la-clock"></span>20 mins
-        </div>
-
-        <div class="order-wrapper">
-            <div class="order-card">
-                <img class="order-image" src="Card-image/RPLC-all-sandwiches-chicken-teriyaki-PH-594x334.jpg">
-                <div class="order-detail">
-                    <p>Chicken Teriyaki</p>
-                    <i class="las la-times"></i><input type="text" value="1">
-                </div>
-                <h4 class="order-price">RM10</h4>
-            </div>
-            <div class="order-card">
-                <img class="order-image" src="Card-image/RPLC-all-sandwiches-slicedchicken-MY-594x334.jpg">
-                <div class="order-detail">
-                    <p>Chicken Slice</p>
-                    <i class="las la-times"></i><input type="text" value="1">
-                </div>
-                <h4 class="order-price">RM10</h4>
-            </div>
-            <div class="order-card">
-                <img class="order-image" src="Card-image/RPLC-all-sandwiches-italian-bmt-PH-594x334.jpg">
-                <div class="order-detail">
-                    <p>Italian B.M.T.™</p>
-                    <i class="las la-times"></i><input type="text" value="1">
-                </div>
-                <h4 class="order-price">RM10</h4>
-            </div>
-            <div class="order-card">
-                <img class="order-image" src="Card-image/RPLC-all-sandwiches-meatball-marinara-PH-594x334.jpg">
-                <div class="order-detail">
-                    <p>Meatball Marinara</p>
-                    <i class="las la-times"></i><input type="text" value="1">
-                </div>
-                <h4 class="order-price">RM10</h4>
-            </div>
-        </div>
-        <hr class="divider">
-        <div class="order-total">
-            <p>Subtotal <span>RM 40</span></p>
-            <p>Delivery Fee <span>RM 5</span></p>
-
-            <div class="order-promo">
-                <input class="input-promo" type="text" placeholder="Apply Voucher">
-                <button class="button-promo">Find Promo</button>
-            </div>
-            <hr class="divider">
-            <p>Total <span>RM 45</span></p>
-        
-        </div>
-        <button class="checkout">Checkout</button>
-    </div>
-    
+    </div> -->
 </body>
 </html>
