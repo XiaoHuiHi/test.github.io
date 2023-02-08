@@ -1,4 +1,6 @@
-<?php include("config.php"); ?>
+<?php include("config.php"); 
+
+?>
 
 <html>
 <head><title>Manage user</title>
@@ -34,6 +36,10 @@
     {
       color: red;
     }
+    .img
+    {
+      width: 80px;
+    }
   </style>
 </head>
 <body>
@@ -50,6 +56,7 @@
       <table border="0px">
         <tr>
           <td>ID</td>
+          <td>Image</td>
           <td>Name</td>
           <td>Email</td>
           <td>Role</td>
@@ -61,8 +68,10 @@
         while($row = mysqli_fetch_array($result))
         {
             ?>
+      
         <tr>
           <td><?php echo $row["No"]; ?></td>
+          <td><img src="<?php echo "image/".$row['image'];?>" class='img'></td>
           <td><?php echo $row["Name"];	?></td>
           <td><?php echo $row["Email"];?></td>
           <td><?php echo $row["Role"];?></td>
@@ -85,7 +94,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="insert.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
-      <a href="http://localhost/project/User%20n%20Admin%20(done)/dashboard/loading_dashboard.php">Back to Dashboard
+      <a href="http://localhost/DWP_1Coin_Project/Chorxiang/dashboard/loading_dashboard.php">Back to Dashboard
 
     </fieldset>
   </div>

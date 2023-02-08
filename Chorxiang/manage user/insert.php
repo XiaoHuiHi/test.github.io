@@ -115,7 +115,8 @@
                 <br>
                 Status<sup>*</sup> : (Active / Inactive)<br>
                 <input type="text" name="status"><span id="error_status"></span>
-                <br><br>
+                <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
+                <br>
                 <input type="submit" name="save" value="submit" onsubmit="validationForm()">
                 <a href="manage.php">Back to manage user list</a>
             </form>
@@ -131,8 +132,12 @@
     $memail = $_POST['email'];
     $mrole = $_POST['role'];
     $mstatus = $_POST['status'];
+    $img = $_POST['image'];
     
-    
+    // $sql = "INSERT INTO user (image) VALUES ()";
+    // $result = mysqli_query($conn,$sql);
+
+
     if (!$mname)
     {
         echo "Please Key in Name !";
@@ -158,21 +163,21 @@
 
         if($mstatus == "Active")
         {
-            $sql = "INSERT INTO user (name,email,role,status) VALUES ('$mname','$memail','$mrole','$mstatus')";
+            $sql = "INSERT INTO user (image,name,email,role,status) VALUES ('$img','$mname','$memail','$mrole','$mstatus')";
             if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully !";
               } else {
-                echo "Error: " . $sql . "" . mysqli_error($connect);
+                echo "Error: " . $sql . "" . mysqli_error($conn);
               }
               mysqli_close($conn);
         }
         else if($mstatus == "Inactive")
         {
-            $sql = "INSERT INTO user (name,email,role,status) VALUES ('$mname','$memail','$mrole','$mstatus')";
+            $sql = "INSERT INTO user (image,name,email,role,status) VALUES ('$img','$mname','$memail','$mrole','$mstatus')";
             if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully !";
               } else {
-                echo "Error: " . $sql . "" . mysqli_error($connect);
+                echo "Error: " . $sql . "" . mysqli_error($conn);
               }
               mysqli_close($conn);
         }
@@ -186,23 +191,23 @@
 
         if($mstatus == "Active")
         {
-            $sql = "INSERT INTO user (name,email,role,status) VALUES ('$mname','$memail','$mrole','$mstatus')";
-            if (mysqli_query($connect, $sql)) {
+            $sql = "INSERT INTO user (image,name,email,role,status) VALUES ('$img','$mname','$memail','$mrole','$mstatus')";
+            if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully !";
               } else {
-                echo "Error: " . $sql . "" . mysqli_error($connect);
+                echo "Error: " . $sql . "" . mysqli_error($conn);
               }
-              mysqli_close($connect);
+              mysqli_close($conn);
         }
         else if($mstatus == "Inactive")
         {
-            $sql = "INSERT INTO user (name,email,role,status) VALUES ('$mname','$memail','$mrole','$mstatus')";
-            if (mysqli_query($connect, $sql)) {
+            $sql = "INSERT INTO user (image,name,email,role,status) VALUES ('$img','$mname','$memail','$mrole','$mstatus')";
+            if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully !";
               } else {
-                echo "Error: " . $sql . "" . mysqli_error($connect);
+                echo "Error: " . $sql . "" . mysqli_error($conn);
               }
-              mysqli_close($connect);
+              mysqli_close($conn);
         }
         else
         {
