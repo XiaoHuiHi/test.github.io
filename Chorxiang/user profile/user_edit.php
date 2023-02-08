@@ -106,7 +106,7 @@
 		
 		<h1><b style="font-size: 50px;"><i class="fa fa-pencil" style="font-size:50px"></i>Edit Profile</b></h1>
 
-		<form name="addfrm" method="post" action="" enctype="multipart/form-data">
+		<form name="addfrm" method="post" action="">
 
 			<p><label>Name :</label><input type="text" name="name" size="50" value="<?php echo $row['Name']; ?>">
 
@@ -149,13 +149,7 @@ if (isset($_POST["savebtn"]))
 	$msummary = $_POST["summary"];  		
 	
     
-            
-        $sql = "update user set image='" . $_POST['image'] . "' where No=$id";
-        $result = mysqli_query($conn,$sql);
-        if($result)
-        {
-            header("Location: manage.php");
-        }
+    mysqli_query($conn,"update user set image='" . $_POST['image'] . "' where No=$id");
 
     if (!$mname)
     {
