@@ -94,7 +94,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="insert.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
-      <a href="http://localhost/project/User%20n%20Admin%20(done)/dashboard/loading_dashboard.php">Back to Dashboard
+      <a href="http://localhost/DWP_1Coin_Project/Chorxiang/dashboard/loading_dashboard.php">Back to Dashboard
 
     </fieldset>
   </div>

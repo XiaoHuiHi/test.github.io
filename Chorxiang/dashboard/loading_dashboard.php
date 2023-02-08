@@ -119,7 +119,7 @@
         <a href="#"><i class="fa fa-group"></i> Category</a>
         <a href="#"><i class="fa fa-universal-access"></i> Product</a>
         <a href="#"><i class="fa fa-shopping-cart"></i> Order</a>
-        <a href="http://localhost/DWP%20project/manage.php#"><i class="fa fa-info-circle"></i> Manage user</a>
+        <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php"><i class="fa fa-info-circle"></i> Manage user</a>
         <a href="#"><i class="fa fa-wrench"></i> Staff</a>
         <a href="#"><i class="fa fa-book"></i> View report</a>
     </div>
