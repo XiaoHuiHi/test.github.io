@@ -2,7 +2,7 @@
     include 'config.php';
 
     $id = $_GET['id'];
-    $query = "DELETE FROM staff WHERE id = '$id'";
+    $query = "DELETE FROM `admin` WHERE username = '$id'";
     $query_run = mysqli_query($conn,$query);
 
     if($query_run)
