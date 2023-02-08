@@ -36,7 +36,7 @@
 		 
 		$id = $_REQUEST["Prod_ID"];
 
-		$result = mysqli_query($conn, "select * from user where Prod_ID = $id");
+		$result = mysqli_query($conn, "select * from product where Prod_ID = $id");
 		$row = mysqli_fetch_assoc($result);
 
 		?>
@@ -53,7 +53,7 @@
 
 			<p><label>Product Stock:</label><input type="number" name="Prod_stock" size="10" value="<?php echo $row['Prod_stock']; ?>">
 			
-			<p><input type="submit" name="savebtn" value="Upd_inv">
+			<p><input type="submit" name="savebtn" value="Update inventory">
  
 		</form>
 	   
@@ -92,7 +92,8 @@ if (isset($_POST["savebtn"]))
     }
 	else
 	{
-		mysqli_query($conn,"UPDATE product set Prod_Name'" . $_POST['Prod_Name'] . "', Prod_cate'" . $_POST['Prod_cate'] . "', Prod_price'" . $_POST['Prod_price'] . "', Prod_stock'" . $_POST['Prod_stock'] . "'where Prod_ID=$id");
+ 
+		mysqli_query($conn,"UPDATE product set Prod_Name='" . $_POST['Prod_Name'] . "', Prod_cate='" . $_POST['Prod_cate'] . "', Prod_price='" . $_POST['Prod_price'] . "', Prod_stock='" . $_POST['Prod_stock'] . "'where Prod_ID=$id");
 		echo "Updated successfully !";
 	}
 
