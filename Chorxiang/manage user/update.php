@@ -119,6 +119,8 @@
 			<p><label>Role<sup>*</sup> (Customer / VIP) :</label><input type="text" name="role" size="10" value="<?php echo $row['Role']; ?>">
 
             <p><label>Status<sup>*</sup> (Active / Inactive) :</label><input type="text" name="status" size="15" value="<?php echo $row['Status']; ?>">
+
+            <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
 			
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
@@ -146,6 +148,18 @@ if (isset($_POST["savebtn"]))
 	$mrole = $_POST["role"];  	
 	$mstatus = $_POST["status"];  		
     
+
+            
+            $sql = "update user set image='" . $_POST['image'] . "' where No=$id";
+            $result = mysqli_query($conn,$sql);
+            if($result)
+            {
+                header("Location: manage.php");
+            }
+            
+
+        
+
 	if (!$mname)
     {
         echo "Please Key in Name !";

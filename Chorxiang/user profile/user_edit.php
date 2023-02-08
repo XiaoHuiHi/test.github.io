@@ -117,6 +117,8 @@
             <p><label>Date:</label><input type="date" name="date" value="<?php echo $row['Date']; ?>">
 
             <p><label>About us :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
+
+            <p><input type="file" id="file"  name="image" class="form-control" multiple ></P>
 			
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
@@ -137,6 +139,7 @@
 
 <?php
 
+
 if (isset($_POST["savebtn"])) 	
 {
 	$mname = $_POST["name"];  	
@@ -145,6 +148,14 @@ if (isset($_POST["savebtn"]))
     $mdate = $_POST["date"];  	
 	$msummary = $_POST["summary"];  		
 	
+    
+            
+        $sql = "update user set image='" . $_POST['image'] . "' where No=$id";
+        $result = mysqli_query($conn,$sql);
+        if($result)
+        {
+            header("Location: manage.php");
+        }
 
     if (!$mname)
     {

@@ -45,8 +45,9 @@
     <div class="middle">
         <fieldset>
             <?php
-            $login_no=req
-            $sql = "select * from user where no=$login_no"; // put from the user check login  ( where no=$login_no )
+
+            // $login_no=$_REQUEST["no"];
+            $sql = "select * from user "; // put from the user check login  ( where no=$login_no )
             $result = mysqli_query($conn,$sql);
            
             ?>
@@ -59,6 +60,7 @@
                 <a class="edit" href="user_edit.php?edit&no=<?php echo $row['No']; ?>" alt="update">Edit Profile<i class="fa fa-pencil"></i></a>
  
                 
+                <p><img src="<?php echo "image/".$row['image'];?>" class='img'></p>
                 <label for="fname" ><i class="fa fa-user"></i> Full Name :</label>
                 <?php echo $row["Name"]; ?>
                 <label for="email"><i class="fa fa-envelope"></i>Email : </label>
