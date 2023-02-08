@@ -267,6 +267,7 @@ nav:hover
                 <li>
                     <div class="sidebarlogo">
                     <a class="logo" href="#">
+
                         <span  class="nav-item"><?php echo $host_image['username']?></span>
                     </a>
                     </div>
@@ -280,32 +281,32 @@ nav:hover
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-group"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-group"></i><span class="nav-item">Category</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-universal-access"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-wrench"></i><span class="nav-item">Provissions</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-book"></i><span class="nav-item">View report</span>
                     </a>
                 </li>
                 <li>
@@ -328,14 +329,11 @@ nav:hover
                 <span class="insidebox"> 15</span>
             </div>
             <div class="box">
-                <i class="fa fa-user"></i> Users
-                <span class="insidebox"> 60</span>
-            </div>
-            <div class="box">
                 <i class="fa fa-thumbs-up"></i> Like
                 <span class="insidebox"> 20</span>
             </div>
         </div>
+        <br><br><br><br><br><br>
         <p>Recent Prodct</p>
         <table border="1px">
             <?php
