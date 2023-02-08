@@ -71,6 +71,15 @@ include("config.php");
         bottom: 0;
     }
   </style>
+  <?php
+        $host = "SELECT * FROM host";
+        $query = mysqli_query($conn,$host);
+        $host_image = mysqli_fetch_assoc($query);
+
+        
+        $image = $host_image['image'] 
+?>
+
 </head>
 <body>
 <div class="sidebar">
