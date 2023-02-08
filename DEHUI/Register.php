@@ -13,7 +13,7 @@
         // $code = mysqli_real_escape_string($conn,$_POST['']);
 
         // $name = mysqli_real_escape_string($conn,$_POST['submit']);
-        if(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM users WHERE email = '{$email}'"))>0)
+        if(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM user WHERE Email = '{$email}'"))>0)
         {
             $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>{$email} - This email address has been already exists.</div>";
         }
@@ -38,7 +38,7 @@
 
             if($pass === $cpass && $name && $email && $pass !='')
             {
-                $sql = "INSERT INTO users (name,email,password,code) VALUES ('{$name}','{$email}','{$pass}',' ')";
+                $sql = "INSERT INTO user (Name,Email,password) VALUES ('{$name}','{$email}','{$pass}')";
                 $result = mysqli_query($conn,$sql);
 
                 
@@ -63,7 +63,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Registers</title>
     <link rel="stylesheet" href="./register.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
