@@ -93,6 +93,7 @@ include("config.php");
                 <th>Food ID</th>
                 <th>Food Name</th>
                 <th>Quantity</th>
+                <th>Price per Item</th>
                 <th>Total Price</th>
             </thead>
             <tbody>
@@ -102,9 +103,14 @@ include("config.php");
 
    $sql = "SELECT * FROM orderorder";
    $result = mysqli_query($conn,$sql);
+   $total=0;
    
    while($row = mysqli_fetch_array($result))
    {
+    $p=$row["price"];
+    $q=$row["qty"];
+$subtotal=$p*$q;
+$total =  $total + $subtotal;
 
                   ?>
             
@@ -113,7 +119,8 @@ include("config.php");
 								<th><?php echo $row['foodid']; ?></th>
 								<th><?php echo $row['foodname']; ?></th>
 								<th><?php echo $row['qty']; ?></th>
-								<th><?php echo $row['price']; ?></th>
+                <th>RM<?php echo $row['price']; ?></th>
+								<th>RM <?php echo $subtotal; ?></th>
 								
 							</tr>
 					
