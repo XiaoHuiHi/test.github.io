@@ -295,7 +295,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
+                    <a href="http://localhost/DWP_1Coin_Project/manageuser.php">
                         <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
                     </a>
                 </li>
@@ -305,7 +305,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/DWP_1Coin_Project/adminlogout.php" class="logout">
+                    <a href="adminlogout.php" class="logout">
 
                         <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
@@ -392,4 +392,5 @@ nav:hover
         <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageproduct.php#">More Product  <i class="fa fa-mail-forward"></i></button>   
     </div>
 </body>
+>>>>>>> ef52eafee83641cec7ed9cc91c67b8032fe16a55:loading_dashboard.php
 </html>

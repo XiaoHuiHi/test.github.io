@@ -118,7 +118,7 @@
                 <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
                 <br>
                 <input type="submit" name="save" value="submit" onsubmit="validationForm()">
-                <a href="manage.php">Back to manage user list</a>
+                <a href="manageuser.php">Back to manage user list</a>
             </form>
         </fieldset>
     </div>
@@ -132,6 +132,7 @@
     $memail = $_POST['email'];
     $mrole = $_POST['role'];
     $mstatus = $_POST['status'];
+    $mimage = $_POST['image'];
     $img = $_POST['image'];
     
     // $sql = "INSERT INTO user (image) VALUES ()";
@@ -157,6 +158,10 @@
     {
         echo "Please Key in Status !";
         
+    }
+    else if(!$mimage)
+    {
+        echo "Please put the image ! ";
     }
     else if($mrole=="VIP")
     {

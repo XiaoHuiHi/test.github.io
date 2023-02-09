@@ -76,8 +76,8 @@
           <td><?php echo $row["Email"];?></td>
           <td><?php echo $row["Role"];?></td>
           <td><?php echo $row["Status"];?></td>
-          <td>           <a href="delete.php?No=<?php echo $row['No']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
-            <a href="update.php?edit&no=<?php echo $row['No']; ?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
+          <td>           <a href="deletemanageuser.php?No=<?php echo $row['No']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
+            <a href="updatemanageuser.php?edit&no=<?php echo $row['No']; ?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
             </td>
         </tr>
         <?php echo "<br><br>";?>
@@ -93,8 +93,8 @@
       <button>3</button>
       <button>4</button>
       <button>5</button>
-      <button>Next Page</button><span class="left"><a href="insert.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
-      <a href="http://localhost/DWP_1Coin_Project/Chorxiang/dashboard/loading_dashboard.php">Back to Dashboard
+      <button>Next Page</button><span class="left"><a href="insertmanageuser.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
+      <a href="http://localhost/DWP_1Coin_Project/loading_dashboard.php">Back to Dashboard
 
     </fieldset>
   </div>

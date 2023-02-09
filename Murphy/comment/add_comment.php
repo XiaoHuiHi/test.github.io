@@ -27,7 +27,7 @@
         <input type="text" id="contact" name="contact"><br><br>
         <label for="email">Email:</label>
         <input type="text" id="email" name="email"><br><br>
-        <label for="comment">Comment:</label>
+        <label for="comment">Comment:</label><br>
         <textarea id="comment" name="comment" rows="5" cols="60"></textarea><br><br>
         <input type="submit" name="submit" value="Submit">
     </form> 
