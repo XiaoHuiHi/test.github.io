@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     VALUES ($id, '$name', '$contact', '$email', '$comment')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        echo "New record created successfully. We really appreciate for your comment!";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -41,20 +41,22 @@ if(isset($_POST['submit'])){
         </style>
     </head>
 <body>
-<fieldset>
-<form action="" method="post">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id"><br><br>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="contact">Contact:</label>
-    <input type="text" id="contact" name="contact"><br><br>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email"><br><br>
-    <label for="comment">Comment:</label>
-    <textarea id="comment" name="comment"></textarea><br><br>
-    <input type="submit" name="submit" value="Submit">
-</form> 
-</fieldset>
+    <h1>Please Give Us Your Valuable Comments!</h1>
+    <h2>We want to say thank you and please come again!</h2>
+    <fieldset>
+    <form action="" method="post">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id"><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment"></textarea><br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form> 
+    </fieldset>
 </body>
 </html>
