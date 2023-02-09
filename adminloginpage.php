@@ -17,7 +17,9 @@ header("location: loading_dashboard.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
-        
+    <!--Sidebar!-->
+    <?php include "adminsidebar.php" ?>
+    
         <div class="container">
             <div class="login-box">
                 <form name="form" action="#" method="post">
