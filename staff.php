@@ -11,14 +11,14 @@ session_start();
         {
             $imageName = $_FILES['image']['name'][$i];
             $imageTempName = $_FILES['image']['tmp_name'][$i];
-            $targetPath = "./image/".$imageName;
+            $targetPath = "images/".$imageName;
             if(move_uploaded_file($imageTempName,$targetPath))
             {
                 $sql = "INSERT INTO `admin`(username,image) VALUES('$name','$imageName')";
                 $result = mysqli_query($conn,$sql);
                 if($result)
             {
-                header("Location: staff.php");
+                
             }
             }
             
@@ -402,15 +402,14 @@ nav:hover
     cursor: pointer;
     color: #ff7b00;
 } */
+
 </style>
 <body>
 <?php
         $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
-        $username = $_GET['username'];
-        $individual = mysqli_query($conn,"SELECT * From `admin` where username = $username");
-        $in = mysqli_fetch_assoc($individual);
+        
 ?>
     <div class="container">
         <nav>
@@ -418,8 +417,8 @@ nav:hover
                 <li>
                     <div class="sidebarlogo">
                     <a class="logo" href="#">
-                        <img  src="<?php echo"images/".$in['image']?>">
-                        <span class="nav-item"><?php echo $host_image['uesername']?></span>
+                        <img  src="<?php echo"images/".$host_image['image']?>">
+                        <span class="nav-item"><?php echo $host_image['username']?></span>
                     </a>
                     </div>
                 </li>
@@ -432,17 +431,26 @@ nav:hover
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-cubes"></i>
-                        <span class="nav-item">Product</span>
+                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="logout">
+                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff.php?username=<?php echo $host_image['username']?>">
+                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminlogout.php" class="logout">
                         <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
@@ -511,13 +519,13 @@ nav:hover
             
             <div class='col-md-3' style='text-align: center;'>
             <div class='img-box' >
-            <img src="<?php echo "image/".$fetch['image'];?>" class='img-responsive'>
+            <img src="<?php echo "images/".$fetch['image'];?>" class='img-responsive'>
             <form action="" method="POST">
             <input type="hidden" name="delete_id" value="<?php echo $fetch['username'];?>">
             <input type="hidden" name="del_image" value="<?php echo $fetch['image']?>">
                 <ul>
                     <li><a href="delstaff.php?id=<?php echo $fetch['username']?>"><i class='fa fa-trash-o' ></i></a></li>
-                    <li><a href=""><i class='fa fa-info-circle'></i></a></li>
+                    <li><a href="editstaff.php?id=<?php echo $fetch['username']?>"><i class='fa fa-info-circle'></i></a></li>
                 </ul>
             </div>
             <h2 style="padding: 20px; padding-top:0;"><?php echo $fetch['username']?></h2>

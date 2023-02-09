@@ -213,3 +213,8 @@ hr
   cursor: pointer;
   background: linear-gradient(to right,#f94144,#f3722c);
 }
+
+.submit a
+{
+  text-decoration: none;
+}
