@@ -213,7 +213,7 @@
                     <p>Total :<span class="price" style="color:black"><b>RM <?php echo $total;?></b></span></p>
                 </div>
             </div>
-            <p><a href="http://localhost/DWP_1Coin_Project/Chorxiang/order/order.php">Back to order page</p>
+            <p><a href="http://localhost/DWP_1Coin_Project/order.php">Back to order page</p>
         </fieldset>
     </div>
 

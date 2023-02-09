@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'config1.php';
 $conn = Connect();
 
 session_start();
