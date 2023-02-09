@@ -1,4 +1,4 @@
-<<<<<<< HEAD:dashboard.php
+
 <?php include("config.php"); ?>
 
 <!DOCTYPE html>
@@ -301,7 +301,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="logout">
+                    <a href="adminlogout.php" class="logout">
                         <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>

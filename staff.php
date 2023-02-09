@@ -432,17 +432,26 @@ nav:hover
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-cubes"></i>
-                        <span class="nav-item">Product</span>
+                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="logout">
+                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff.php?username=<?php echo $host_image['username']?>">
+                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminlogout.php" class="logout">
                         <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
