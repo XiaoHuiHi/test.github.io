@@ -13,3 +13,12 @@ function Connect()
 	return $conn;
 }
 ?>
+
+<?php
+session_start();
+
+if(!isset($_SESSION['login_user2'])){
+header("location: Login.php"); 
+}
+
+?>
