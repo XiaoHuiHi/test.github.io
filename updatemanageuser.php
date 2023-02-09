@@ -147,14 +147,14 @@ if (isset($_POST["savebtn"]))
     $memail = $_POST["email"];  
 	$mrole = $_POST["role"];  	
 	$mstatus = $_POST["status"];  		
-    
+    $mimage = $_POST['image'];
 
             
             $sql = "update user set image='" . $_POST['image'] . "' where No=$id";
             $result = mysqli_query($conn,$sql);
             if($result)
             {
-                header("Location: manage.php");
+                header("Location: manageuser.php");
             }
             
 
@@ -175,6 +175,10 @@ if (isset($_POST["savebtn"]))
     else if(!$mstatus)
     {
         echo "Please Key in Status !";
+    }
+    else if(!$mimage)
+    {
+        echo "Please put the image ! ";
     }
     else if($mrole=="VIP")
     {
