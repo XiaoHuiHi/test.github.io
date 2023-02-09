@@ -5,6 +5,11 @@
 <head>
     <title>VIEW COMMENTS</title>
     <style>
+        body
+        {
+            background-image: url(test.jpg);
+        }
+
         .middle
         {
             max-width: 900px;
@@ -24,9 +29,11 @@
         }
 
         
+        
         </style>
 </head>
 <body>
+
 <div class="middle">
     <h1>Customer's comments</h1>
     <fieldset>
