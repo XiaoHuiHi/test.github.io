@@ -4,8 +4,24 @@
 <html lang="en">
 <head>
     <title>VIEW COMMENT</title>
+    <style>
+        .middle
+        {
+            max-width: 900px;
+            margin: auto; 
+        }
+
+        fieldset
+        {
+            background-color: #f2f2f2;
+        }
+        </style>
 </head>
 <body>
+<div class="middle">
+    <h1>Customer's comments</h1>
+    <fieldset>
+    <div class="middle">
     <table class="table table-striped table-bordered table-hover" border="1px">
 						<thead>
 							<th> ID</th>
@@ -63,6 +79,12 @@
 
                     mysqli_close($conn);
                     ?>
+
     </table>
+
+                <span><a href="http://localhost/DWP_1Coin_Project/Murphy/comment/add_comment.php" >Add comment</a></span>
+                <span><a href=# >Back to Main Page</a></span>
+    </div>
+                </div>
 </body>
 </html>
