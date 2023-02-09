@@ -300,7 +300,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="staff.php?username = <?php $host_image['username']?>">
                         <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
                     </a>
                 </li>
