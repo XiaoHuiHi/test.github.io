@@ -334,24 +334,6 @@ nav:hover
             </div>
         </div>
         <br><br><br><br><br><br>
-        <p>Recent Prodct</p>
-        <table border="1px">
-            <?php
-            $sql = "select * from product;";
-            $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
-            ?>
-            <tr class="center">
-                <td>Product Name :</td>
-                <td>Product Category :</td>
-                <td>Product Price :</td>
-            </tr>
-            <tr class="center">
-                <td><?php echo $row["Prod_Name"];	?></td>
-                <td><?php echo $row["Prod_cate"];?></td>
-                <td><?php echo $row["Prod_price"];?></td>
-            </tr>
-        </table>
         <p>Recent Order</p>
         <table border="1px">
             <?php
@@ -369,31 +351,7 @@ nav:hover
                 <td><?php echo $row["qty"];?></td>
                 <td><?php echo $row["price"];?></td>
             </tr>
-            
         </table>
-        
-        <p>Recent User</p>
-        <table border="1px">
-            <?php
-            $sql = "select * from user;";
-            $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
-            ?>
-            <tr class="center">
-                <td>User Name :</td>
-                <td>Date :</td>
-                <td>Status :</td>
-            </tr>
-            <tr class="center">
-                <td><?php echo $row["Name"];	?></td>
-                <td><?php echo $row["Date"];?></td>
-                <td><?php echo $row["Status"];?></td>
-            </tr>
-        </table>
-        <br>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manage.php#">More User  <i class="fa fa-mail-forward"></i></button>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageorder.php#">More Order  <i class="fa fa-mail-forward"></i></button>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageproduct.php#">More Product  <i class="fa fa-mail-forward"></i></button>   
     </div>
 </body>
 </html>
