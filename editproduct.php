@@ -185,7 +185,7 @@ session_start();
         $stock= $_POST['stock'];
         $price = $_POST['price'];
         mysqli_query($conn,"UPDATE product set Prod_Name='$prodname' , Prod_cate = '$cate',Prod_price='$price',Prod_stock = '$stock',code='$code' WHERE Prod_ID = '$id'");
-        header('location:Manage_prod.php');
+        // header('location:Manage_prod.php');
 
             
     }
