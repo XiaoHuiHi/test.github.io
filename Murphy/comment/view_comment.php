@@ -15,6 +15,15 @@
         {
             background-color: #f2f2f2;
         }
+
+        .table 
+        {
+            table-layout: fixed;
+            width: 900px;
+            word-wrap: break-word;
+        }
+
+        
         </style>
 </head>
 <body>
@@ -22,7 +31,7 @@
     <h1>Customer's comments</h1>
     <fieldset>
     <div class="middle">
-    <table class="table table-striped table-bordered table-hover" border="1px">
+    <table class="table" border="1px">
 						<thead>
 							<th> ID</th>
 							<th> Customer Name</th>
