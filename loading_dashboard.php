@@ -1,4 +1,4 @@
-<?php include("config.php"); ?>
+<?php include("config1.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -286,12 +286,6 @@ nav:hover
                 <li>
                     <a href="#">
 
-                        <i class="fa fa-group"></i><span class="nav-item">Category</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-
                         <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>
                 </li>
@@ -311,15 +305,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-
                     <a href="http://localhost/DWP_1Coin_Project/adminlogout.php" class="logout">
-
-                    <a href="#">
-                        <i class="fa fa-book"></i><span class="nav-item">View report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="logout">
 
                         <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
