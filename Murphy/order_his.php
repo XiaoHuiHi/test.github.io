@@ -77,45 +77,12 @@ include("config.php");
         $host_image = mysqli_fetch_assoc($query);
 
         
-        $image = $host_image['image'] 
+  
 ?>
 
 </head>
 <body>
-<div class="sidebar">
-        <nav>
-            <ul>
-                <li>
-                    <a class="logo" href="#">
-                        <?php echo '<img src="'.$image.'" >'?>
-                        <span class="nav-item"><?php echo $host_image['name']?></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home"></i>
-                        <span class="nav-item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-cubes"></i>
-                        <span class="nav-item">Product</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item">Provissions</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="logout">
-                        <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        </div>
+
   <div class="middle">
     <fieldset>
 
@@ -155,8 +122,10 @@ include("config.php");
           }
           ?>
         </table>
- 
-	   
+        <br><br>
+        <a href="#">
+				<i class="fa fa-edit">Home</i> 
+		</a>
 	</fieldset>
 	
 </div>
