@@ -10,7 +10,7 @@ else
 {
 $username=$_POST['username'];
 $password=$_POST['password'];
-require 'config.php';
+require 'config1.php';
 $conn = Connect();
 
 $query = "SELECT username, password FROM `admin` WHERE username=? AND password=? LIMIT 1";
