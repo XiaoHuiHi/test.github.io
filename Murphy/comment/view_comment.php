@@ -7,7 +7,9 @@
     <style>
         body
         {
-            background-image: url(test.jpg);
+            background-image: url("https://i.pinimg.com/564x/52/9d/2b/529d2ba9360a0707359ca15b9cb184be.jpg");
+            background-size: 100%;
+            background-repeat:no-repeat;
         }
 
         .middle
