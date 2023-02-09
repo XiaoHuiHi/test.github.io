@@ -1,39 +1,18 @@
 <?php
 include 'config.php';
     $msg = "";
-
-    if(isset($_GET['reset']))
+    $id=$_GET['id'];
+    if(isset($_POST['reset']))
     {
-        if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE code = '{$_GET['reset']}'")))
-        {
-            if(isset($_POST['submit']))
+        // $query = "SELECT * From user";
+        // $query_run = mysqli_query($conn,$query);
+
+        $password = $_POST['pass'];
+        $cpassword = $_POST['cpassword'];
+            if($pass == $cpassword)
             {
-                $password = mysqli_real_escape_string($conn,$_POST['pass']);
-                $cpassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
-                if($pass == $cpassword)
-                {
-                    $query = mysqli_query($conn,"UPDATE users SET password = '{$password}',code='' WHERE code='{$_GET['reset']}'");
-
-                    if($query)
-                    {
-                        // header("Location: Login.php");
-                    }
-                }
-                else
-                {
-                    $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Password and Confirm Password do not match.</div>";
-                }
-               
-        }
-        }
-        else
-        {
-            $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Something Wrong Went.</div>";
-        }
-    }
-    else
-    {
-        // header('Location: Forgot.php');
+                mysqli_query($conn,"UPDATE user SET password = '{$password}'WHERE email='$id'");
+            }
     }
 ?>
 
@@ -93,10 +72,21 @@ include 'config.php';
                         <p style="text-align: center;">Back to <a href="Login.php">Login</a></p>
                 </div>
                 <div class="submit">
-                    <input type="submit" value="Reset" onclick="validate()">
+                    <input type="submit" name="reset" value="Reset" onclick="validate()">
                 </div>
             </form>
         </div>
     </div>
+    else
+            {
+                $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Password and Confirm Password do not match.</div>";
+            }
+            
+    }
+    
+    else
+    {
+        $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Something Wrong Went.</div>";
+    }
 </body>
 </html>
