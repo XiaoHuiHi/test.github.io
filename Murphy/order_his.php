@@ -110,10 +110,10 @@ include("config.php");
             
             <tr>
 								
-								<td><?php echo $row['foodid']; ?></td>
-								<td><?php echo $row['foodname']; ?></td>
-								<td>RM <?php echo $row['qty']; ?></td>
-								<td><?php echo $row['price']; ?></td>
+								<th><?php echo $row['foodid']; ?></th>
+								<th><?php echo $row['foodname']; ?></th>
+								<th><?php echo $row['qty']; ?></th>
+								<th><?php echo $row['price']; ?></th>
 								
 							</tr>
 					
