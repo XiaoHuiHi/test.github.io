@@ -118,7 +118,7 @@
                 <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
                 <br>
                 <input type="submit" name="save" value="submit" onsubmit="validationForm()">
-                <a href="manage.php">Back to manage user list</a>
+                <a href="manageuser.php">Back to manage user list</a>
             </form>
         </fieldset>
     </div>

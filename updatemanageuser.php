@@ -125,7 +125,7 @@
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
             <div style="padding-bottom:5px;">
-            <a href="manage.php">Back to manage user list</a>
+            <a href="manageuser.php">Back to manage user list</a>
             </div>
 
 
