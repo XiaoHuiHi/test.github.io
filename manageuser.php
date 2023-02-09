@@ -1,4 +1,4 @@
-<?php include("config1.php"); 
+<?php include("config.php"); 
 
 ?>
 
