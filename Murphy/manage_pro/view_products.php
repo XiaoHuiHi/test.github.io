@@ -67,16 +67,17 @@
 								</td>
 							</tr>
 						</tbody>
-								<br><br>
-								<a href="add_prod.php">
-										<i class="fa fa-edit"></i> Add
 								
-									</a>
 
 							<?php 
 								} 
 						?>
 	</table>
+	<br><br>
+								<a href="add_prod.php">
+										<i class="fa fa-edit"></i> Add
+								
+									</a>
 	</fieldset>
 </body>
 </html>
