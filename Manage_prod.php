@@ -579,8 +579,8 @@ tr a button:hover
                         <td><?php echo $product['Prod_stock']?></td>
                         <td class="button">
                             <form action="" method="POST">
-                            <a href="editproduct.php?id=<?php echo $product['Prod_ID']?>">Edit</a>
-                            <a href="delproduct.php?id=<?php echo $product['Prod_ID']?>"><i class="fa fa-trash"></i></a>
+                            <a href="edit.php?id=<?php echo $product['Prod_ID']?>">Edit</a>
+                            <a href="del.php?id=<?php echo $product['Prod_ID']?>"><i class="fa fa-trash"></i></a>
                             <input type="hidden" name="prod_id" value="<?php echo $product['Prod_ID']?>">
                             </form>
                         </td>
