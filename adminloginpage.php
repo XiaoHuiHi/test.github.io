@@ -1,6 +1,6 @@
 <?php
 include('adminlogin.php'); 
-include 'config.php';
+
 if(isset($_SESSION['login_user1'])){
 header("location: loading_dashboard.php"); 
 }
@@ -8,11 +8,7 @@ header("location: loading_dashboard.php");
 
 <!DOCTYPE html>
 <html>
-<?php 
-    $h= "SELECT * FROM `admin`";
-    $query = mysqli_query($conn,"$h");
-    $is = mysqli_fetch_assoc($query);
-?>
+
     <head>
         <title> Admin Login | 1 Coin Sandwich' </title>
 
@@ -36,7 +32,7 @@ header("location: loading_dashboard.php");
                     </div>
                     
                     <div class="submit">
-                        <a href="loading_dashboard.php?<?php echo $username?>"><input type="submit" name="submit" value="Login"></a>
+                        <input type="submit" name="submit" value="Login">
                     </div>
                     <br>
                     <div class="forgot">

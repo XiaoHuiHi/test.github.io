@@ -1,4 +1,4 @@
-<?php include("config1.php"); ?>
+<?php include("config.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -305,7 +305,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/DWP_1Coin_Project/adminlogout.php" class="logout">
+                    <a href="adminlogout.php" class="logout">
 
                         <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>

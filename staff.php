@@ -402,15 +402,14 @@ nav:hover
     cursor: pointer;
     color: #ff7b00;
 } */
+
 </style>
 <body>
 <?php
         $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
-        $user = $_GET['username'];
-        $individual = mysqli_query($conn,"SELECT * From `admin` where username = '$user'");
-        $in = mysqli_fetch_assoc($individual);
+        
 ?>
     <div class="container">
         <nav>
@@ -418,8 +417,8 @@ nav:hover
                 <li>
                     <div class="sidebarlogo">
                     <a class="logo" href="#">
-                        <img  src="<?php echo"images/".$in['image']?>">
-                        <span class="nav-item"><?php echo $in['username']?></span>
+                        <img  src="<?php echo"images/".$host_image['image']?>">
+                        <span class="nav-item"><?php echo $host_image['username']?></span>
                     </a>
                     </div>
                 </li>
@@ -526,7 +525,7 @@ nav:hover
             <input type="hidden" name="del_image" value="<?php echo $fetch['image']?>">
                 <ul>
                     <li><a href="delstaff.php?id=<?php echo $fetch['username']?>"><i class='fa fa-trash-o' ></i></a></li>
-                    <li><a href=""><i class='fa fa-info-circle'></i></a></li>
+                    <li><a href="editstaff.php?id=<?php echo $fetch['username']?>"><i class='fa fa-info-circle'></i></a></li>
                 </ul>
             </div>
             <h2 style="padding: 20px; padding-top:0;"><?php echo $fetch['username']?></h2>

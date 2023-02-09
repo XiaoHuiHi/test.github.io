@@ -508,20 +508,13 @@ tr a button:hover
                         
                         <div class="option">
                             <input type="radio" class="radio" id="automobiles" name="Category">
-                            <label for="automobiles">adaadad</label>
+                            <label for="automobiles">Sandwich</label>
                         </div>
                         <div class="option">
                             <input type="radio" class="radio" id="automobiles" name="Category">
-                            <label for="automobiles">adaadad</label>
+                            <label for="automobiles">Drink</label>
                         </div>
-                        <div class="option">
-                            <input type="radio" class="radio" id="automobiles" name="Category">
-                            <label for="automobiles">adaadad</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" class="radio" id="automobiles" name="Category">
-                            <label for="automobiles">adaadad</label>
-                        </div>
+                        
                         
                         
                     </div>
@@ -557,8 +550,7 @@ tr a button:hover
             
             <div class="create">
                     <form action="" method="POST" enctype="multipart/form-data">
-                        <a href="add.php"><i class="fa fa-plus-circle"></i><span> Create a product</span></a>
-                        
+                        <a href="addproduct.php"><i class="fa fa-plus-circle"></i><span> Create a product</span></a>
                     </form>
             </div>
             <table>
