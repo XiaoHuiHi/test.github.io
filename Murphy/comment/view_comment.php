@@ -18,6 +18,7 @@
         </style>
 </head>
 <body>
+<div class="middle">
     <h1>Customer's comments</h1>
     <fieldset>
     <div class="middle">
@@ -78,7 +79,12 @@
 
                     mysqli_close($conn);
                     ?>
+
     </table>
+
+                <span><a href="http://localhost/DWP_1Coin_Project/Murphy/comment/add_comment.php" >Add comment</a></span>
+                <span><a href=# >Back to Main Page</a></span>
     </div>
+                </div>
 </body>
 </html>

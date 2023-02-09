@@ -13,9 +13,16 @@
 		{
       		background-color: #f2f2f2;
     	}
+		.middle
+        {
+            max-width: 900px;
+            margin: auto; 
+        }
+
 	</style>		
 </head>
 <body>
+<div class="middle">
 	<fieldset>
     <table class="table table-striped table-bordered table-hover" border="1px">
 						<thead>
@@ -79,5 +86,6 @@
 								
 									</a>
 	</fieldset>
+							</div>
 </body>
 </html>
