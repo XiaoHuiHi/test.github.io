@@ -8,18 +8,15 @@ header("location: loading_dashboard.php");
 
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href ="css/adminloginpage.css">
 
     <head>
         <title> Admin Login | 1 Coin Sandwich' </title>
-
-    <link rel="stylesheet" href ="css/adminloginpage.css">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     </head>
+    
     <!--Sidebar!-->
     <?php include "adminsidebar.php" ?>
-    
+
         <div class="container">
             <div class="login-box">
                 <form name="form" action="#" method="post">

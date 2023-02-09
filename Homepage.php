@@ -1,22 +1,89 @@
-<?php
-session_start();
 
-if(!isset($_SESSION['login_user2'])){
-header("location: Login.php"); 
-}
 
-?>
 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Homepage | 1 Coin Sandwich</title>
-</head>
+<html lang="en">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="css/home.css">
+    <title>Homepage | 1 Coin Sandwich</title>
+</head>  
+<style>
+body,html {
+    height: 100%;
+  }
+  
+  body {
+    padding-top: 50px;
+    background-image: url('bgimg1.jpg'); 
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+  /*
+    background: linear-gradient(-90deg,#ff8008, #ffc837);
+    */
+  }
+  
+  
+  #myBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  #myBtn:hover {
+    background-color: darkgreen;
+    color: white;
+  }
+  
+  
+  
+  
+  .bg-4{
+    background-color: #2f2f2f;
+    color: #ffffff;
+  
+  }
+  
+  footer{
+    display: block;
+  }
+  
+  .mypanel{
+    border: 1px solid #eaeaec; 
+    margin: -1px 19px 3px -1px; 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
+    background-color: #FAFAFA;  
+    padding:15px;
+    border-radius: 5px;
+  }
+  
+  
+  input{
+    border: 5px solid white;
+  }
 
+  .text-dark
+  {
+    
+  }
+
+  h1
+  {
+    
+  }
+
+</style>
 <body>
     <!--Header-->
     <?php include "header.php" ?>
@@ -44,6 +111,10 @@ header("location: Login.php");
             <input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
             <input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
             <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+
+
+
+            <h1>dashdjhdkahsdha</h1>
         </form>
     </div>
 </body>
