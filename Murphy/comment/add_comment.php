@@ -39,22 +39,35 @@
 </html>
 
 <?php
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
     $name = $_POST['name'];
     $contact = $_POST['contact'];
     $email = $_POST['email'];
     $comment = $_POST['comment'];
-    
 
-    $sql = "INSERT INTO comment (name, contact, email, comment)VALUES ('$name', '$contact', '$email', '$comment')";
+    if (!$name) {
+        echo "Please Key in name !";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully.";
+    } else if (!$contact && is_nan($contact)) {
+        echo "Please Key in correct contact !";
+
+    } else if (!$email) {
+        echo "Please Key in email !";
+
+    } else if (!$comment) {
+        echo "Please Key in your comment !";
+
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+        $sql = "INSERT INTO comment (name, contact, email, comment)VALUES ('$name', '$contact', '$email', '$comment')";
 
-    mysqli_close($conn);
+        if (mysqli_query($conn, $sql)) {
+            echo "New record created successfully.";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
+    }
 }
 ?>
