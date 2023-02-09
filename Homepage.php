@@ -95,7 +95,7 @@ else if (isset($_SESSION['login_user2'])) {
           </ul>
   <?php        
 }
-else {
+else 
 
 ?>
 
@@ -107,14 +107,11 @@ else {
             </ul>
         </li>
     
-  }
-
-  h1
-  {
+  <style>
     
-  }
+  </style>
 
-</style>
+
 <body>
     <!--Header-->
     <?php include "header.php" ?>

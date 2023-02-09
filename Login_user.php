@@ -14,7 +14,7 @@
         $re = mysqli_fetch_assoc($result);
         if($r === 1)
         {
-            header("location: Homepage.php?name=".$re['Name']);
+            header("location: Homepage.php?email=".$re['Email']);
             
         }
         else{

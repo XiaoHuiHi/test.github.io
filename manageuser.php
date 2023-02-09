@@ -77,7 +77,7 @@
           <td><?php echo $row["Role"];?></td>
           <td><?php echo $row["Status"];?></td>
           <td>           <a href="deletemanageuser.php?No=<?php echo $row['No']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
-            <a href="updatemanageuser.php?edit&no=<?php echo $row['No']; ?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
+            <a href="updatemanageuser.php?edit&email=<?php echo $row['Email']; ?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
             </td>
         </tr>
         <?php echo "<br><br>";?>
