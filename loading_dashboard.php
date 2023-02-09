@@ -295,7 +295,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
+                    <a href="http://localhost/DWP_1Coin_Project/manageuser.php">
                         <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
                     </a>
                 </li>
