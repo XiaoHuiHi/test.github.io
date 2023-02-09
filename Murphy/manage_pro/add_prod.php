@@ -38,7 +38,7 @@
 
 			<p><label>Product Stock:</label><input type="number" name="Prod_stock">
 			
-			<p><input type="submit" name="savebtn" value="Save_inventory">
+			<p><input type="submit" name="savebtn" value="Save inventory">
 
 		</form>
 	</fieldset>
@@ -74,6 +74,6 @@ if(isset($_POST["savebtn"]))
 	
 	
 }
-
+header("location: view_products.php")
 ?>
 
