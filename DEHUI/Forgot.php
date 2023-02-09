@@ -1,11 +1,5 @@
 <?php 
     session_start();
-    
-    if(isset($_SESSION['SESSION_EMAIL']))
-    {
-        // header("Location: Reset.php");
-        // die();
-    }
 
     include 'config.php';
     $msg = "";
@@ -13,10 +7,9 @@
     {
         $email = mysqli_real_escape_string($conn,$_POST["email"]);
 
-        if(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM users WHERE email = '{$email}'"))>0)
+        if(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM user WHERE email = '{$email}'"))>0)
         {
-            
-
+            header("Location: Reset.php?id=".$email);
         }
         else
         {
@@ -37,27 +30,27 @@
     <link rel="stylesheet" href="./Forgot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
-        function validate()
-        {
-            var email;
-            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            var email_flag=false;
-            email=document.form.email.value;
-            if (email.trim()=="")
-            {
-                document.getElementById("error_email").innerHTML="Please key in correct email";
+        // function validate()
+        // {
+        //     var email;
+        //     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        //     var email_flag=false;
+        //     email=document.form.email.value;
+        //     if (email.trim()=="")
+        //     {
+        //         document.getElementById("error_email").innerHTML="Please key in correct email";
                 
-            }
-            else if(email.match(mailformat))
-            {
-                document.getElementById("error_email").innerHTML="&nbsp";
-                email_flag=true;
-            }
-            else
-            {
-                document.getElementById("error_email").innerHTML="Please key in correct email";
-            }
-        }
+        //     }
+        //     else if(email.match(mailformat))
+        //     {
+        //         document.getElementById("error_email").innerHTML="&nbsp";
+        //         email_flag=true;
+        //     }
+        //     else
+        //     {
+        //         document.getElementById("error_email").innerHTML="Please key in correct email";
+        //     }
+        // }
 
     </script>
 </head>
