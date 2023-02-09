@@ -13,9 +13,16 @@
 		{
       		background-color: #f2f2f2;
     	}
+		.middle
+        {
+            max-width: 900px;
+            margin: auto; 
+        }
+
 	</style>		
 </head>
 <body>
+<div class="middle">
 	<fieldset>
     <table class="table table-striped table-bordered table-hover" border="1px">
 						<thead>
@@ -67,16 +74,18 @@
 								</td>
 							</tr>
 						</tbody>
-								<br><br>
-								<a href="add_prod.php">
-										<i class="fa fa-edit"></i> Add
 								
-									</a>
 
 							<?php 
 								} 
 						?>
 	</table>
+	<br><br>
+								<a href="add_prod.php">
+										<i class="fa fa-edit"></i> Add
+								
+									</a>
 	</fieldset>
+							</div>
 </body>
 </html>

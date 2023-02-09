@@ -106,7 +106,7 @@
 		
 		<h1><b style="font-size: 50px;"><i class="fa fa-pencil" style="font-size:50px"></i>Edit Profile</b></h1>
 
-		<form name="addfrm" method="post" action="" enctype="multipart/form-data">
+		<form name="addfrm" method="post" action="">
 
 			<p><label>Name :</label><input type="text" name="name" size="50" value="<?php echo $row['Name']; ?>">
 
@@ -117,6 +117,8 @@
             <p><label>Date:</label><input type="date" name="date" value="<?php echo $row['Date']; ?>">
 
             <p><label>About us :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
+
+            <p><input type="file" id="file"  name="image" class="form-control" multiple ></P>
 			
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
@@ -137,6 +139,7 @@
 
 <?php
 
+
 if (isset($_POST["savebtn"])) 	
 {
 	$mname = $_POST["name"];  	
@@ -145,6 +148,8 @@ if (isset($_POST["savebtn"]))
     $mdate = $_POST["date"];  	
 	$msummary = $_POST["summary"];  		
 	
+    
+    mysqli_query($conn,"update user set image='" . $_POST['image'] . "' where No=$id");
 
     if (!$mname)
     {

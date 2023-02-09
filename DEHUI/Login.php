@@ -1,32 +1,20 @@
 <?php
-    session_start();
-    if(isset($_SESSION['SESSION_EMAIL']))
-    {
-        header("Location: welcome.php");
-        die();
-    }
 
     include 'config.php';
     $msg = "";
+    
     if(isset($_POST['submit']))
     {
         $email = mysqli_real_escape_string($conn,$_POST["email"]);
         $password=mysqli_real_escape_string($conn,$_POST['pass']);
 
-        $sql = "SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'";
+        $sql = "SELECT * FROM user WHERE Email = '{$email}' AND Password = '{$password}'";
         $result = mysqli_query($conn,$sql);
-        if(mysqli_num_rows($result) === 1)
+        $r = mysqli_num_rows($result);
+        if($r === 1)
         {
-            $row = mysqli_fetch_assoc($result);
-            if(empty($row['code']))
-            {
-                $_SESSION['SESSION_EMAIL'] = $email;
-                header("Location: welcome.php");
-            }
-            else
-            {
-                $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Email or Password do not match.</div>";
-            }
+            header("location: welcome.php");
+            
         }
         else{
             $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Email or Password do not match.</div>";
@@ -48,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="./Login.js"></script>
+    <!-- <script src="./Login.js"></script> -->
     <script>
         function validate()
         {
@@ -94,13 +82,27 @@
             <?php echo $msg;?>
             <div class="box">
                 <div. name="login" class="login-input">
-                    <p class="email"><label><i class="fa fa-envelope"></i> Email:&nbsp;</label>
-                    <br><input maxlength="50" name="email" type="email" id="email"><br><span id="error_email"></span></p>
+                <?php
+                    // if(isset($_COOKIE['emailid']) && isset($_COOKIE['password']))
+                    // {
+                    //     $emailid = $_COOKIE['emailid'];
+                    //     $password = $_COOKIE['password'];
+                    // }
+                    // else
+                    // {
+                    //     $emailid = $password ='';
+                    // }
+                    // if(isset($_REQUEST['rememberme']))
+                    // {
+                    //     setcookie('emailid',$_POST['email'],time()+20);
+                    //     setcookie('password',$_POST['pass'],time()+20);
 
-                    <p class="pass"><label><i class="fa fa-lock"></i>&nbsp; &nbsp;Password :&nbsp;&nbsp;&nbsp;</label><br><input maxlength="50" name="pass" type="password" id="password"><br><span id="error_pass"></span></p>
-                </div>
-                <div class="remember">
-                    <input type="checkbox" name="" id="remember"  name="rememberme" onclick="setcookie()"><span>Remember Me</span>
+                    // }
+                ?>
+                    <p class="email"><label><i class="fa fa-envelope"></i> Email:&nbsp;</label>
+                    <br><input maxlength="50" name="email" type="email" id="email" value=""><br><span id="error_email"></span></p>
+
+                    <p class="pass"><label><i class="fa fa-lock"></i>&nbsp; &nbsp;Password :&nbsp;&nbsp;&nbsp;</label><br><input maxlength="50" name="pass" type="password" id="password"  value=""><br><span id="error_pass"></span></p>
                 </div>
                 <div class="submit">
                     <input type="submit" name="submit" value="Login" onclick="validate()">
@@ -114,19 +116,12 @@
                 
                 <hr>
                 <div class="login-img">   
-                <?php
-                    $imagecode = "SELECT * FROM imageofphp";
-                    $query = mysqli_query($conn,$imagecode);
-                    while($imgcode = mysqli_fetch_assoc($query))
-                    {
-                        ?>
-                        <a href="#"><img src="<?php echo "image/".$imgcode['imagecode']?>" width="30px"></a>
-                        <?php
-                    }
-                ?>
+                        <a href="#"><img src="<?php echo "image/fb.png" ?>" width="30px"></a>
+                        <a href="#"><img src="<?php echo "image/g.png"?>" width="30px"></a>
+
                 </div>
             </form>
-                
+               
             </div>
         </div>
     </div>

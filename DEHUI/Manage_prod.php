@@ -5,7 +5,7 @@
     {
         header("location: edit.php");
     }
-?>
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -456,12 +456,12 @@ tr a button:hover
 ?>
 <body>
     <div class="container">
-        <div class="sidebar">
+    <div class="sidebar">
         <nav>
             <ul>
                 <li>
-                    <a class="logo" href="#">
-                        <img  src="<?php echo "image/".$host_image['image']?>" alt="">
+                    <a class="logo" href="">
+                        <?php echo '<img src='."image/".$host_image['image'].' >'?>
                         <span class="nav-item"><?php echo $host_image['name']?></span>
                     </a>
                 </li>
@@ -474,16 +474,26 @@ tr a button:hover
                 <li>
                     <a href="#">
                         <i class="fa fa-cubes"></i>
-                        <span class="nav-item">Product</span>
+                        <span class="nav-item"></span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item">Provissions</span>
+                        <i class="fa fa-clone"></i><span class="nav-item"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="logout">
+                    <a href="http://localhost/DWP_1Coin_Project/DEHUI/whishlist.php">
+                        <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/about us/About_us.php">
+                        <i class="fa fa-commenting"></i><span class="nav-item">About Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.php" class="logout">
                         <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
@@ -578,7 +588,7 @@ tr a button:hover
                         <td class="button">
                             <form action="" method="POST">
                             <a href="edit.php?id=<?php echo $product['Prod_ID']?>">Edit</a>
-                            <a href=""><button type="submit" name="del" class="del"><i class="fa fa-trash"></i></button></a>
+                            <a href="del.php?id=<?php echo $product['Prod_ID']?>"><i class="fa fa-trash"></i></a>
                             <input type="hidden" name="prod_id" value="<?php echo $product['Prod_ID']?>">
                             </form>
                         </td>
@@ -593,19 +603,7 @@ tr a button:hover
                     // }
                     if(isset($_POST['del']))
                     {
-                        $id = $_POST['prod_id'];
-                        $query = "DELETE FROM product WHERE Prod_ID = '$id'";
-                        $query_run = mysqli_query($conn,$query);
-                        if($query_run)
-                        {
-                            // unlink("image/".$image);
-                            $_SESSION['success']="Data is Deleted";
-                            // header("location: staff.php?delete successfully");
-                        }
-                        else
-                        {
-                            $_SESSION['status']="Data is Not Deleted";
-                        }
+                        
                     }
                 ?>
             </table>

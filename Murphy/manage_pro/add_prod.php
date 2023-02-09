@@ -15,9 +15,7 @@
 
 <div id="wrapper">
 
-	<div id="left">
-		<?php include("view_products.php"); ?>
-	</div>
+
 	
 	<div id="right">
 	<fieldset>
@@ -40,7 +38,7 @@
 
 			<p><label>Product Stock:</label><input type="number" name="Prod_stock">
 			
-			<p><input type="submit" name="savebtn" value="Save_inv">
+			<p><input type="submit" name="savebtn" value="Save inventory">
 
 		</form>
 	</fieldset>
@@ -62,7 +60,8 @@ if(isset($_POST["savebtn"]))
 	$pro_price = $_POST["Prod_price"];  	
 	$pro_keywords = $_POST["Prod_stock"];  	
 	
-	mysqli_query($conn,"insert into product (Prod_ID, Prod_Name, Prod_cate, Prod_price, Prod_stock) values ('$pro_id',$pro_title,'$pro_price','$pro_keywords')");
+	mysqli_query($conn,"INSERT into product (Prod_ID, Prod_Name, Prod_cate, Prod_price, Prod_stock) values ('$pro_id','$pro_title','$pro_img1','$pro_price','$pro_keywords')");
+	//mysqli_query($conn,"INSERT into product ( Prod_Name, Prod_cate, Prod_price, Prod_stock) values ('$pro_title','$pro_price','$pro_keywords')");
 
 	
 	?>
@@ -75,6 +74,6 @@ if(isset($_POST["savebtn"]))
 	
 	
 }
-
+header("location: view_products.php")
 ?>
 
