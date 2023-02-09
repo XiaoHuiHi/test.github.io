@@ -281,11 +281,6 @@ nav:hover
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-group"></i><span class="nav-item">Category</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
                         <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>
                 </li>
@@ -302,11 +297,6 @@ nav:hover
                 <li>
                     <a href="staff.php?username = <?php $host_image['username']?>">
                         <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book"></i><span class="nav-item">View report</span>
                     </a>
                 </li>
                 <li>
