@@ -1,6 +1,6 @@
 <?php
 session_start();
-    include 'config1.php';
+    include 'config.php';
 
     if(isset($_POST['upload']))
     {
