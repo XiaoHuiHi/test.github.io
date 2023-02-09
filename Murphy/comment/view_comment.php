@@ -3,8 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>VIEW COMMENT</title>
+    <title>VIEW COMMENTS</title>
     <style>
+        body
+        {
+            background-image: url("https://i.pinimg.com/564x/52/9d/2b/529d2ba9360a0707359ca15b9cb184be.jpg");
+            background-size: 100%;
+            background-repeat:no-repeat;
+        }
+
         .middle
         {
             max-width: 900px;
@@ -15,14 +22,25 @@
         {
             background-color: #f2f2f2;
         }
+
+        .table 
+        {
+            table-layout: fixed;
+            width: 900px;
+            word-wrap: break-word;
+        }
+
+        
+        
         </style>
 </head>
 <body>
+
 <div class="middle">
     <h1>Customer's comments</h1>
     <fieldset>
     <div class="middle">
-    <table class="table table-striped table-bordered table-hover" border="1px">
+    <table class="table" border="1px">
 						<thead>
 							<th> ID</th>
 							<th> Customer Name</th>
