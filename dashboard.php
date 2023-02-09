@@ -295,7 +295,7 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="staff.php?username = <?php $host_image['username']?>">
+                    <a href="staff.php?username=<?php echo $host_image['username']?>">
                         <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
                     </a>
                 </li>

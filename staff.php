@@ -1,6 +1,6 @@
 <?php
 session_start();
-    include 'config1.php';
+    include 'config.php';
 
     if(isset($_POST['upload']))
     {
@@ -11,14 +11,14 @@ session_start();
         {
             $imageName = $_FILES['image']['name'][$i];
             $imageTempName = $_FILES['image']['tmp_name'][$i];
-            $targetPath = "./image/".$imageName;
+            $targetPath = "images/".$imageName;
             if(move_uploaded_file($imageTempName,$targetPath))
             {
                 $sql = "INSERT INTO `admin`(username,image) VALUES('$name','$imageName')";
                 $result = mysqli_query($conn,$sql);
                 if($result)
             {
-                header("Location: staff.php");
+                
             }
             }
             
@@ -408,8 +408,8 @@ nav:hover
         $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
-        $username = $_GET['username'];
-        $individual = mysqli_query($conn,"SELECT * From `admin` where username = $username");
+        $user = $_GET['username'];
+        $individual = mysqli_query($conn,"SELECT * From `admin` where username = '$user'");
         $in = mysqli_fetch_assoc($individual);
 ?>
     <div class="container">
@@ -419,7 +419,7 @@ nav:hover
                     <div class="sidebarlogo">
                     <a class="logo" href="#">
                         <img  src="<?php echo"images/".$in['image']?>">
-                        <span class="nav-item"><?php echo $host_image['uesername']?></span>
+                        <span class="nav-item"><?php echo $in['username']?></span>
                     </a>
                     </div>
                 </li>
@@ -511,7 +511,7 @@ nav:hover
             
             <div class='col-md-3' style='text-align: center;'>
             <div class='img-box' >
-            <img src="<?php echo "image/".$fetch['image'];?>" class='img-responsive'>
+            <img src="<?php echo "images/".$fetch['image'];?>" class='img-responsive'>
             <form action="" method="POST">
             <input type="hidden" name="delete_id" value="<?php echo $fetch['username'];?>">
             <input type="hidden" name="del_image" value="<?php echo $fetch['image']?>">
