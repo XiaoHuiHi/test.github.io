@@ -11,6 +11,10 @@
     {
         background-color: #f2f2f2;
     }
+    body
+        {
+          background-color: lightgrey;
+        }
     .middle
     {
         max-width: 800px;
