@@ -135,7 +135,7 @@ else {
 <div class="container" style="width:50%;">
 <?php
 
-require 'config.php';
+require 'config1.php';
 $conn = Connect();
 
 $sql = "SELECT * FROM foodmenu WHERE options = 'ENABLE' ORDER BY Food_ID";

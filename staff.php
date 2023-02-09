@@ -404,13 +404,21 @@ nav:hover
 } */
 </style>
 <body>
+<?php
+        $host = "SELECT * FROM `admin`";
+        $query = mysqli_query($conn,$host);
+        $host_image = mysqli_fetch_assoc($query);
+        $username = $_GET['username'];
+        $individual = mysqli_query($conn,"SELECT * From `admin` where username = $username");
+        $in = mysqli_fetch_assoc($individual);
+?>
     <div class="container">
         <nav>
             <ul>
                 <li>
                     <div class="sidebarlogo">
                     <a class="logo" href="#">
-                        <img  src="<?php echo"image/".$host_image['image']?>">
+                        <img  src="<?php echo"images/".$in['image']?>">
                         <span class="nav-item"><?php echo $host_image['uesername']?></span>
                     </a>
                     </div>
