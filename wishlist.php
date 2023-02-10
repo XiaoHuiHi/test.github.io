@@ -399,7 +399,7 @@ nav:hover
                                         <button class="plus-btn">+</button>
                                     </div>
                                     <div class="cart">
-                                        <img src="/image/shoppingcart.png" alt=""><button>Add to cart </button>
+                                        <img src="images/shoppingcart.png" alt=""><button type="submit">Add to cart </button>
                                     </div>
                                 </div>
                                     
