@@ -152,7 +152,8 @@ if (isset($_POST["savebtn"]))
     $memail = $_POST["email"];  
 	$mpn = $_POST["pn"];  
     $mdate = $_POST["date"];  	
-	$msummary = $_POST["summary"];  		
+	$msummary = $_POST["summary"];  
+    $mimage = $_POST['image'];		
 	
     
     mysqli_query($conn,"update user set image='" . $_POST['image'] . "' where No=$id");
@@ -176,6 +177,10 @@ if (isset($_POST["savebtn"]))
     else if(!$msummary)
     {
         echo "Please Key in Summary !";
+    }
+    else if(!$mimage)
+    {
+        echo "Please put the image ! ";
     }
     else
     {
