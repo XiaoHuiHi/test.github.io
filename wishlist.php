@@ -389,7 +389,7 @@ nav:hover
                                             
                                         </form>
                                         
-                                        <img src="<?php echo "images/".$fetch['itemimage']?>" alt=""> </p> <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
+                                        <img src="<?php echo $fetch['itemimage']?>" alt=""> </p> <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
                                 </div>
                                 
                                 <div class="add">
@@ -399,7 +399,7 @@ nav:hover
                                         <button class="plus-btn">+</button>
                                     </div>
                                     <div class="cart">
-                                        <img src="/image/shoppingcart.png" alt=""><button>Add to cart </button>
+                                        <img src="images/shoppingcart.png" alt=""><button type="submit">Add to cart </button>
                                     </div>
                                 </div>
                                     

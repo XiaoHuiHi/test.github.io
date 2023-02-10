@@ -74,7 +74,11 @@ $conn = Connect();
 
 $sql = "SELECT * FROM foodmenu WHERE options = 'ENABLE' ORDER BY Food_ID";
 $result = mysqli_query($conn, $sql);
-
+$id = $_GET['email']; 
+            // $login_no=$_REQUEST["no"]; --------------------- no user ------------   // put from the user check login  ( where no=$login_no )  
+$query = "select * from user where Email = '$id'"; 
+$r = mysqli_query($conn,$query);
+$re = mysqli_fetch_assoc($r);
   while($row = mysqli_fetch_assoc($result))
    {
 
@@ -84,8 +88,7 @@ $result = mysqli_query($conn, $sql);
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
-                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>"><button type="button" onclick="wishlist.php" name="options" class="las la-heart" style="font-size:15px" id="wishlist">Wishlist&nbsp;</button>
-                    
+                    <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
               </div>
             </div>
 </div>
