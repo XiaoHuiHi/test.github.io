@@ -78,7 +78,7 @@
                 </div>
                 <?php echo "<br><br>";?>
                 <i class="fa fa-sign-out"></i>
-                <span><a href="#" >Back To Main Menu</a></span>
+                <span><a href="http://localhost/DWP_1Coin_Project/Homepage.php" >Back To Main Menu</a></span>
                 <i class="fa fa-times"></i> 
                 <span><a href="deleteprofile.php" >Delete Account</a></span>
             </form>
