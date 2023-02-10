@@ -24,7 +24,7 @@ $stmt -> store_result();
 if ($stmt->fetch())  
 {
 	$_SESSION['login_user1']=$username; 
-	header("location: loading_dashboard.php"); 
+	header("location: loading_dashboard.php?name=".$username); 
 } else {
 $error = "Username or Password is invalid";
 }

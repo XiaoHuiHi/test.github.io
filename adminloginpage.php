@@ -2,7 +2,7 @@
 include('adminlogin.php'); 
 
 if(isset($_SESSION['login_user1'])){
-header("location: loading_dashboard.php?name=".$username); 
+// 
 }
 ?>
 

@@ -456,50 +456,7 @@ tr a button:hover
 ?>
 <body>
     <div class="container">
-    <div class="sidebar">
-        <nav>
-            <ul>
-                <li>
-                    <a class="logo" href="">
-                        <?php echo '<img src='."image/".$host_image['image'].' >'?>
-                        <span class="nav-item"><?php echo $host_image['name']?></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home"></i>
-                        <span class="nav-item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-cubes"></i>
-                        <span class="nav-item"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://localhost/DWP_1Coin_Project/DEHUI/whishlist.php">
-                        <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/about us/About_us.php">
-                        <i class="fa fa-commenting"></i><span class="nav-item">About Us</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="logout.php" class="logout">
-                        <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        </div>
+    <?php include 'adminsidebar.php' ?>
     
         <div class="product">
             <div id="productmanager">    
@@ -520,10 +477,8 @@ tr a button:hover
                     </div>
                     
                     <h1>
-                        <div class="logo1">
-                            <?php echo '<img src="image/logo.png">'?>
-                        </div>
-                        <?php echo '<img src="image/management.png" alt="">'?> Product</h1>
+                        
+                        <?php echo '<img src="images/management.png" alt="">'?> Product</h1>
                         <?php
                         if(isset($_SESSION['success'])&& $_SESSION['success'] != '')
                         {
@@ -542,7 +497,7 @@ tr a button:hover
                             <button><?php echo '<img src="image/search.png" alt="">'?></button>
                         </form>
                         <div class="selected">
-                            Select an Option <?php echo '<img src="image/arrowdown.png" alt="">'?>
+                            Select an Option <?php echo '<img src="images/arrowdown.png" alt="">'?>
                         </div>
                     </div>
                 </div>
@@ -550,13 +505,12 @@ tr a button:hover
             
             <div class="create">
                     <form action="" method="POST" enctype="multipart/form-data">
-                        <a href="addproduct.php"><i class="fa fa-plus-circle"></i><span> Create a product</span></a>
+                        <a href="addproduct.php?name=<?php echo $host_image['username']?>"><i class="fa fa-plus-circle"></i><span> Create a product</span></a>
                     </form>
             </div>
             <table>
                 <tr>
                     <th>PRODUCT_IMAGE</th>
-                    <th>CODE</th>
                     <th>PRODUCT_NAME</th>
                     <th>PRICE</th>
                     <th>CATEGORY</th>
@@ -564,24 +518,23 @@ tr a button:hover
                     <th>EDITING</th>
                 </tr>
                 <?php
-                    $p = "SELECT * FROM product";
+                    $p = "SELECT * FROM foodmenu";
                     $query= mysqli_query($conn,$p);
 
                     while($product = mysqli_fetch_assoc($query))
                     {
                 ?>
                     <tr>
-                        <td><img style="width: 100px;" src="<?php echo "image/Card-image/".$product['image']?> " alt="<?php echo $product['Prod_Name']?>"></td>
-                        <td><?php echo $product['code']?></td>
-                        <td><?php echo $product['Prod_Name']?></td>
-                        <td><?php echo "RM ".$product['Prod_price']?></td>
-                        <td><?php echo $product['Prod_cate']?></td>
-                        <td><?php echo $product['Prod_stock']?></td>
+                        <td><img alt="<?php echo $product['Food_Name']?>" style="width: 100px;" src="<?php echo $product['images_path']?>"></td>
+                        <td><?php echo $product['Food_Name']?></td>
+                        <td><?php echo "RM ".$product['Food_Price']?></td>
+                        <td><?php echo $product['Food_Cat']?></td>
+                        <td><?php echo $product['stock']?></td>
                         <td class="button">
                             <form action="" method="POST">
-                            <a href="edit.php?id=<?php echo $product['Prod_ID']?>">Edit</a>
-                            <a href="del.php?id=<?php echo $product['Prod_ID']?>"><i class="fa fa-trash"></i></a>
-                            <input type="hidden" name="prod_id" value="<?php echo $product['Prod_ID']?>">
+                            <a href="editproduct.php?id=<?php echo $product['Food_ID']?>&&name=<?php echo $host_image['username']?>">Edit</a>
+                            <a href="delproduct.php?id=<?php echo $product['Food_ID']?>&&name=<?php echo $host_image['username']?>"><i class="fa fa-trash"></i></a>
+                            <input type="hidden" name="prod_id" value="<?php echo $product['Food_ID']?>">
                             </form>
                         </td>
                     </tr>
