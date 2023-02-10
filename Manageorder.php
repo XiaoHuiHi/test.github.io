@@ -6,9 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Admin Homepage | 1 Coin Sandwich</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
     <style>
         .nav
         {
@@ -103,11 +102,11 @@
     </style>
 </head>
 <body>
-    <!--Sidebar!-->
-    <?php include "adminsidebar.php" ?>
+<!--Sidebar!-->
+<?php include "adminsidebar.php" ?>
 
     <div class="main">
-        <p><i class="fa fa-tasks"></i> My Dashboard</p>
+        <p><i class="fa fa-tasks"></i>Manage Order</p>
         <div class="container">
             <div class="box">
                 <i class="fa fa-eye"></i> Views
@@ -123,24 +122,6 @@
             </div>
         </div>
         <br><br><br><br><br><br>
-        <p>Recent Prodct</p>
-        <table border="1px">
-            <?php
-            $sql = "select * from product;";
-            $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
-            ?>
-            <tr class="center">
-                <td>Product Name :</td>
-                <td>Product Category :</td>
-                <td>Product Price :</td>
-            </tr>
-            <tr class="center">
-                <td><?php echo $row["Prod_Name"];	?></td>
-                <td><?php echo $row["Prod_cate"];?></td>
-                <td><?php echo $row["Prod_price"];?></td>
-            </tr>
-        </table>
         <p>Recent Order</p>
         <table border="1px">
             <?php
@@ -158,32 +139,7 @@
                 <td><?php echo $row["qty"];?></td>
                 <td><?php echo $row["price"];?></td>
             </tr>
-            
         </table>
-        
-        <p>Recent User</p>
-        <table border="1px">
-            <?php
-            $sql = "select * from user;";
-            $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
-            ?>
-            <tr class="center">
-                <td>User Name :</td>
-                <td>Date :</td>
-                <td>Status :</td>
-            </tr>
-            <tr class="center">
-                <td><?php echo $row["Name"];	?></td>
-                <td><?php echo $row["Date"];?></td>
-                <td><?php echo $row["Status"];?></td>
-            </tr>
-        </table>
-        <br>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manage.php#">More User  <i class="fa fa-mail-forward"></i></button>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageorder.php#">More Order  <i class="fa fa-mail-forward"></i></button>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageproduct.php#">More Product  <i class="fa fa-mail-forward"></i></button>   
     </div>
 </body>
-
 </html>

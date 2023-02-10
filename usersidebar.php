@@ -141,49 +141,70 @@ nav:hover
     transition: all 0.5s ease;
 }
 
-.logout
-{
-    position: absolute;
+.logout {
+	position: absolute;
     bottom: 0;
+	float: left;
+	line-height: 30px;
 }
 
-          
+.logout a{
+	margin: 10px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.logout:hover > ul {
+	display:block;
+    margin: auto;
+}
+
+.logoutoption {
+	display: none;
+}
+
+.logoutoption li {
+    color: rgb(85,83,83)
+}
+
+.logoutoption li a{
+	color: #000000;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0px; 
+	min-width:10em;
+}
+
+ul ul {
+	left: 100%;
+	top: 0;
+	margin-left:1px;
+}
+
+.logout li:hover {
+	color: rgb(85,83,83)
+}
+
+.expand{
+	font-size:25px;
+	float:right;
+    margin-top:10px;
+	margin-left:20px;
+}
+
 *
 {
   box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+</style>
 
-          
-          contaner::after
-          {
-            content: "";
-            clear: both;
-            display: table;
-          }
-          .order
-          {
-            float: left;
-            border: 3px solid ;
-            padding: 10px;
-            margin: 10px;
-          }
-          .insideorder
-          {
-            float: right;
-          }
-          img
-          {
-            height: 100px;
-          }
-          .center
-          {
-            text-align: center;
-          }
-    </style>
-</head>
 <body>
+
 <?php
         $host = "SELECT * FROM `user`";
         $query = mysqli_query($conn,$host);
@@ -208,33 +229,21 @@ nav:hover
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-
-                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
+                    <a href="Cart.php">
+                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Cart</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
+                        <i class="fa fa-wrench"></i><span class="nav-item">Setting</span>
                     </a>
                 </li>
-                <li>
-                    <a href="http://localhost/DWP_1Coin_Project/manageuser.php">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="adminlogout.php" class="logout">
-
-                        <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
+                <li class="logout"><i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span><span class="expand">»</span></a>
+                    <ul class="logoutoption">
+                        <li><a href="Login_user.php"> User Login</a></li>
+                        <li><a href="adminloginpage.php"> Admin Login</a></li>
+                    </ul></li>
             </ul>
         </nav>
         </div>
-
+</body>
