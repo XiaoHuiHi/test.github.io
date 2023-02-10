@@ -1,4 +1,6 @@
-<?php include("config1.php"); ?>
+<?php include("config1.php"); 
+    $email=$_GET['email']
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -109,7 +111,7 @@
                 </td>
             </tr>
         </table>
-        <a href="http://localhost/DWP_1Coin_Project/Hern/01%20Homepage/Homepage.php">Back to Home page
+        <a href="Homepage.php?email=<?php echo $email;?>">Back to Home page
     </div>
     
     </div>

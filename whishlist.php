@@ -361,56 +361,7 @@ nav:hover
     
 ?>
 <body>
-    <div class="sidebar">
-        <nav>
-            <ul>
-                <li>
-                    <a class="logo" href="updatemanageuser.php?email=<?php echo $host_image['Email']?>">
-                        <?php echo '<img src='."image/".$host_image['Image'].' >'?>
-                        <span class="nav-item"><?php echo $host_image['Name']?></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home"></i>
-                        <span class="nav-item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="nav-item">Order</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="whishlist.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="About_us.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-commenting"></i><span class="nav-item">About Us</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="manageuser.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Profile</span>
-                    </a>
-                    
-                </li>
-                <li>
-                    <a href="logoutuser.php" class="logout">
-                        <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        </div>
+    <?php include 'usersidebar.php'?>
     <div class="subway">
         <div class="logo1">
             <img src="<?php echo "image/logo.png"?>">
