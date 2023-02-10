@@ -92,12 +92,13 @@ nav
     cursor:unset;
 }
 
-.sidebar a
+
+ a
 {
     color: rgb(85,83,83);
     font-size: 14px;
     display: table;
-    width: 200px;
+    width: 260px;
     padding: 5px;
     padding-left: 10px;
     margin-top: 10px;
@@ -217,7 +218,7 @@ ul ul {
             <ul>
                 <li>
                     <a class="logo" href="updatemanageuser.php?email=<?php echo $host_image['Email']?>">
-                        <?php echo '<img src='."image/".$host_image['Image'].' >'?>
+                        <?php echo '<img src='."images/".$host_image['Image'].' >'?>
                         <span class="nav-item"><?php echo $host_image['Name']?></span>
                     </a>
                 </li>
