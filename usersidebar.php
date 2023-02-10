@@ -206,7 +206,8 @@ ul ul {
 <body>
 
 <?php
-        $host = "SELECT * FROM `user`";
+        $id =$_GET['email'];
+        $host = "SELECT * FROM `user` where Email = '$id'";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
 ?>
@@ -238,11 +239,27 @@ ul ul {
                         <i class="fa fa-wrench"></i><span class="nav-item">Setting</span>
                     </a>
                 </li>
-                <li class="logout"><i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span><span class="expand">»</span></a>
-                    <ul class="logoutoption">
-                        <li><a href="Login_user.php"> User Login</a></li>
-                        <li><a href="adminloginpage.php"> Admin Login</a></li>
-                    </ul></li>
+                <li>
+                    <a href="whishlist.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="About_us.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-commenting"></i><span class="nav-item">About Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="manageuser.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Profile</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="logout.php" class="logout">
+                        <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         </div>

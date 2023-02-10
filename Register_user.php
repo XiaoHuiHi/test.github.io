@@ -8,6 +8,7 @@
     {
         $name = mysqli_real_escape_string($conn,$_POST['user']);
         $email = mysqli_real_escape_string($conn,$_POST['email']);
+        
         $pass = mysqli_real_escape_string($conn,$_POST['pass']);
         $cpass = mysqli_real_escape_string($conn,$_POST['cpassword']);
         // $code = mysqli_real_escape_string($conn,$_POST['']);
@@ -31,20 +32,24 @@
             {
                 $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; text-align: center; padding: 10px; text_align: center;'>Please Key in Your Email.</div>";
             }
+            else if(filter_var($email,FILTER_VALIDATE_EMAIL) ===false) 
+            {
+                $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; text-align: center; padding: 10px; text_align: center;'>Email is Invalid.</div>";
+            }
             else if(!$pass)
             {
-                $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Please Key In Your Password!!!</div>";
+                $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; text-align: center; padding: 10px; text_align: center;'>Please Key In Your Password!!!</div>";
             }
 
             if($pass === $cpass && $name && $email && $pass !='')
             {
-                $sql = "INSERT INTO user (Name,Email,password) VALUES ('{$name}','{$email}','{$pass}')";
+                $sql = "INSERT INTO user (Name,Email,password,Image) VALUES ('{$name}','{$email}','{$pass}','profile.jpg')";
                 $result = mysqli_query($conn,$sql);
 
                 
                 if($result)
                 {
-                    $msg = "<div style='background-color: green; color: white; font-weight: bold;border-radius: 30px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>The Account have been create Successfuly</div>";
+                    $msg = "<div style='background-color: green; color: white; font-weight: bold;border-radius: 30px; margin: 20px; margin-bottom: 0; padding: 10px; text-align: center; text_align: center;'>The Account have been create Successfuly</div>";
                 }
                 else
                 {
