@@ -81,8 +81,8 @@
       <button>3</button>
       <button>4</button>
       <button>5</button>
-      <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD other food or drink"></span></p>
-      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Back to Home page
+      <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="Add-On"></span></p>
+      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Return Home page
       <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>

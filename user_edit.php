@@ -1,7 +1,7 @@
 <?php include("config.php"); ?>
 
 <html>
-<head><title>Edit</title>
+<head><title>Edit Profile | 1 Coin Sandwich</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script>
@@ -108,7 +108,7 @@
 			$row = mysqli_fetch_assoc($result);
 		?>
 		
-		<h1><b style="font-size: 50px;"><i class="fa fa-pencil" style="font-size:50px"></i>Edit Profile</b></h1>
+		<h1><b style="font-size: 50px;"><i class="fa fa-pencil" style="font-size:50px"></i> Edit Profile</b></h1>
 
 		<form name="addfrm" method="post" action="">
 
@@ -122,14 +122,14 @@
 
             <p><label>Your Summary<sup>*</sup> :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
             
-            <p>User Image<sup>*</sup> : (insert the file picture)<br>
+            <p>User Image<sup>*</sup> : (insert image files)<br>
 
             <p><input type="file" id="file"  name="image" class="form-control" multiple ></P>
 			
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
             <div style="padding-bottom:5px;">
-            <a href="User_profile.php?email=<?php echo $id ?>">Back to user profile</a>
+            <a href="User_profile.php?email=<?php echo $id ?>">Return user profile</a>
             </div>
 
 

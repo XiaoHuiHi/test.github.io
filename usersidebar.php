@@ -249,7 +249,7 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="manageuser.php?email=<?php echo $host_image['Email']?>">
+                    <a href="User_profile.php?email=<?php echo $host_image['Email']?>">
                         <i class="fa fa-info-circle"></i><span class="nav-item">Profile</span>
                     </a>
                     

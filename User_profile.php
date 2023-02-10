@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document   </title>
+    <title>User Profile | 1 Coin Sandwich</title>
     <style>
         body
         {
@@ -102,7 +102,7 @@
                 </div>
                 <?php echo "<br><br>";?>
                 <i class="fa fa-sign-out"></i>
-                <span><a href="Homepage.php?email=<?php echo $id ?>" >Back To Main Menu</a></span>
+                <span><a href="Homepage.php?email=<?php echo $id ?>" >Return Home Page</a></span>
                 <i class="fa fa-times"></i> 
                 <span><a href="deleteprofile.php" >Delete Account</a></span>
             </form>

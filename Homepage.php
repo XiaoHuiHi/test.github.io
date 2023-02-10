@@ -84,7 +84,8 @@ $result = mysqli_query($conn, $sql);
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
-                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
+                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>"><button type="button" onclick="wishlist.php" name="options" class="las la-heart" style="font-size:15px" id="wishlist">Wishlist&nbsp;</button>
+                    
               </div>
             </div>
 </div>
