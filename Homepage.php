@@ -72,6 +72,17 @@ body,html {
   input{
     border: 5px solid white;
   }
+
+  .text-dark
+  {
+    
+  }
+
+  h1
+  {
+    
+  }
+
 </style>
 <body>
     <!--Header-->

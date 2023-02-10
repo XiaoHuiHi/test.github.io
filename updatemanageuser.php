@@ -101,9 +101,9 @@
     <fieldset>
 		<?php
 		 
-			$id = $_REQUEST["no"];
+			$id = $_REQUEST["email"];
 
-			$result = mysqli_query($conn, "select * from user where No = $id");
+			$result = mysqli_query($conn, "select * from user where Email = '$id'");
 			$row = mysqli_fetch_assoc($result);
 
 		?>
@@ -126,6 +126,7 @@
 
             <div style="padding-bottom:5px;">
             <a href="manageuser.php">Back to manage user list</a>
+            <a href="Homepage.php?email=<?php echo $row['Email']; ?>">Back to Homepage</a>
             </div>
 
 
@@ -150,11 +151,11 @@ if (isset($_POST["savebtn"]))
     $mimage = $_POST['image'];
 
             
-            $sql = "update user set image='" . $_POST['image'] . "' where No=$id";
+            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
             $result = mysqli_query($conn,$sql);
             if($result)
             {
-                header("Location: manageuser.php");
+                // header("Location: manageuser.php");
             }
             
 
@@ -185,7 +186,7 @@ if (isset($_POST["savebtn"]))
 
         if($mstatus == "Active")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where No=$id");
+            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email='$id'");
             echo "Updated successfully !";
         }
         else if($mstatus == "Inactive")
