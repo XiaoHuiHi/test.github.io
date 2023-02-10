@@ -229,24 +229,13 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-
-                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
+                    <a href="Cart.php">
+                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Cart</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://localhost/DWP_1Coin_Project/manageuser.php">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
+                        <i class="fa fa-wrench"></i><span class="nav-item">Setting</span>
                     </a>
                 </li>
                 <li class="logout"><i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span><span class="expand">»</span></a>
