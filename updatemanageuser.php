@@ -120,7 +120,7 @@
 
             <p><label>Status<sup>*</sup> (Active / Inactive) :</label><input type="text" name="status" size="15" value="<?php echo $row['Status']; ?>">
 
-            <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
+            <p>User Image<sup>*</sup> : (insert the file picture)<br><br><input type="file" id="file"  name="image" class="form-control" multiple></P>
 			
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
@@ -151,12 +151,9 @@ if (isset($_POST["savebtn"]))
     $mimage = $_POST['image'];
 
             
-            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
-            $result = mysqli_query($conn,$sql);
-            if($result)
-            {
-                // header("Location: manageuser.php");
-            }
+            $sql = "update user set image='" . $_POST['image'] . "' where No='$id'";
+
+
             
 
         
@@ -186,7 +183,7 @@ if (isset($_POST["savebtn"]))
 
         if($mstatus == "Active")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email='$id'");
+            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where No='$id'");
             echo "Updated successfully !";
         }
         else if($mstatus == "Inactive")

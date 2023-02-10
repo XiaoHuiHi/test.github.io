@@ -114,7 +114,8 @@
                 <br>(email@gmail.com)
                 <br>
                 Status<sup>*</sup> : (Active / Inactive)<br>
-                <input type="text" name="status"><span id="error_status"></span>
+                <input type="text" name="status"><span id="error_status"></span> <br>
+                User Image<sup>*</sup> : (insert the file picture)<br>
                 <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
                 <br>
                 <input type="submit" name="save" value="submit" onsubmit="validationForm()">
