@@ -82,7 +82,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD other food or drink"></span></p>
-      <a href="loading_dashboard.php">Back to Home page
+      <a href="Homepage.php">Return Home page
       <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>
