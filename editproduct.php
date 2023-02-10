@@ -19,7 +19,7 @@ session_start();
             $targetPath = "./image/".$imageName;
             if(move_uploaded_file($imageTempName,$targetPath))
             {
-                $sql = "UPDATE product SET image ='$imageName' WHERE Prod_ID='$id'";
+                $sql = "UPDATE product SET image ='$imageName' WHERE Food_Name='$id'";
                 // $sql = "INSERT INTO product(image) VALUES('$imageName') WHERE Prod_ID = '$id'";
                 $result = mysqli_query($conn,$sql);
             }
@@ -124,17 +124,20 @@ session_start();
     }
 </style>
 <?php
-    $p = "SELECT * FROM product";
-    $query= mysqli_query($conn,$p);
+    // $p = "SELECT * FROM foodmenu where Food_Name = '$id'";
+    // $query= mysqli_query($conn,$p);
 
-    $product = mysqli_fetch_assoc($query);
+    // $product = mysqli_fetch_assoc($query);
 ?>
 <?php 
     
         $id = $_GET['id'];
-        $query = mysqli_query($conn, "SELECT * FROM product WHERE Prod_ID = '$id'");
+        $query = mysqli_query($conn, "SELECT * FROM foodmenu WHERE Food_ID = $id");
         $p = mysqli_fetch_assoc($query);
-    
+
+        $d= $_GET['name'];
+        $q= mysqli_query($conn,"SELECT * From `admin` where username = '$d'");
+        $s=mysqli_fetch_assoc($q);
     ?>
 <body>
 
@@ -142,33 +145,31 @@ session_start();
     <h1>Edit Product</h1>
     <fieldset>
     <form action="" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?php echo $p['Prod_ID']?>">
+        <input type="hidden" name="id" value="<?php echo $p['Food_ID']?>">
         <label for=""><i class="fa fa-cube"></i> Product_Name:</label>
-        <input name="prodname" type="text" value="<?php echo $p['Prod_Name']?>">
+        <input name="prodname" type="text" value="<?php echo $p['Food_Name']?>">
         <br>
         <label for=""><i class="fa fa-usd"></i> Price:</label>
-        <input type="text" name="price" value="<?php echo $p['Prod_price']?>">
-        <br>
-        <label for=""><i class="fa fa-code"></i> Code:</label>
-        <input name="code" type="text" value="<?php echo $p['code']?>">
+        <input type="text" name="price" value="<?php echo $p['Food_Price']?>">
         <br>
         <label for=""><i class="fa fa-archive"></i> Category:</label>
-        <input type="text" name="cate" id="" value="<?php echo $p['Prod_cate']?>">
+        <input type="text" name="cate" id="" value="<?php echo $p['Food_Cat']?>">
         <br>
         <label for=""><i class="fa fa-cubes"></i> Stock:</label>
-        <input type="number" name="stock" id="" value="<?php echo $p['Prod_stock']?>">
+        <input type="number" name="stock" id="" value="<?php echo $p['stock']?>">
         <br>
         <label for="file"  class="Choose"><i class="fa fa-camera"></i> Choose a Photo</label>
         <input type="file" id="file" name="image" class="form-control" multiple>
         <br>
         <br>
         <h4><i class="fa fa-picture-o"></i> ORIGINAL IMAGE:</h4>
-        <img width="200px" src="<?php echo "image/Card-image/".$p['image']?>" alt="">
+        <img width="200px" src="<?php echo $p['images_path']?>" alt="">
         <?php ?>
         <br>
         <input type="submit" name="change" value="CHANGE">
         <br>
-        <a href="Manage_prod.php">Back To Manage Product</a>
+        <a href="Manage_prod.php?name=<?php echo $s['username']?>">Back To Manage Product</a>
+        <a href="editproduct.php?id=<?php echo $p['Food_ID']?>&&name=<?php echo $s['username']?>">Refresh</a>
 
     </form>
     </fieldset>
@@ -184,7 +185,7 @@ session_start();
         $image= $_POST['image'];
         $stock= $_POST['stock'];
         $price = $_POST['price'];
-        mysqli_query($conn,"UPDATE product set Prod_Name='$prodname' , Prod_cate = '$cate',Prod_price='$price',Prod_stock = '$stock',code='$code' WHERE Prod_ID = '$id'");
+        mysqli_query($conn,"UPDATE foodmenu set Food_NAme='$prodname' , Food_Cat = '$cate',Food_Price='$price',stock = '$stock' WHERE Food_ID = '$id'");
         // header('location:Manage_prod.php');
 
             

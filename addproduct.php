@@ -1,6 +1,10 @@
 <?php
 session_start();
     include 'config.php';
+    $admin =$_GET['name'];
+        $host = "SELECT * FROM `admin` where username = '$admin'";
+        $query = mysqli_query($conn,$host);
+        $host_image = mysqli_fetch_assoc($query);
     $msg='';
     if(isset($_POST['create']))
     {
@@ -11,11 +15,11 @@ session_start();
         $stock = mysqli_real_escape_string($conn,$_POST['stock']);
         $imageName = $_FILES['image']['name'];
         $imageTempName = $_FILES['image']['tmp_name'];
-        $targetPath = "image/".$imageName;
+        $targetPath = "images/".$imageName;
         if(move_uploaded_file($imageTempName,$targetPath))
         {
             // $sql = "INSERT INTO product(image) VALUES('$imageName')";
-            $sql = "INSERT INTO product(Prod_Name,Prod_price,code,Prod_cate,Prod_stock,image) VALUES ('$prodname','$price','$code','$cate','$stock','$imageName')";
+            $sql = "INSERT INTO foodmenu(Food_Name,Food_Price,Food_Cat,stock,images_path,options) VALUES ('$prodname','$price','$cate','$stock','images/$imageName','$code')";
 
             $result = mysqli_query($conn,$sql);
         }
@@ -148,13 +152,13 @@ session_start();
     <fieldset>
     <form action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id">
-        <label for=""><i class="fa fa-cube"></i> Product_Name:</label>
+        <label for=""><i class="fa fa-cube"></i> Food_Name:</label>
         <input name="prodname" type="text">
         <br>
         <label for=""><i class="fa fa-usd"></i> Price:</label>
         <input type="text" name="price" >
         <br>
-        <label for=""><i class="fa fa-code"></i> Code:</label>
+        <label for=""><i class="fa fa-code"></i> Options [ENABLE/DISENABLE]:</label>
         <input name="code" type="text" >
         <br>
         <label for=""><i class="fa fa-archive"></i> Category:</label>
@@ -168,7 +172,8 @@ session_start();
         <br>
         <input type="submit" name="create" value="Create">
         <br>
-        <a href="Manage_prod.php">Back To Manage Product</a>
+        <a href="Manage_prod.php?name=<?php echo $host_image['username']?>">Back To Manage Product</a>
+        
 
     </form>
     </fieldset>
@@ -186,7 +191,7 @@ session_start();
         $stock= $_POST['stock'];
         $price = $_POST['price'];
         mysqli_query($conn,"UPDATE product set Prod_Name='$prodname' , Prod_cate = '$cate',Prod_price='$price',Prod_stock = '$stock',code='$code' WHERE Prod_ID = '$id'");
-        header('location:Manage_prod.php');
+        
 
             
     }

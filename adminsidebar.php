@@ -230,7 +230,7 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Manage_prod.php?name=<?php echo $host_image['username']?>">
 
                         <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>

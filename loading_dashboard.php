@@ -126,7 +126,7 @@
         <p>Recent Prodct</p>
         <table border="1px">
             <?php
-            $sql = "select * from product;";
+            $sql = "select * from foodmenu;";
             $result = mysqli_query($conn,$sql);
             $row = mysqli_fetch_array($result)
             ?>
@@ -136,9 +136,9 @@
                 <td>Product Price :</td>
             </tr>
             <tr class="center">
-                <td><?php echo $row["Prod_Name"];	?></td>
-                <td><?php echo $row["Prod_cate"];?></td>
-                <td><?php echo $row["Prod_price"];?></td>
+                <td><?php echo $row["Food_Name"];	?></td>
+                <td><?php echo $row["Food_Cat"];?></td>
+                <td><?php echo $row["Food_Price"];?></td>
             </tr>
         </table>
         <p>Recent Order</p>
