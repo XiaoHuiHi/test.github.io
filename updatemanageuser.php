@@ -125,8 +125,9 @@
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
             <div style="padding-bottom:5px;">
+            <i class="fa fa-mail-forward"></i>
             <a href="manageuser.php">Back to manage user list</a>
-            <a href="Homepage.php?email=<?php echo $row['Email']; ?>">Back to Homepage</a>
+
             </div>
 
 
