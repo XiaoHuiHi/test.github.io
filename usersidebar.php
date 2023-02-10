@@ -217,7 +217,7 @@ ul ul {
             <ul>
                 <li>
                     <a class="logo" href="updatemanageuser.php?email=<?php echo $host_image['Email']?>">
-                        <?php echo '<img src='."image/".$host_image['Image'].' >'?>
+                        <?php echo '<img src='."images/".$host_image['Image'].' >'?>
                         <span class="nav-item"><?php echo $host_image['Name']?></span>
                     </a>
                 </li>
