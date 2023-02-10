@@ -7,122 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
-    <style>
-        .nav
-        {
-            height: 100%; 
-            width: 200px; 
-            position: fixed; 
-            z-index: 1; 
-            top: 0; 
-            left: 0;
-            overflow-x: hidden; 
-            padding-top: 20px;
-            background-color:#f2f2f2;
-        }
-        .nav a 
-        {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-          }
-          .nav a:hover 
-          {
-            color: red;
-          }
-          .side
-          {
-            padding: 6px 8px 6px 16px;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-          }
-          .main 
-          {
-            margin-left: 200px; 
-            padding: 0px 10px;
-            font-size: 28px;
-          }
-          .user
-          {
-            display: block;
-            width: 50%;
-            margin-left: 50px;
-          }
-          table
-          {
-            width: 100%;
-          }
-          button:active
-          {
-            background-color: lightgray;
-          }
-          .box
-          {
-            width: 365px;
-            float: left;
-            border: 5px solid ;
-            background-color: lightblue;
-            padding: 50px;
-            margin: 20px;
-          }
-          .insidebox
-          {
-            float: right;
-          }
-
-          container::after
-          {
-            content: "";
-            clear: both;
-            display: table;
-          }
-          .order
-          {
-            float: left;
-            border: 3px solid ;
-            padding: 10px;
-            margin: 10px;
-          }
-          .insideorder
-          {
-            float: right;
-          }
-          img
-          {
-            height: 100px;
-          }
-          .center
-          {
-            text-align: center;
-          }
-    </style>
+    <title>Manage Order | 1 Coin Sandwich</title>
 </head>
 <body>
 <!--Sidebar!-->
 <?php include "adminsidebar.php" ?>
 
     <div class="main">
-        <p><i class="fa fa-tasks"></i>Manage Order</p>
-        <div class="container">
-            <div class="box">
-                <i class="fa fa-eye"></i> Views
-                <span class="insidebox"> 99</span>
-            </div>
-            <div class="box">
-                <i class="fa fa-share-alt"></i> Shares
-                <span class="insidebox"> 15</span>
-            </div>
-            <div class="box">
-                <i class="fa fa-thumbs-up"></i> Like
-                <span class="insidebox"> 20</span>
-            </div>
-        </div>
-        <br><br><br><br><br><br>
-        <p>Recent Order</p>
+        <p><i class="fa fa-shopping-cart"></i> Manage Order</p>
+        <br><br>
         <table border="1px">
             <?php
             $sql = "select * from orderorder;";
