@@ -185,6 +185,7 @@ nav:hover
 </head>
 <body>
 <?php
+        
         $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
