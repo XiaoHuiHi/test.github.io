@@ -64,3 +64,38 @@ ALTER TABLE `foodmenu`
   ADD PRIMARY KEY (`Food_ID`);
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_ID` int(30) NOT NULL,
+  `Food_ID` int(30) NOT NULL,
+  `foodname` varchar(30) NOT NULL,
+  `price` int(30) NOT NULL,
+  `quantity` int(30) NOT NULL,
+  `username` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_ID`, `Food_ID`, `foodname`, `price`, `quantity`, `username`) VALUES
+(1, 10, 'Subway Melt™', 10, 1, 'user'),
+(2, 11, 'Tuna', 10, 2, 'user'),
+(3, 13, 'Turkey Breast', 10, 2, 'user'),
+(4, 14, 'Turkey Breast & Chicken Slice', 10, 4, 'user'),
+(5, 15, 'Veggie Delite™', 10, 7, 'user');
+
+--
+-- Indexes for table `orders`
+--
+
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_ID`),
+  ADD KEY `Food_ID` (`Food_ID`),
+  ADD KEY `username` (`username`);
+
+-- --------------------------------------------------------

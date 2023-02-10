@@ -235,17 +235,17 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="order.php">
                         <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/DWP_1Coin_Project/manageuser.php">
+                    <a href="manageuser.php">
                         <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="staff.php">
                         <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
                     </a>
                 </li>

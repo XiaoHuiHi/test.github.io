@@ -1,7 +1,7 @@
 <?php include("config.php"); ?>
 
 <html>
-<head><title>Manage order</title>
+<head><title>Manage Order | 1 Coin Sandwich</title>
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,10 +47,10 @@
 
     <fieldset>
         <?php
-        $sql = "SELECT * FROM orderorder";
+        $sql = "SELECT * FROM orders";
         $result = mysqli_query($conn,$sql);
         ?>
-      <h1><i class="fa fa-address-book-o" style="font-size:50px"></i><b style="font-size: 50px;">Order</b></h1>
+      <h1><i class="fa fa-shopping-cart" style="font-size:50px"></i><b style="font-size: 50px;"> Order</b></h1>
       <table border="0px">
         <tr>
           <td>Food Name </td>
@@ -64,12 +64,11 @@
             ?>
         <tr>
           <td><?php echo $row["foodname"]; ?></td>
-          <td><?php echo $row["qty"];	?></td>
-          <td><?php echo $row["price"];?></td>
-          <td>           <a href="deleteorder.php?foodid=<?php echo $row['foodid']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
+          <td><?php echo $row["quantity"];	?></td>
+          <td>RM<?php echo $row["price"];?></td>
+          <td><a href="deleteorder.php?Food_ID=<?php echo $row['Food_ID']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
           </td>
         </tr>
-        <?php echo "<br><br>";?>
             <?php
         
         }
@@ -83,7 +82,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD other food or drink"></span></p>
-      <a href="http://localhost/DWP%20project/loading_dashboard.php#">Back to Home page
+      <a href="loading_dashboard.php">Back to Home page
       <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>
