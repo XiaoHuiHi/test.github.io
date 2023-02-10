@@ -13,7 +13,7 @@
 
 .logo1 a
 {
-    margin-left: 50px;
+    margin-left: 100px;
     float:left;
     /* border: 1px solid black; */
 }
@@ -51,9 +51,9 @@ nav
     font-size: 14px;
     /* display: table; */
     
-    padding: 5px;
+    /* padding: 5px;
     padding-left: 10px;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 10px; */
     
     text-decoration: none;
 }
@@ -66,6 +66,10 @@ nav
     margin: 10px 0 0 10px;
     
 }
+/* .logo a
+{
+    padding-left: 20px;
+} */
 .logo img
 {
     width: 45px;
@@ -81,7 +85,7 @@ nav
 .logo span
 {
     font-weight: bold;
-    padding-left: 0px; 
+    padding-left: 15px; 
     font-size: 18px; 
     text-transform: uppercase;  
 }

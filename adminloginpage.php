@@ -2,7 +2,7 @@
 include('adminlogin.php'); 
 
 if(isset($_SESSION['login_user1'])){
-header("location: loading_dashboard.php"); 
+header("location: loading_dashboard.php?name=".$username); 
 }
 ?>
 
@@ -15,7 +15,7 @@ header("location: loading_dashboard.php");
     </head>
     
     <!--Sidebar!-->
-    <?php include "adminsidebar.php" ?>
+    
 
         <div class="container">
             <div class="login-box">

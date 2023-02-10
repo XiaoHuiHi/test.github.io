@@ -406,56 +406,16 @@ nav:hover
 </style>
 <body>
 <?php
-        $host = "SELECT * FROM `admin`";
+        $id = $_GET['name'];
+        $host = "SELECT * FROM `admin` where username = '$id'";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
         
 ?>
     <div class="container">
-        <nav>
-            <ul>
-                <li>
-                    <div class="sidebarlogo">
-                    <a class="logo" href="#">
-                        <img  src="<?php echo"images/".$host_image['image']?>">
-                        <span class="nav-item"><?php echo $host_image['username']?></span>
-                    </a>
-                    </div>
-                </li>
-                <div class="sidebar"> 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home"></i>
-                        <span class="nav-item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="staff.php?username=<?php echo $host_image['username']?>">
-                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="adminlogout.php" class="logout">
-                        <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <?php
+            include 'adminsidebar.php';
+        ?>
         </div>
         
         <div class="title">

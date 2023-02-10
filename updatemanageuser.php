@@ -100,12 +100,13 @@
     <div class="middle">
     <fieldset>
 		<?php
-		 
 			$id = $_REQUEST["email"];
-
 			$result = mysqli_query($conn, "select * from user where Email = '$id'");
 			$row = mysqli_fetch_assoc($result);
-
+            $id = $_GET['name'];
+        $host = "SELECT * FROM `admin` where username = '$id'";
+        $query = mysqli_query($conn,$host);
+        $host_image = mysqli_fetch_assoc($query);
 		?>
 		
 		<h1><b style="font-size: 50px;"><i class="fa fa-pencil" style="font-size:50px"></i>Edit User</b></h1>
@@ -126,7 +127,7 @@
 
             <div style="padding-bottom:5px;">
             <i class="fa fa-mail-forward"></i>
-            <a href="manageuser.php">Back to manage user list</a>
+            <a href="manageuser.php?name=<?php echo $host_image['username']?>">Back to manage user list</a>
 
             </div>
 

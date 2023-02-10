@@ -45,6 +45,10 @@
         <?php
         $sql = "SELECT * FROM orders";
         $result = mysqli_query($conn,$sql);
+        $id = $_GET['name'];
+        $host = "SELECT * FROM `admin` where username = '$id'";
+        $query = mysqli_query($conn,$host);
+        $host_image = mysqli_fetch_assoc($query);
         ?>
       <h1><i class="fa fa-shopping-cart" style="font-size:50px"></i><b style="font-size: 50px;"> Order</b></h1>
       <table border="0px">
@@ -78,7 +82,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD other food or drink"></span></p>
-      <a href="loading_dashboard.php">Back to Home page
+      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Back to Home page
       <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>

@@ -49,8 +49,12 @@
 <div class="middle">
     <fieldset>
     <?php
-        $sql = "select * from user;";
+        $sql = "select * from user";
         $result = mysqli_query($conn,$sql);
+        $id = $_GET['name'];
+        $host = "SELECT * FROM `admin` where username = '$id'";
+        $query = mysqli_query($conn,$host);
+        $host_image = mysqli_fetch_assoc($query);
         ?>
       <h1><i class="fa fa-address-book-o" style="font-size:50px"></i><b style="font-size: 50px;">Manage User</b></h1>
       <table border="0px">
@@ -71,13 +75,13 @@
       
         <tr>
           <td><?php echo $row["No"]; ?></td>
-          <td><img src="<?php echo "image/".$row['image'];?>" class='img'></td>
+          <td><img class='img' src="<?php echo "images/".$row['Image'];?>" ></td>
           <td><?php echo $row["Name"];	?></td>
           <td><?php echo $row["Email"];?></td>
           <td><?php echo $row["Role"];?></td>
           <td><?php echo $row["Status"];?></td>
           <td>           <a href="deletemanageuser.php?No=<?php echo $row['No']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
-            <a href="updatemanageuser.php?edit&email=<?php echo $row['Email']; ?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
+            <a href="updatemanageuser.php?email=<?php echo $row['Email']; ?>&&name=<?php echo $host_image['username']?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
             </td>
         </tr>
         <?php echo "<br><br>";?>
@@ -94,7 +98,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="insertmanageuser.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
-      <a href="http://localhost/DWP_1Coin_Project/loading_dashboard.php">Back to Dashboard
+      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Back to Dashboard
 
     </fieldset>
   </div>

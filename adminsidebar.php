@@ -206,7 +206,8 @@ ul ul {
 <body>
 
 <?php
-        $host = "SELECT * FROM `admin`";
+        $id =$_GET['name'];
+        $host = "SELECT * FROM `admin` where username = '$id'";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
 ?>
@@ -223,7 +224,7 @@ ul ul {
                 </li>
                 <div class="sidebar"> 
                 <li>
-                    <a href="#">
+                    <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">
                         <i class="fa fa-home"></i>
                         <span class="nav-item">Home</span>
                     </a>
@@ -235,17 +236,17 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="order.php">
+                    <a href="order.php?name=<?php echo $host_image['username']?>">
                         <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="manageuser.php">
+                    <a href="manageuser.php?name=<?php echo $host_image['username']?>">
                         <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
                     </a>
                 </li>
                 <li>
-                    <a href="staff.php">
+                    <a href="staff.php?name=<?php echo $host_image['username']?>">
                         <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
                     </a>
                 </li>
