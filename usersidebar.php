@@ -11,26 +11,6 @@
     /* position:fixed; */
 }
 
-.logo1 a
-{
-    margin-left: 50px;
-    float:left;
-    /* border: 1px solid black; */
-}
-
-.logo1 a:hover
-{
-    background: none;
-}
-
-body
-{
-    background: #DDDDDD;
-    margin-left: 120px;
-    margin-right: 25px;
-    margin-top: 30px;
-}
-
 nav
 {
     position: fixed;
@@ -45,26 +25,12 @@ nav
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.sidebarlogo a
+.logo
 {
-    color: rgb(85,83,83);
-    font-size: 14px;
-    /* display: table; */
-    
-    padding: 5px;
-    padding-left: 10px;
-    margin: 10px 0 0 10px;
-    
-    text-decoration: none;
-}
-.logo 
-{
-    width: 200px;
     text-align: center;
     display: flex;
     transition: all 0.5s ease;
     margin: 10px 0 0 10px;
-    
 }
 .logo img
 {
@@ -81,8 +47,8 @@ nav
 .logo span
 {
     font-weight: bold;
-    padding-left: 0px; 
-    font-size: 18px; 
+    padding-left: 16px;
+    font-size: 18px;
     text-transform: uppercase;  
 }
 
@@ -92,12 +58,12 @@ nav
     cursor:unset;
 }
 
-.sidebar a
+a
 {
     color: rgb(85,83,83);
     font-size: 14px;
     display: table;
-    width: 200px;
+    width: 260px;
     padding: 5px;
     padding-left: 10px;
     margin-top: 10px;
@@ -127,72 +93,21 @@ nav
     margin-left: 10px;
 }
 
-.sidebar a:hover
+a:hover
 {
-    background: linear-gradient(to left,#ffaa00,#ffea00);
-    color: white;
-    transition: all 0.3s ease;
-
+    background: linear-gradient(to left,#ffaa00,#ffea00);;
 }
 
 nav:hover
 {
-    width: 200px;
+    width: 250px;
     transition: all 0.5s ease;
 }
 
-.logout {
-	position: absolute;
+.logout
+{
+    position: absolute;
     bottom: 0;
-	float: left;
-	line-height: 30px;
-}
-
-.logout a{
-	margin: 10px;
-	color: #FFFFFF;
-	text-decoration: none;
-}
-
-.logout:hover > ul {
-	display:block;
-    margin: auto;
-}
-
-.logoutoption {
-	display: none;
-}
-
-.logoutoption li {
-    color: rgb(85,83,83)
-}
-
-.logoutoption li a{
-	color: #000000;
-}
-
-ul{
-	list-style: none;
-	margin: 0;
-	padding: 0px; 
-	min-width:10em;
-}
-
-ul ul {
-	left: 100%;
-	top: 0;
-	margin-left:1px;
-}
-
-.logout li:hover {
-	color: rgb(85,83,83)
-}
-
-.expand{
-	font-size:25px;
-	float:right;
-    margin-top:10px;
-	margin-left:20px;
 }
 
 *
@@ -212,17 +127,15 @@ ul ul {
         $host_image = mysqli_fetch_assoc($query);
 ?>
 <div class="container">
+<div class="sidebar">
         <nav>
             <ul>
                 <li>
-                    <div class="sidebarlogo">
-                    <a class="logo" href="#">
-
-                        <span  class="nav-item"><?php echo $host_image['username']?></span>
+                    <a class="logo" href="updatemanageuser.php?email=<?php echo $host_image['Email']?>">
+                        <?php echo '<img src='."image/".$host_image['Image'].' >'?>
+                        <span class="nav-item"><?php echo $host_image['Name']?></span>
                     </a>
-                    </div>
                 </li>
-                <div class="sidebar"> 
                 <li>
                     <a href="#">
                         <i class="fa fa-home"></i>
@@ -230,13 +143,14 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="Cart.php">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Cart</span>
+                    <a href="#">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-wrench"></i><span class="nav-item">Setting</span>
+                        <i class="fa fa-clone"></i><span class="nav-item"></span>
                     </a>
                 </li>
                 <li>
@@ -256,7 +170,7 @@ ul ul {
                     
                 </li>
                 <li>
-                    <a href="logout.php" class="logout">
+                    <a href="logoutuser.php" class="logout">
                         <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
