@@ -102,9 +102,9 @@
     <fieldset>
 		<?php
 		 
-			$id = $_REQUEST["no"];
+			$id = $_REQUEST["email"];
 
-			$result = mysqli_query($conn, "select * from user where No = $id");
+			$result = mysqli_query($conn, "select * from user where Email = '$id'");
 			$row = mysqli_fetch_assoc($result);
 		?>
 		
@@ -120,7 +120,7 @@
 
             <p><label>Date<sup>*</sup> :</label><input type="date" name="date" value="<?php echo $row['Date']; ?>">
 
-            <p><label>About us<sup>*</sup> :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
+            <p><label>Your Summary<sup>*</sup> :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
             
             <p>User Image<sup>*</sup> : (insert the file picture)<br>
 
@@ -129,7 +129,7 @@
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
             <div style="padding-bottom:5px;">
-            <a href="User_profile.php">Back to user profile</a>
+            <a href="User_profile.php?email=<?php echo $id ?>">Back to user profile</a>
             </div>
 
 
@@ -156,7 +156,7 @@ if (isset($_POST["savebtn"]))
     $mimage = $_POST['image'];		
 	
     
-    mysqli_query($conn,"update user set image='" . $_POST['image'] . "' where No=$id");
+    mysqli_query($conn,"update user set Image='" . $_POST['image'] . "' where Email='$id'");
 
     if (!$mname)
     {
@@ -185,7 +185,7 @@ if (isset($_POST["savebtn"]))
     else
     {
     //     mysqli_query($conn,"updateuser set name='$mname', emaile='$memail', summary='$msummary', pn='$mpn', date='$mdate' where no=$id");
-        mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', phonenumber='" . $_POST['pn'] . "' ,date='" . $_POST['date'] . "',summary='" . $_POST['summary'] . "' where No=$id");
+        mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', phonenumber='" . $_POST['pn'] . "' ,date='" . $_POST['date'] . "',summary='" . $_POST['summary'] . "' where Email='$id'");
         echo "Updated successfully !";
     }
     
