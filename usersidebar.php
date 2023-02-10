@@ -239,11 +239,6 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item"></span>
-                    </a>
-                </li>
-                <li>
                     <a href="whishlist.php?email=<?php echo $host_image['Email']?>">
                         <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
                     </a>
