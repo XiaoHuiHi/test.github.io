@@ -124,6 +124,7 @@ nav:hover
 <?php
         $id =$_GET['email'];
         $host = "SELECT * FROM `user` where Email = '$id'";
+        
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
 ?>
@@ -171,7 +172,7 @@ nav:hover
                     
                 </li>
                 <li>
-                    <a href="logout.php" class="logout">
+                    <a href="logoutuser.php" class="logout">
                         <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
