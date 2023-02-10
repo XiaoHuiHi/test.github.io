@@ -118,8 +118,8 @@
                 
                 <hr>
                 <div class="login-img">   
-                        <a href="#"><img src="<?php echo "image/fb.png" ?>" width="30px"></a>
-                        <a href="#"><img src="<?php echo "image/g.png"?>" width="30px"></a>
+                        <a href="#"><img src="<?php echo "images/fb.png" ?>" width="30px"></a>
+                        <a href="#"><img src="<?php echo "images/g.png"?>" width="30px"></a>
 
                 </div>
             </form>

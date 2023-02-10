@@ -27,11 +27,7 @@
         
             
     }
-    
-    else
-    {
-        $msg = "<div style='background-color: #f94144; color: white; font-weight: bold;border-radius: 20px; margin: 20px; margin-bottom: 0; padding: 10px; text_align: center;'>Something Wrong Went.</div>";
-    }         
+          
 ?>
 
 
@@ -42,7 +38,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset</title>
-    <link rel="stylesheet" href="Forgot.css">
+    <link rel="stylesheet" href="css/Forgot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <script>
         function validate()
@@ -110,7 +106,7 @@
                         <br>
                         &nbsp;&nbsp;<input maxlength="50" name="cpassword" type="password"><br>&nbsp;&nbsp;<span id="error_pass2"></span></p>
                         <!-- <br> -->
-                        <p style="text-align: center;">Back to <a href="Login.php">Login</a></p>
+                        <p style="text-align: center;">Back to <a href="Login_user.php">Login</a></p>
                 </div>
                 <div class="submit">
                     <button type="submit" name="reset">RESET</button>

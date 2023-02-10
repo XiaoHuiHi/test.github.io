@@ -39,7 +39,7 @@
             /* display: inline-block; */
             width: 150px;
             margin-bottom: 20px;
-
+            
             text-align: right;
         }
         img
@@ -61,9 +61,20 @@
             border-top-left-radius: 20px;
             border-bottom: 4px solid gray;
         }
-        textarea
+        form
+        {
+            padding: 20px;
+        }
+        form img
+        {
+            width: 90px;
+            border-radius: 50%;
+        }
+        .sum
         {
             border: none;
+            width: 100px;
+            height: 50px;
         }
     </style>
 </head>
@@ -89,16 +100,19 @@
                 <div class="label">
                     <label for="fname" ><i class="fa fa-user"></i> Full Name : <?php echo $row["Name"]; ?></label>
                     <br>
-                    <label for="email"><i class="fa fa-envelope"></i>Email : <?php echo $row["Email"];?></label>
                     <br>
-                    <label for="fname"><i class="fa fa-phone"></i>Phone number : <?php echo $row["PhoneNumber"];?></label>
+                    <label for="email"><i class="fa fa-envelope"></i> Email : <?php echo $row["Email"];?></label>
                     <br>
-                    <label for="fname"><i class="fa fa-birthday-cake"></i>Date  : <?php echo $row["Date"];?></label>
+                    <br>
+                    <label for="fname"><i class="fa fa-phone"></i> Phone number : <?php echo $row["PhoneNumber"];?></label>
+                    <br>
+                    <br>
+                    <label for="fname"><i class="fa fa-birthday-cake"></i> Birthday  : <?php echo $row["Date"];?></label>
                     
                 </div>
                 <div>
                     <P>About me : </P>
-                    <textarea rows="5" cols="50" placeholder="type some thing here"><?php echo $row["Summary"];?></textarea>
+                    <input class="sum" type="text" value="<?php echo $row["Summary"];?>">
                 </div>
                 <?php echo "<br><br>";?>
                 <i class="fa fa-sign-out"></i>

@@ -363,11 +363,9 @@ nav:hover
 <body>
     <?php include 'usersidebar.php'?>
     <div class="subway">
-        <div class="logo1">
-            <img src="<?php echo "image/logo.png"?>">
-        </div>
+        
         <div class="Title">
-            <h1>My Wishlist <img src="<?php echo "image/wishlist.png"?>" width="25px" alt=""></h1>
+            <h1>My Wishlist</h1>
         </div>
         
         
@@ -391,7 +389,7 @@ nav:hover
                                             
                                         </form>
                                         
-                                        <img src="<?php echo "image/".$fetch['itemimage']?>" alt=""> </p> <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
+                                        <img src="<?php echo "images/".$fetch['itemimage']?>" alt=""> </p> <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
                                 </div>
                                 
                                 <div class="add">
