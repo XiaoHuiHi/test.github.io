@@ -105,70 +105,9 @@
 <!--Sidebar!-->
 <?php include "adminsidebar.php" ?>
 
-<?php
-        $host = "SELECT * FROM `admin`";
-        $query = mysqli_query($conn,$host);
-        $host_image = mysqli_fetch_assoc($query);
-?>
-<div class="container">
-        <nav>
-            <ul>
-                <li>
-                    <div class="sidebarlogo">
-                    <a class="logo" href="#">
-
-                        <span  class="nav-item"><?php echo $host_image['username']?></span>
-                    </a>
-                    </div>
-                </li>
-                <div class="sidebar"> 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home"></i>
-                        <span class="nav-item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-group"></i><span class="nav-item">Category</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://localhost/DWP_1Coin_Project/Chorxiang/manage%20user/manage.php">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book"></i><span class="nav-item">View report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="logout">
-                        <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        </div>
     <div class="main">
-        <p><i class="fa fa-tasks"></i> My Dashboard</p>
-        <div class="contaner">
+        <p><i class="fa fa-tasks"></i>Manage Order</p>
+        <div class="container">
             <div class="box">
                 <i class="fa fa-eye"></i> Views
                 <span class="insidebox"> 99</span>

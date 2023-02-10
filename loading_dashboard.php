@@ -75,7 +75,7 @@
             float: right;
           }
 
-          contaner::after
+          container::after
           {
             content: "";
             clear: both;
@@ -108,7 +108,7 @@
 
     <div class="main">
         <p><i class="fa fa-tasks"></i> My Dashboard</p>
-        <div class="contaner">
+        <div class="container">
             <div class="box">
                 <i class="fa fa-eye"></i> Views
                 <span class="insidebox"> 99</span>
