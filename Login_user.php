@@ -7,9 +7,10 @@
     {
         $email = mysqli_real_escape_string($conn,$_POST["email"]);
         $password=mysqli_real_escape_string($conn,$_POST['pass']);
-
+        
         $sql = "SELECT * FROM user WHERE Email = '{$email}' AND Password = '{$password}'";
         $result = mysqli_query($conn,$sql);
+        
         $r = mysqli_num_rows($result);
         $re = mysqli_fetch_assoc($result);
         if($r === 1)
@@ -101,7 +102,7 @@
                     // }
                 ?>
                     <p class="email"><label><i class="fa fa-envelope"></i> Email:&nbsp;</label>
-                    <br><input maxlength="50" name="email" type="email" id="email" value=""><br><span id="error_email"></span></p>
+                    <br><input maxlength="50" name="email" type="email" id="email" value="<?php if(isset($_POST['submit'])){echo $email;}?>"><br><span id="error_email"></span></p>
 
                     <p class="pass"><label><i class="fa fa-lock"></i>&nbsp; Password :&nbsp;&nbsp;&nbsp;</label><br><input maxlength="50" name="pass" type="password" id="password"  value=""><br><span id="error_pass"></span></p>
                 </div>

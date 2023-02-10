@@ -125,8 +125,9 @@
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
             <div style="padding-bottom:5px;">
+            <i class="fa fa-mail-forward"></i>
             <a href="manageuser.php">Back to manage user list</a>
-            <a href="Homepage.php?email=<?php echo $row['Email']; ?>">Back to Homepage</a>
+
             </div>
 
 
@@ -151,7 +152,7 @@ if (isset($_POST["savebtn"]))
     $mimage = $_POST['image'];
 
             
-            $sql = "update user set image='" . $_POST['image'] . "' where No='$id'";
+
 
 
             
@@ -183,13 +184,21 @@ if (isset($_POST["savebtn"]))
 
         if($mstatus == "Active")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where No='$id'");
-            echo "Updated successfully !";
+            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email = '$id'");
+            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,$sql);
+            if (mysqli_query($conn, $sql)) {
+                echo "Updated successfully !";
+              } 
         }
         else if($mstatus == "Inactive")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where No=$id");
-            echo "Updated successfully !";
+            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email = '$id'");
+            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,$sql);
+            if (mysqli_query($conn, $sql)) {
+                echo "Updated successfully !";
+              } 
         }
         else
         {
@@ -201,13 +210,22 @@ if (isset($_POST["savebtn"]))
 
         if($mstatus == "Active")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where No=$id");
-            echo "Updated successfully !";
+            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email = '$id'");
+            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,$sql);
+            if (mysqli_query($conn, $sql)) {
+                echo "Updated successfully !";
+              } 
+
         }
         else if($mstatus == "Inactive")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where No=$id");
-            echo "Updated successfully !";
+            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "'where Email = '$id'");
+            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,$sql);
+            if (mysqli_query($conn, $sql)) {
+                echo "Updated successfully !";
+              } 
         }
         else
         {

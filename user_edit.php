@@ -90,6 +90,10 @@
     {
       color: red;
     }
+    sup 
+    {
+        color: red;
+    }
 </style>
 </head>
 <body>
@@ -108,15 +112,17 @@
 
 		<form name="addfrm" method="post" action="">
 
-			<p><label>Name :</label><input type="text" name="name" size="50" value="<?php echo $row['Name']; ?>">
+			<p><label>Name<sup>*</sup> :</label><input type="text" name="name" size="50" value="<?php echo $row['Name']; ?>">
 
-            <p><label>Email :</label><input type="text" name="email" size="15" value="<?php echo $row['Email']; ?>">
+            <p><label>Email<sup>*</sup> :</label><input type="text" name="email" size="15" value="<?php echo $row['Email']; ?>">
 		 
-			<p><label>PhoneNumber :</label><input type="text" name="pn" size="15" value="<?php echo $row['PhoneNumber']; ?>">
+			<p><label>PhoneNumber<sup>*</sup> :</label><input type="text" name="pn" size="15" value="<?php echo $row['PhoneNumber']; ?>">
 
-            <p><label>Date:</label><input type="date" name="date" value="<?php echo $row['Date']; ?>">
+            <p><label>Date<sup>*</sup> :</label><input type="date" name="date" value="<?php echo $row['Date']; ?>">
 
-            <p><label>About us :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
+            <p><label>About us<sup>*</sup> :</label><textarea cols="60" rows="4" name="summary"><?php echo $row['Summary']; ?></textarea>
+            
+            <p>User Image<sup>*</sup> : (insert the file picture)<br>
 
             <p><input type="file" id="file"  name="image" class="form-control" multiple ></P>
 			
@@ -146,7 +152,8 @@ if (isset($_POST["savebtn"]))
     $memail = $_POST["email"];  
 	$mpn = $_POST["pn"];  
     $mdate = $_POST["date"];  	
-	$msummary = $_POST["summary"];  		
+	$msummary = $_POST["summary"];  
+    $mimage = $_POST['image'];		
 	
     
     mysqli_query($conn,"update user set image='" . $_POST['image'] . "' where No=$id");
@@ -170,6 +177,10 @@ if (isset($_POST["savebtn"]))
     else if(!$msummary)
     {
         echo "Please Key in Summary !";
+    }
+    else if(!$mimage)
+    {
+        echo "Please put the image ! ";
     }
     else
     {
