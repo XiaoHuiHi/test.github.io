@@ -6,11 +6,45 @@
     <link rel="stylesheet" href="css/he.css">
     <title>Homepage | 1 Coin Sandwich</title>
 </head>  
+<style>
+  .homepage-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0.5rem 1rem 1rem 1rem;
+}
 
+.homepage-card{
+    background-color: var(--white);
+    box-shadow: 0px 1px 4px #cfcfcf;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.homepage-card:hover{
+    box-shadow: #000000;
+}
+
+.card-image{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-detail{
+    padding: 10px;
+}
+
+.card-detail>h4>span{
+    float: right;
+}
+
+
+</style>
 <body>
 
-    <!--Header-->
-    <?php include "header.php" ?>
 
     <!--Sidebar-->
     <?php include "config.php" ?>
@@ -37,20 +71,15 @@ if (mysqli_num_rows($result) > 0)
 
 ?>
 <div class="col-md-3">
-
-<form method="post" action="order.php?action=add&id=<?php echo $row["Food_ID"]; ?>">
-<div class="mypanel" align="center";>
-<img src="<?php echo $row["images_path"]; ?>" class="img-responsive">
-<h4 class="text-dark"><?php echo $row["Food_Name"]; ?></h4>
-<h5 class="text-info"><?php echo $row["Food_Cat"]; ?></h5>
-<h5 class="text-danger">RM <?php echo $row["Food_Price"]; ?>/-</h5>
-<h5 class="text-info">Quantity: <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> </h5>
-<input type="hidden" name="hidden_name" value="<?php echo $row["Food_Name"]; ?>">
-<input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
-<input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
-<input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+<div class="homepage-content">
+            <div class="homepage-card">
+                <img class="card-image" src="<?php echo $row["images_path"]; ?>">
+                <div class="card-detail">
+                    <h4>Chicken Slice<span>RM10</span></h4>
+                </div>
+            </div>
 </div>
-</form>
+
       
      
 </div>
