@@ -138,7 +138,7 @@ nav
 
 nav:hover
 {
-    width: 250px;
+    width: 200px;
     transition: all 0.5s ease;
 }
 
@@ -255,11 +255,11 @@ ul ul {
                     </a>
                     
                 </li>
-                <li>
-                    <a href="logoutuser.php" class="logout">
-                        <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
-                    </a>
-                </li>
+                <li class="logout"><i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span><span class="expand">»</span></a>
+                    <ul class="logoutoption">
+                        <li><a href="Login_user.php"> User Login</a></li>
+                        <li><a href="adminloginpage.php"> Admin Login</a></li>
+                </ul></li>
             </ul>
         </nav>
         </div>
