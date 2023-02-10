@@ -3,15 +3,21 @@
 <html>
     <head>
         <style>
+            body
+            {
+                background-image: url("https://i.pinimg.com/564x/52/9d/2b/529d2ba9360a0707359ca15b9cb184be.jpg");
+                background-size: 100%;
+                background-repeat:no-repeat;
+            }
             fieldset
             {
                 background-color: #f2f2f2;
             }
             .middle
-        {
-            max-width: 900px;
-            margin: auto; 
-        }
+            {
+                max-width: 900px;
+                margin: auto; 
+            }
         </style>
 
     </head>

@@ -11,6 +11,12 @@ include("config.php");
 <head>
   <title>Order History</title>
   <style>
+    body
+    {
+      background-image: url("https://i.pinimg.com/564x/52/9d/2b/529d2ba9360a0707359ca15b9cb184be.jpg");
+      background-size: 100%;
+      background-repeat:no-repeat;
+    }
     .middle {
       max-width: 800px;
       margin: auto; 
@@ -27,58 +33,9 @@ include("config.php");
       color: red;
     }
     
-    sup {
-      color: red;
-    }
-      
-    .sidebar
-    {
-        top: 0;
-        left: 0;
-    }
-
-    .sidebar .fa
-    {
-        position: relative;
-        width: 70px;
-        height: 40px;
-        top: 14px;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .nav-item
-    {
-        position: relative;
-        top: 12px;
-        margin-left: 10px;
-    }
-
-    a:hover
-    {
-        background: linear-gradient(to left,#ffaa00,#ffea00);;
-    }
-
-    nav:hover
-    {
-        width: 200px;
-        transition: all 0.5s ease;
-    }
-
-    .logout
-    {
-        position: absolute;
-        bottom: 0;
-    }
+    
   </style>
-  <?php
-        $host = "SELECT * FROM host";
-        $query = mysqli_query($conn,$host);
-        $host_image = mysqli_fetch_assoc($query);
 
-        
-  
-?>
 
 </head>
 <body>
