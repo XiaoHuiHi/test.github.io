@@ -111,7 +111,7 @@
                 </td>
             </tr>
         </table>
-        <a href="Homepage.php?email=<?php echo $email;?>">Back to Home page
+        <a href="Homepage.php?email=<?php echo $email;?>">Return Home page
     </div>
     
     </div>

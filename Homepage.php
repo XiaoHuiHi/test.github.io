@@ -87,7 +87,7 @@ $re = mysqli_fetch_assoc($r);
               <div class="homepage-card">
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
-                    <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"];?></span></h4>
+                    <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
                     <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
               </div>
             </div>

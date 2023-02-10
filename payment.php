@@ -140,7 +140,7 @@
 
                         <label for="fname" >Table number :</label>
                         <select name="tableno" >
-                            <option value="0">Please select table number</option>
+                            <option value="0">Please select the table number</option>
                             <option value="1">table 1</option>
                             <option value="2">table 2</option>
                             <option value="3">table 3</option>
@@ -162,8 +162,8 @@
         
                         </div>
                         <label>
-                            <input type="checkbox" name="tick" > By clicking on, you agree to 1coin's <a href="#"> Terms and Conditions of Use.</a><br>
-                            <input type="checkbox" checked="checked"> Email me with latest news<br>
+                            <input type="checkbox" name="tick" > By clicking on, you agree to 1 Coin Sandwich's <a href="#"> Terms and Conditions.</a><br>
+                            <input type="checkbox" checked="checked"> Notify me the latest promotion through email<br>
                         </label>
         
                         <input type="submit" name="saveas" value="Continue to checkout" class="botton">
@@ -175,7 +175,7 @@
                     <table>
                         <hr>
                     <?php
-                    $sql = "SELECT * FROM orderorder";
+                    $sql = "SELECT * FROM orders";
                     $result = mysqli_query($conn,$sql);
                     $total=0;
                     ?>
@@ -192,7 +192,7 @@
                     while($row = mysqli_fetch_array($result))
                     {
                         $p=$row["price"];
-                        $q=$row["qty"];
+                        $q=$row["quantity"];
                     $subtotal=$p*$q;
                     $total =  $total + $subtotal;
                     ?>
@@ -200,7 +200,7 @@
                     <td><?php echo $row["foodname"]; ?></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td><?php echo $row["qty"]; ?></td>
+                    <td><?php echo $row["quantity"]; ?></td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
 
                     <td>RM<?php echo $subtotal; ?></td>
@@ -214,7 +214,7 @@
                     <p>Total :<span class="price" style="color:black"><b>RM <?php echo $total;?></b></span></p>
                 </div>
             </div>
-            <p><a href="http://localhost/DWP_1Coin_Project/order.php">Back to order page</p>
+            <p><a href="http://localhost/DWP_1Coin_Project/order.php">Return order page</p>
         </fieldset>
     </div>
 
