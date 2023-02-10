@@ -72,17 +72,6 @@ body,html {
   input{
     border: 5px solid white;
   }
-
-  .text-dark
-  {
-    
-  }
-
-  h1
-  {
-    
-  }
-
 </style>
 <body>
     <!--Header-->
@@ -111,10 +100,6 @@ body,html {
             <input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
             <input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
             <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
-
-
-
-            <h1>dashdjhdkahsdha</h1>
         </form>
     </div>
 </body>
