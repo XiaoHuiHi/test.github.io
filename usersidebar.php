@@ -227,19 +227,19 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Homepage.php?email=<?php echo $host_image['Email']?>">
                         <i class="fa fa-home"></i>
                         <span class="nav-item">Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="order.php">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="whishlist.php?email=<?php echo $host_image['Email']?>">
+                    <a href="wishlist.php?email=<?php echo $host_image['Email']?>">
                         <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
                     </a>
                 </li>

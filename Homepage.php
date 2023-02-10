@@ -3,42 +3,56 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/he.css">
     <title>Homepage | 1 Coin Sandwich</title>
 </head>  
+
 <style>
-   .homepage-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0.5rem 1rem 1rem 1rem;
-    /* border: 1px solid black; */
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.homepage-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0.5rem 1rem 1rem 1rem;
 }
 
 .homepage-card{
-    background-color: var(--white);
-    box-shadow: 0px 1px 4px #cfcfcf;
-    border-radius: 15px;
-    cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 1px 4px darkgray;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .homepage-card:hover{
-    box-shadow: #000000;
+  box-shadow: #000000;
 }
 
 .card-image{
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .card-detail{
-    padding: 10px;
+  padding: 10px;
+}
+
+.card-detail h4{
+  font-weight: bold;
 }
 
 .card-detail>h4>span{
-    float: right;
+  float: right;
 } 
 
 
@@ -65,14 +79,14 @@ $result = mysqli_query($conn, $sql);
    {
 
 ?>
-<div class="container" style="width:100%;">
-  <div class="homepage-card">
+            <div class="container" style="width: 100%;">
+              <div class="homepage-card">
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
-                    <h4><?php echo $row["Food_Name"]; ?><span>RM10</span></h4>
-
-                </div>
-  </div>
+                    <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
+                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
+              </div>
+            </div>
 </div>
 
 
