@@ -385,11 +385,12 @@ nav:hover
                                         <span class="item"><?php echo $fetch['itemname']?></span> 
                                             <input type="hidden" name="delete_id" value="<?php echo $fetch['id'];?>">
                                             <input type="hidden" name="del_image" value="<?php echo $fetch['itemimage']?>">
-                                            <button type="submit" name ="delete" class="delete"><img class="love" src="<?php echo "image/love.png"?>" alt=""></button>
+                                            <button type="submit" name ="delete" class="delete"><img class="love" src="<?php echo "images/love.png"?>" alt=""></button>
                                             
                                         </form>
                                         
-                                        <img src="<?php echo $fetch['itemimage']?>" alt=""> </p> <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
+                                        <img src="<?php echo $fetch['itemimage']?>" alt=""> </p> 
+                                        <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
                                 </div>
                                 
                                 <div class="add">
@@ -399,7 +400,7 @@ nav:hover
                                         <button class="plus-btn">+</button>
                                     </div>
                                     <div class="cart">
-                                        <img src="images/shoppingcart.png" alt=""><button type="submit">Add to cart </button>
+                                        <img src="images/shoppingcart.png" alt=""><button type="submit" name="submit">Add to cart </button>
                                     </div>
                                 </div>
                                     
@@ -409,22 +410,7 @@ nav:hover
 
                 if(isset($_POST['delete']))
                 {
-                    $id = $_POST['delete_id'];
-                    $image = $_POST['del_image'];
-
-                    $query = "DELETE FROM wishlist WHERE id = '$id'";
-                    $query_run = mysqli_query($conn,$query);
-
-                    if($query_run)
-                    {
-                        // unlink("image/".$image);
-                        $_SESSION['success']="Data is Deleted";
-                        // header("location: staff.php?delete successfully");
-                    }
-                    else
-                    {
-                        $_SESSION['status']="Data is Not Deleted";
-                    }
+                    
                 }
         ?>
         <?php

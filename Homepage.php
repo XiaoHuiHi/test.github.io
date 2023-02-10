@@ -75,7 +75,6 @@ $conn = Connect();
 $sql = "SELECT * FROM foodmenu WHERE options = 'ENABLE' ORDER BY Food_ID";
 $result = mysqli_query($conn, $sql);
 $id = $_GET['email']; 
-            // $login_no=$_REQUEST["no"]; --------------------- no user ------------   // put from the user check login  ( where no=$login_no )  
 $query = "select * from user where Email = '$id'"; 
 $r = mysqli_query($conn,$query);
 $re = mysqli_fetch_assoc($r);
