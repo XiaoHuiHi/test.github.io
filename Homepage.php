@@ -8,38 +8,51 @@
     <link rel="stylesheet" href="css/he.css">
     <title>Homepage | 1 Coin Sandwich</title>
 </head>  
+
 <style>
-   .homepage-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0.5rem 1rem 1rem 1rem;
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.homepage-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0.5rem 1rem 1rem 1rem;
 }
 
 .homepage-card{
-    background-color: white;
-    box-shadow: 0px 1px 4px darkgray;
-    border-radius: 15px;
-    cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 1px 4px darkgray;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .homepage-card:hover{
-    box-shadow: #000000;
+  box-shadow: #000000;
 }
 
 .card-image{
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .card-detail{
-    padding: 10px;
+  padding: 10px;
+}
+
+.card-detail h4{
+  font-weight: bold;
 }
 
 .card-detail>h4>span{
-    float: right;
+  float: right;
 } 
 
 
@@ -70,8 +83,8 @@ $result = mysqli_query($conn, $sql);
               <div class="homepage-card">
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
-                    <h4><?php echo $row["Food_Name"]; ?><span>RM10</span></h4>
-                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>&&name=<?php echo $host_image['username']?>" alt="update"><i class="fas fa-heart" style="font-size:36px"></i></a>
+                    <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
+                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
               </div>
             </div>
 </div>
