@@ -1,32 +1,9 @@
-CREATE TABLE `admin` (
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `image` varchar(100) NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`username`, `password`, `image`) VALUES
-('hern', 'hern', ''),
-('admin', 'admin', '');
-
---
--- Indexes for table `admin`
---
-
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`username`);
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `foodmenu`
 --
 
 CREATE TABLE `foodmenu` (
-  `Food_ID` int(50) NOT NULL,
+  `Food_id` int(50) NOT NULL,
   `Food_Name` varchar(50) NOT NULL,
   `Food_Cat` varchar(50) NOT NULL,
   `Food_Price` int(50) NOT NULL,
@@ -39,7 +16,7 @@ CREATE TABLE `foodmenu` (
 -- Dumping data for table `foodmenu`
 --
 
-INSERT INTO `foodmenu` (`Food_ID`, `Food_Name`, `Food_Cat`,`Food_Price`, `Ref_ID`, `images_path`, `options`) VALUES
+INSERT INTO `foodmenu` (`Food_id`, `Food_Name`, `Food_Cat`,`Food_Price`, `Ref_ID`, `images_path`, `options`) VALUES
 (1, 'Chicken Slice', 'Sandwich', 10, 1, 'images/RPLC-all-sandwiches-slicedchicken-MY-594x334.jpg', 'ENABLE'),
 (2, 'Chicken Teriyaki', 'Sandwich', 10, 2, 'images/RPLC-all-sandwiches-chicken-teriyaki-PH-594x334.jpg', 'ENABLE'),
 (3, 'Italian B.M.T.™', 'Sandwich', 10, 3, 'images/RPLC-all-sandwiches-italian-bmt-PH-594x334.jpg', 'ENABLE'),
@@ -61,7 +38,7 @@ INSERT INTO `foodmenu` (`Food_ID`, `Food_Name`, `Food_Cat`,`Food_Price`, `Ref_ID
 --
 
 ALTER TABLE `foodmenu`
-  ADD PRIMARY KEY (`Food_ID`);
+  ADD PRIMARY KEY (`Food_id`);
 
 -- --------------------------------------------------------
 
@@ -132,7 +109,7 @@ CREATE TABLE `admin` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin`
@@ -158,7 +135,7 @@ CREATE TABLE `checkout` (
   `payment_method` varchar(20) NOT NULL COMMENT '1=Tng,2=card,3=cash',
   `total` int(11) NOT NULL,
   `table_number` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `checkout`
@@ -179,7 +156,7 @@ CREATE TABLE `comment` (
   `contact` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `comment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `comment`
@@ -191,14 +168,6 @@ INSERT INTO `comment` (`id`, `name`, `contact`, `email`, `comment`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `foodmenu`
---
-
-
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `host`
 --
 
@@ -206,7 +175,7 @@ CREATE TABLE `host` (
   `id` int(11) NOT NULL,
   `image` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `host`
@@ -225,7 +194,7 @@ INSERT INTO `host` (`id`, `image`, `name`) VALUES
 CREATE TABLE `imageofphp` (
   `id` int(11) NOT NULL,
   `imagecode` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `imageofphp`
@@ -243,42 +212,6 @@ INSERT INTO `imageofphp` (`id`, `imagecode`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderorder`
---
-
-CREATE TABLE `orderorder` (
-  `foodid` int(11) NOT NULL,
-  `foodname` varchar(40) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `product`
---
-
-CREATE TABLE `product` (
-  `Prod_ID` int(50) NOT NULL,
-  `Prod_Name` varchar(50) NOT NULL,
-  `Prod_cate` varchar(50) NOT NULL,
-  `Prod_price` varchar(50) NOT NULL,
-  `Prod_stock` int(10) DEFAULT NULL,
-  `image` varchar(100) NOT NULL,
-  `code` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`Prod_ID`, `Prod_Name`, `Prod_cate`, `Prod_price`, `Prod_stock`, `image`, `code`) VALUES
-(30, 'Turkey Breast', 'Sandwi', '10', 10, 'Roasted_Chicken.jpg', 'S-001');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `staff`
 --
 
@@ -286,7 +219,7 @@ CREATE TABLE `staff` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `staff`
@@ -313,7 +246,7 @@ CREATE TABLE `user` (
   `Summary` text NOT NULL,
   `Password` varchar(100) NOT NULL,
   `Image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
@@ -336,7 +269,7 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `code` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -359,7 +292,7 @@ CREATE TABLE `wishlist` (
   `itemname` varchar(100) NOT NULL,
   `itemimage` varchar(100) NOT NULL,
   `itemprice` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wishlist`
@@ -379,12 +312,6 @@ ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `foodmenu`
---
-ALTER TABLE `foodmenu`
-  ADD PRIMARY KEY (`Food_ID`);
-
---
 -- Indexes for table `host`
 --
 ALTER TABLE `host`
@@ -395,12 +322,6 @@ ALTER TABLE `host`
 --
 ALTER TABLE `imageofphp`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`Prod_ID`);
 
 --
 -- Indexes for table `staff`
@@ -447,12 +368,6 @@ ALTER TABLE `host`
 --
 ALTER TABLE `imageofphp`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `Prod_ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `staff`
