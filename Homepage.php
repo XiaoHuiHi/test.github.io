@@ -38,7 +38,7 @@ if (mysqli_num_rows($result) > 0)
 ?>
 <div class="col-md-3">
 
-<form method="post" action="cart.php?action=add&id=<?php echo $row["Food_ID"]; ?>">
+<form method="post" action="order.php?action=add&id=<?php echo $row["Food_ID"]; ?>">
 <div class="mypanel" align="center";>
 <img src="<?php echo $row["images_path"]; ?>" class="img-responsive">
 <h4 class="text-dark"><?php echo $row["Food_Name"]; ?></h4>
