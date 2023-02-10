@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 .sidebar
 {
@@ -9,6 +9,26 @@
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     /* position:fixed; */
+}
+
+.logo1 a
+{
+    margin-left: 50px;
+    float:left;
+    /* border: 1px solid black; */
+}
+
+.logo1 a:hover
+{
+    background: none;
+}
+
+body
+{
+    background: #DDDDDD;
+    margin-left: 120px;
+    margin-right: 25px;
+    margin-top: 30px;
 }
 
 nav
@@ -25,12 +45,26 @@ nav
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.logo
+.sidebarlogo a
 {
+    color: rgb(85,83,83);
+    font-size: 14px;
+    /* display: table; */
+    
+    padding: 5px;
+    padding-left: 10px;
+    margin: 10px 0 0 10px;
+    
+    text-decoration: none;
+}
+.logo 
+{
+    width: 200px;
     text-align: center;
     display: flex;
     transition: all 0.5s ease;
     margin: 10px 0 0 10px;
+    
 }
 .logo img
 {
@@ -47,8 +81,8 @@ nav
 .logo span
 {
     font-weight: bold;
-    padding-left: 16px;
-    font-size: 18px;
+    padding-left: 0px; 
+    font-size: 18px; 
     text-transform: uppercase;  
 }
 
@@ -58,12 +92,12 @@ nav
     cursor:unset;
 }
 
-a
+.sidebar a
 {
     color: rgb(85,83,83);
     font-size: 14px;
     display: table;
-    width: 260px;
+    width: 200px;
     padding: 5px;
     padding-left: 10px;
     margin-top: 10px;
@@ -93,14 +127,17 @@ a
     margin-left: 10px;
 }
 
-a:hover
+.sidebar a:hover
 {
-    background: linear-gradient(to left,#ffaa00,#ffea00);;
+    background: linear-gradient(to left,#ffaa00,#ffea00);
+    color: white;
+    transition: all 0.3s ease;
+
 }
 
 nav:hover
 {
-    width: 250px;
+    width: 200px;
     transition: all 0.5s ease;
 }
 
@@ -118,25 +155,52 @@ nav:hover
     padding: 0;
 }
 
+          
+          contaner::after
+          {
+            content: "";
+            clear: both;
+            display: table;
+          }
+          .order
+          {
+            float: left;
+            border: 3px solid ;
+            padding: 10px;
+            margin: 10px;
+          }
+          .insideorder
+          {
+            float: right;
+          }
+          img
+          {
+            height: 100px;
+          }
+          .center
+          {
+            text-align: center;
+          }
     </style>
 </head>
 <body>
 <?php
-        $id =$_GET['email'];
-        $host = "SELECT * FROM `user` where Email = '$id'";
+        $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
 ?>
 <div class="container">
-<div class="sidebar">
         <nav>
             <ul>
                 <li>
-                    <a class="logo" href="updatemanageuser.php?email=<?php echo $host_image['Email']?>">
-                        <?php echo '<img src='."image/".$host_image['Image'].' >'?>
-                        <span class="nav-item"><?php echo $host_image['Name']?></span>
+                    <div class="sidebarlogo">
+                    <a class="logo" href="#">
+
+                        <span  class="nav-item"><?php echo $host_image['username']?></span>
                     </a>
+                    </div>
                 </li>
+                <div class="sidebar"> 
                 <li>
                     <a href="#">
                         <i class="fa fa-home"></i>
@@ -145,37 +209,31 @@ nav:hover
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="nav-item">Order</span>
+
+                        <i class="fa fa-universal-access"></i><span class="nav-item">Product</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-clone"></i><span class="nav-item"></span>
+                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="whishlist.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-heart"></i><span class="nav-item">Wishlist</span>
+                    <a href="http://localhost/DWP_1Coin_Project/manageuser.php">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Manage user</span>
                     </a>
                 </li>
                 <li>
-                    <a href="About_us.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-commenting"></i><span class="nav-item">About Us</span>
+                    <a href="#">
+                        <i class="fa fa-wrench"></i><span class="nav-item">Staff</span>
                     </a>
                 </li>
                 <li>
-                    <a href="manageuser.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Profile</span>
-                    </a>
-                    
-                </li>
-                <li>
-                    <a href="logout.php" class="logout">
-                        <i class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
+                    <a href="adminlogout.php" class="logout">
+
+                        <i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        </div>
         </div>
