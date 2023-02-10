@@ -214,7 +214,7 @@
                     <p>Total :<span class="price" style="color:black"><b>RM <?php echo $total;?></b></span></p>
                 </div>
             </div>
-            <p><a href="http://localhost/DWP_1Coin_Project/order.php">Return order page</p>
+            <p><a href="order.php">Return order page</p>
         </fieldset>
     </div>
 
