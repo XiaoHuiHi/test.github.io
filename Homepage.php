@@ -88,6 +88,20 @@ $re = mysqli_fetch_assoc($r);
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
+                    <?php 
+                    if(isset($_POST['submit']))
+                    {
+                        $id = mysqli_real_escape_string($conn,$_POST['foodname']);
+                        $qty = mysqli_real_escape_string($conn,$_POST['quantity']);
+                        $price = mysqli_real_escape_string($conn,$_POST['price']);
+
+
+                        $sql = "INSERT INTO orders (foodname,quantity,price) VALUES ('{$id}','{$qty}','{$price}')";
+                        $result = mysqli_query($conn,$sql); 
+                        
+                    }
+                    ?>
+                    <?php if(isset($_POST['submit'])){echo $name;}?><button class="las la-shopping cart" style="font-size:15px"> Add to Cart&nbsp;</button></a>
                     <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
               </div>
             </div>
