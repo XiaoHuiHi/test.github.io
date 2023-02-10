@@ -3,6 +3,8 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/he.css">
     <title>Homepage | 1 Coin Sandwich</title>
 </head>  
@@ -12,12 +14,11 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 0.5rem 1rem 1rem 1rem;
-    /* border: 1px solid black; */
 }
 
 .homepage-card{
-    background-color: var(--white);
-    box-shadow: 0px 1px 4px #cfcfcf;
+    background-color: white;
+    box-shadow: 0px 1px 4px darkgray;
     border-radius: 15px;
     cursor: pointer;
 }
@@ -65,14 +66,14 @@ $result = mysqli_query($conn, $sql);
    {
 
 ?>
-<div class="container" style="width:100%;">
-  <div class="homepage-card">
+            <div class="container" style="width: 100%;">
+              <div class="homepage-card">
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM10</span></h4>
-
-                </div>
-  </div>
+                    <a href="wishlist.php?email=<?php echo $row['Email']; ?>&&name=<?php echo $host_image['username']?>" alt="update"><i class="fas fa-heart" style="font-size:36px"></i></a>
+              </div>
+            </div>
 </div>
 
 
