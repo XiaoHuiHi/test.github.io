@@ -11,10 +11,6 @@
     {
         background-color: #f2f2f2;
     }
-    body
-        {
-          background-color: lightgrey;
-        }
     .middle
     {
         max-width: 800px;
@@ -83,7 +79,7 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD other food or drink"></span></p>
-      <a href="http://localhost/DWP%20project/loading_dashboard.php#">Back to Home page
+      <a href="http://localhost/DWP_1Coin_Project/Homepage.php">Back to Home page
       <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>

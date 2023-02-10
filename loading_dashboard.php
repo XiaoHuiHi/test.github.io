@@ -75,7 +75,7 @@
             float: right;
           }
 
-          contaner::after
+          container::after
           {
             content: "";
             clear: both;
@@ -108,7 +108,7 @@
 
     <div class="main">
         <p><i class="fa fa-tasks"></i> My Dashboard</p>
-        <div class="contaner">
+        <div class="container">
             <div class="box">
                 <i class="fa fa-eye"></i> Views
                 <span class="insidebox"> 99</span>
@@ -180,7 +180,7 @@
             </tr>
         </table>
         <br>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manage.php#">More User  <i class="fa fa-mail-forward"></i></button>
+        <button style="font-size: 25px;"><a href="http://localhost/DWP_1Coin_Project/manageuser.php">More User  <i class="fa fa-mail-forward"></i></button>
         <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageorder.php#">More Order  <i class="fa fa-mail-forward"></i></button>
         <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageproduct.php#">More Product  <i class="fa fa-mail-forward"></i></button>   
     </div>

@@ -119,10 +119,7 @@
             
             margin-bottom: 20px;
         }
-        body
-        {
-          background-color: lightgrey;
-        }
+
     </style>
 </head>
 <body>
