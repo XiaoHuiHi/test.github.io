@@ -236,8 +236,8 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="manageorder.php?name=<?php echo $host_image['username']?>">
-                        <i class="fa fa-shopping-cart"></i><span class="nav-item">Order</span>
+                    <a href="managepayment.php?name=<?php echo $host_image['username']?>">
+                        <i class="fa fa-money"></i><span class="nav-item">Payment</span>
                     </a>
                 </li>
                 <li>

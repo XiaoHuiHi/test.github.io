@@ -446,7 +446,7 @@ nav:hover
 
                     $foodname = $_POST['foodname'];
                     $price = $_POST['foodprice'];
-                    $id = $fetch['id'];
+                   
                     $value = $_POST['range'];
                     mysqli_query($conn,"INSERT INTO `orders`(foodname,quantity,price) VALUES ('$foodname','$value','$price')");
                     

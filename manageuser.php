@@ -98,8 +98,8 @@
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="insertmanageuser.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
 
-      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Back to Dashboard</a>
-      <span class="left"><br><button onclick="window.print()" header="">Generate user list report</button></span>
+      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Return Dashboard</a>
+      <span class="left"><br><button onclick="window.print()" header="">Generate User List</button></span>
 
     </fieldset>
   </div>

@@ -7,124 +7,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Homepage | 1 Coin Sandwich</title>
+    <title>Manage Payment Rec | 1 Coin Sandwich</title>
 
-    <style>
-        .nav
-        {
-            height: 100%; 
-            width: 200px; 
-            position: fixed; 
-            z-index: 1; 
-            top: 0; 
-            left: 0;
-            overflow-x: hidden; 
-            padding-top: 20px;
-            background-color:#f2f2f2;
-        }
-        .nav a 
-        {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-          }
-          .nav a:hover 
-          {
-            color: red;
-          }
-          .side
-          {
-            padding: 6px 8px 6px 16px;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-          }
-          .main 
-          {
-            margin-left: 200px; 
-            padding: 0px 10px;
-            font-size: 28px;
-          }
-          .user
-          {
-            display: block;
-            width: 50%;
-            margin-left: 50px;
-          }
-          table
-          {
-            width: 100%;
-          }
-          button:active
-          {
-            background-color: lightgray;
-          }
-          .box
-          {
-            width: 365px;
-            float: left;
-            border: 5px solid ;
-            background-color: lightblue;
-            padding: 50px;
-            margin: 20px;
-          }
-          .insidebox
-          {
-            float: right;
-          }
+<style>
+*{
+    font-family: Arial, sans-serif;
+}
 
-          container::after
-          {
-            content: "";
-            clear: both;
-            display: table;
-          }
-          .order
-          {
-            float: left;
-            border: 3px solid ;
-            padding: 10px;
-            margin: 10px;
-          }
-          .insideorder
-          {
-            float: right;
-          }
-          img
-          {
-            height: 100px;
-          }
-          .center
-          {
-            text-align: center;
-          }
-    </style>
+h1{
+    text-align: center; 
+}
+
+.table {
+    overflow-x: scroll;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table thead th {
+    border: none;
+    padding: 30px;
+    font-size: 14px;
+    color: #fff; 
+    background: linear-gradient(#ff7b00,#ffb700);
+    text-align: center; 
+}
+
+.active-row{
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.active-row td {
+    border: none;
+    padding: 30px;
+    font-size: 14px;
+    color: black; 
+    background-color: #fff;
+    text-align: center; 
+}
+
+.active-row :hover {
+    font-weight: bold;
+    color: #ffb700; 
+    text-align: center; 
+}
+
+.btn {
+  background-color: #ffb700;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+}
+
+.btn:hover {
+  background-color: #ff7b00;
+}
+</style>
 </head>
 <body>
     <!--Sidebar!-->
     <?php include "adminsidebar.php" ?>
-
-        <p>P</p>
-        <table width="730" border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
+    
+    <h1>Payment Record<h1>
+    <div class="table-responsive">
+              <table class="table">
+                <thead class="thead">
+                  <tr>
+                  <th width="10%">Payment ID</th>
+                  <th width="30%">Name</th>
+                  <th width="30%">Email</th>
+                  <th width="10%">Total Payment</th>
+                  <th width="20%">Table No.</th>
+                  <th width="5%">Action</th>
+                  </tr>
+                </thead>
+                
             <?php
             $sql = "select * from checkout;";
             $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
+            // $row = mysqli_fetch_array($result);
+            $name = $_GET['name'];
+            
+            while($row = mysqli_fetch_assoc($result))
+            {
             ?>
-            <tr class="center">
-                <td>Payment ID</td>
-                <td>Payment Name</td>
-                <td>Table</td>
-            </tr>
-            <tr class="center">
-                <td><?php echo $row["checkid"];	?></td>
+            <tr class="active-row" >
+                <td style="font-weight:bold"><?php echo $row["checkid"];	?></td>
                 <td><?php echo $row["Name"];?></td>
+                <td><?php echo $row["Email"];?></td>
+                <td>RM <?php echo $row["total"];?></td>
                 <td><?php echo $row["table_number"];?></td>
+                <td><a href="deletepayment.php?checkid=<?php echo $row['checkid']; ?>&&name=<?php echo $name?>"><i class="fa fa-close" style="font-size:36px;color:#dc3545;"></i></a></td>
             </tr>
+        <?php
+            }
+        ?>
         </table>
     </div>
+    <br><button class=btn onclick="window.print()">Print this page</button>
 </body>
-
 </html>
+
