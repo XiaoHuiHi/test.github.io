@@ -1,8 +1,6 @@
 <?php
     include 'config.php';
-    // $imagecode = "SELECT * FROM imageofphp where imagecode";
-    // $query = mysqli_query($conn,$imagecode);
-    // $imgcode = mysqli_fetch_assoc($query)
+    
 ?>
 
 <!DOCTYPE html>
