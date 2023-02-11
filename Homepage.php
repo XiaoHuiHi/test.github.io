@@ -87,6 +87,15 @@ $re = mysqli_fetch_assoc($r);
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
+                    <div class="mypanel" align="center";>
+                    <form method="post" action="order.php?action=add&id=<?php echo $row["Food_ID"]; ?>">
+                    <h5 class="text-info">Quantity: <input type="number" min="1" max="25" name="quantity" class="form-control" value="0" style="width: 60px;"> </h5>
+                    <input type="hidden" name="hidden_name" value="<?php echo $row["Food_Name"]; ?>">
+                    <input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
+                    <input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
+                    <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+                    </div>
+                    </form>
                     <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
               </div>
             </div>
