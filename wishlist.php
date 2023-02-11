@@ -349,6 +349,23 @@ nav:hover
    /* vertical-align: middle; */
    float: right;
 }
+.del a
+{
+    /* border: 1px solid black; */
+    /* float: right; */
+    vertical-align: top;
+    display: inline-block;
+    padding: 0;
+    width: 30px;
+}
+.del a:hover
+{
+    background: transparent;
+}
+.del a img:hover
+{
+    filter: grayscale(100%);
+}
 </style>
 <?php
         $id = $_GET['email'];
@@ -383,9 +400,11 @@ nav:hover
                                     <p class="title">
                                         <form action="" method="POST">
                                         <span class="item"><?php echo $fetch['itemname']?></span> 
-                                            <input type="hidden" name="delete_id" value="<?php echo $fetch['id'];?>">
-                                            <input type="hidden" name="del_image" value="<?php echo $fetch['itemimage']?>">
-                                            <button type="submit" name ="delete" class="delete"><img class="love" src="<?php echo "images/love.png"?>" alt=""></button>
+                                            
+                                            <div class="del">
+                                            <a href="delwishlist.php?email=<?php echo $id?>&&id=<?php echo $fetch['id']?>"class="love1"><img class="love" src="<?php echo "images/love.png"?>" alt=""></a>
+
+                                            </div>
                                             
                                         </form>
                                         
@@ -408,10 +427,7 @@ nav:hover
                     <?php
                 }
 
-                if(isset($_POST['delete']))
-                {
-                    
-                }
+
         ?>
         <?php
                 if(isset($_SESSION['success'])&& $_SESSION['success'] != '')
