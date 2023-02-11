@@ -124,6 +124,7 @@
         </div>
         <br><br><br><br><br><br>
         <p>Recent Product</p>
+
         <table border="1px">
             <?php
             $sql = "select * from foodmenu;";
@@ -140,11 +141,13 @@
                 <td><?php echo $row["Food_Cat"];?></td>
                 <td><?php echo $row["Food_Price"];?></td>
             </tr>
+
         </table>
+        <br><br><br>
         <p>Recent Order</p>
         <table border="1px">
             <?php
-            $sql = "select * from orderorder;";
+            $sql = "select * from orders;";
             $result = mysqli_query($conn,$sql);
             $row = mysqli_fetch_array($result)
             ?>
@@ -152,15 +155,17 @@
                 <td>Food Name :</td>
                 <td>Food Quantity :</td>
                 <td>Food Price :</td>
+
             </tr>
             <tr class="center">
                 <td><?php echo $row["foodname"];	?></td>
-                <td><?php echo $row["qty"];?></td>
+                <td><?php echo $row["quantity"];?></td>
                 <td><?php echo $row["price"];?></td>
+
             </tr>
             
         </table>
-        
+        <br><br><br>
         <p>Recent User</p>
         <table border="1px">
             <?php
@@ -172,17 +177,16 @@
                 <td>User Name :</td>
                 <td>Date :</td>
                 <td>Status :</td>
+
             </tr>
             <tr class="center">
+
                 <td><?php echo $row["Name"];	?></td>
                 <td><?php echo $row["Date"];?></td>
                 <td><?php echo $row["Status"];?></td>
             </tr>
         </table>
         <br>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP_1Coin_Project/manageuser.php">More User  <i class="fa fa-mail-forward"></i></button>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageorder.php#">More Order  <i class="fa fa-mail-forward"></i></button>
-        <button style="font-size: 25px;"><a href="http://localhost/DWP%20project/manageproduct.php#">More Product  <i class="fa fa-mail-forward"></i></button>   
     </div>
 </body>
 

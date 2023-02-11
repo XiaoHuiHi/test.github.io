@@ -60,6 +60,7 @@
   filter: grayscale(100%);
   /* position:absolute; */
   float: right;
+  margin: 10px;
 }
 .love:hover
 {
@@ -117,7 +118,7 @@ $re = mysqli_fetch_assoc($r);
                     <input type="hidden" name="foodname" value="<?php echo $row["Food_Name"]; ?>">
                     <input type="hidden" name="price" value="<?php echo $row["Food_Price"]; ?>">
                     <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
-                    <input type="hidden" name="id" value="<?php echo $row['Food_id']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $row['Food_ID']; ?>">
                     </div>
                     </form>
                     

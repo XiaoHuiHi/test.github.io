@@ -254,6 +254,24 @@ ul ul {
                     </a>
                     
                 </li>
+                <li>
+                    <a href="contact.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Contact Us</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="view_comment.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-comments-o "></i><span class="nav-item">Feedback</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="order_his.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-history "></i><span class="nav-item">History</span>
+                    </a>
+                    
+                </li>
                 <li class="logout"><i name="fa"class="fa fa-sign-out"></i><span class="nav-item">Log Out</span><span class="expand">»</span></a>
                     <ul class="logoutoption">
                         <li><a href="Login_user.php"> User Login</a></li>

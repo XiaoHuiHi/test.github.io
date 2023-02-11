@@ -35,7 +35,9 @@
         </style>
 </head>
 <body>
-
+<?php 
+    $email = $_GET['email'];
+?>
 <div class="middle">
     <h1>Customer's comments</h1>
     <fieldset>
@@ -100,8 +102,8 @@
 
     </table>
 
-                <span><a href="http://localhost/DWP_1Coin_Project/Murphy/comment/add_comment.php" >Add comment</a></span>
-                <span><a href=# >Back to Main Page</a></span>
+                <span><a href="add_comment.php?email=<?php echo $email?>" >Add comment</a></span>
+                <span><a href="Homepage.php?email=<?php echo $email?>" >Return Home Page</a></span>
     </div>
                 </div>
 </body>

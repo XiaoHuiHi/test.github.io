@@ -96,7 +96,7 @@
                 <a class="edit" href="user_edit.php?email=<?php echo $id ?>" alt="update">Edit Profile<i class="fa fa-pencil"></i></a>
  
                 
-                    <p><img class='img' src="<?php echo "images/".$row['image'];?>" ></p>
+                    <p><img class='img' src="<?php echo "images/".$row['Image'];?>" ></p>
                 <div class="label">
                     <label for="fname" ><i class="fa fa-user"></i> Full Name : <?php echo $row["Name"]; ?></label>
                     <br>
