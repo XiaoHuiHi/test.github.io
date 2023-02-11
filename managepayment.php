@@ -25,18 +25,13 @@
     padding: 30px;
     font-size: 14px;
     color: #fff; 
-    background-color: #009879;
+    background: linear-gradient(#ff7b00,#ffb700);
     text-align: center; 
 }
 
 .active-row{
     border-bottom: 1px solid #dddddd;
     text-align: center;
-}
-
-.active-row tr:hover {
-    font-weight: bold;
-    color: #009879;
 }
 
 .active-row td {
@@ -48,7 +43,38 @@
     text-align: center; 
 }
 
+.active-row :hover {
+    font-weight: bold;
+    color: #ffb700; 
+    text-align: center; 
+}
 
+.btn {
+  background-color: #ffb700;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+}
+
+.btn:hover {
+  background-color: #ff7b00;
+}
 </style>
 </head>
 <body>
@@ -77,7 +103,7 @@
             {
             ?>
             <tr class="active-row" >
-                <td><?php echo $row["checkid"];	?></td>
+                <td style="font-weight:bold"><?php echo $row["checkid"];	?></td>
                 <td><?php echo $row["Name"];?></td>
                 <td><?php echo $row["total"];?></td>
                 <td><?php echo $row["table_number"];?></td>
@@ -88,7 +114,7 @@
         ?>
         </table>
     </div>
-    <br><br><button onclick="window.print()">Print this page</button>
+    <br><button class=btn onclick="window.print()">Print this page</button>
 </body>
-
 </html>
+
