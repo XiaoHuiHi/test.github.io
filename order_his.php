@@ -32,6 +32,11 @@ include("config.php");
     a:hover {
       color: red;
     }
+
+    table
+    {
+      width: 100%;
+    }
     
     
   </style>
@@ -47,7 +52,7 @@ include("config.php");
 		<h1>Your Order</h1>
         <table border="1px">
             <thead>
-                <th>Food ID</th>
+                <th>Order ID</th>
                 <th>Food Name</th>
                 <th>Quantity</th>
                 <th>Price per Item</th>
@@ -88,10 +93,10 @@ include("config.php");
         </table>
         <br><br>
         <a href="Homepage.php?email=<?php echo $email?>">
-				<i class="fa fa-edit">Return to Home page</i> 
+				<i class="fa fa-edit">Return Home page</i> 
 		    </a>
         
-        <br><br><button onclick="window.print()">Print this page</button>
+        <br><br><button style="float: right;" onclick="window.print()">Print this page</button>
 	</fieldset>
 	
 </div>

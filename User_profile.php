@@ -116,9 +116,7 @@
                 </div>
                 <?php echo "<br><br>";?>
                 <i class="fa fa-sign-out"></i>
-                <span><a href="Homepage.php?email=<?php echo $id ?>" >Return Home Page</a></span>
-                <i class="fa fa-times"></i> 
-                <span><a href="deleteprofile.php" >Delete Account</a></span>
+                <span><a href="Homepage.php?email=<?php echo $id ?>" >Return Home Page</a></span>               
             </form>
 
     </div>

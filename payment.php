@@ -2,59 +2,7 @@
                     $email = $_GET['email'];
                     ?>
 
-<?php
-    $msg = '';
-  if(isset($_POST['saveas']))
-  {	 
-    $mname = $_POST['Fullname'];
-    $memail = $_POST['Email'];
-    $mph = $_POST['Phonenumber'];
-    $tabletable = $_POST['tableno'];
-    $selected = $_POST['choice'];
-    
-    if (!$mname)
-    {
-        $msg= "Please Key in Name !";
-        
-    }
-    else if(!$memail)
-    {
-        $msg= "Please Key in Email !";
-        
-    }
-    else if(!$mph)
-    {
-        $msg= "Please Key in Phone Number !";
-        
-    }
-    else if(!isset($_POST['tick']))
-    {
-        $msg= "Must agree the Terms and Conditions";
-        
-    }
-    else if($selected==0)
-    {
-        $msg= "Please select the payment method";
-    }
-    else if($tabletable==0)
-    {
-        $msg= "Please select the table of your seet";        
-    }
-    else
-    {
-        $sql = "INSERT INTO checkout (Name,Email,Phonenumber,payment_method,table_number,total) VALUES ('$mname','$memail','$mph','$tabletable','$selected','$total')";
-        if (mysqli_query($conn, $sql)) {
-            $msg= "payment successfully !";
-            header("Location: Homepage.php?email=".$email);
-          } else {
-            $msg= "Error: " . $sql . "" . mysqli_error($conn);
-          }
-          mysqli_close($conn);
-    }
 
-    
-  }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>Payment | 1 Coin Sandwich</title>
     <script>
     function validationForm()
     {
@@ -249,8 +197,8 @@
                     {
                         $p=$row["price"];
                         $q=$row["quantity"];
-                    $subtotal=$p*$q;
-                    $total =  $total + $subtotal;
+                        $subtotal=$p*$q;
+                        $total =  $total + $subtotal;
                     ?>
                     <tr>
                     <td><?php echo $row["foodname"]; ?></td>
@@ -276,5 +224,58 @@
 
 </body>
 </html>
+<?php
+    $msg = '';
+  if(isset($_POST['saveas']))
+  {	 
+    $mname = $_POST['Fullname'];
+    $memail = $_POST['Email'];
+    $mph = $_POST['Phonenumber'];
+    $tabletable = $_POST['tableno'];
+    $selected = $_POST['choice'];
+    
+    if (!$mname)
+    {
+        $msg= "Please Key in Name !";
+        
+    }
+    else if(!$memail)
+    {
+        $msg= "Please Key in Email !";
+        
+    }
+    else if(!$mph)
+    {
+        $msg= "Please Key in Phone Number !";
+        
+    }
+    else if(!isset($_POST['tick']))
+    {
+        $msg= "Must agree the Terms and Conditions";
+        
+    }
+    else if($selected==0)
+    {
+        $msg= "Please select the payment method";
+    }
+    else if($tabletable==0)
+    {
+        $msg= "Please select the table of your seet";        
+    }
+    else
+    {
+        $sql = "INSERT INTO checkout (Name,Email,Phonenumber,payment_method,table_number,total) VALUES ('$mname','$memail','$mph','$tabletable','$selected','$total')";
+        if (mysqli_query($conn, $sql)) {
+            $msg = "<p>payment successfully !<br><a href='Homepage.php?email=$email'>Return Home page</p></a>";
+          } else {
+            $msg= "Error: " . $sql . "" . mysqli_error($conn);
+          }
+          mysqli_close($conn);
+    }
+
+    
+  }
+?>
 <?php echo $msg?>
+
 
