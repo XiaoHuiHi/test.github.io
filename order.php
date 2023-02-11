@@ -66,7 +66,7 @@
           <td><?php echo $row["foodname"]; ?></td>
           <td><?php echo $row["quantity"];	?></td>
           <td>RM<?php echo $row["price"];?></td>
-          <td><a href="deleteorder.php?Food_ID=<?php echo $row['Food_ID']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
+          <td><a href="deleteorder.php?order_ID=<?php echo $row['order_ID']; ?>&&email=<?php echo $id?>"><i class="fa fa-close" style="font-size:36px"></i></a>
           </td>
         </tr>
             <?php

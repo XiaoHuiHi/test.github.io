@@ -1,87 +1,9 @@
---
--- Table structure for table `foodmenu`
---
-
-CREATE TABLE `foodmenu` (
-  `Food_id` int(50) NOT NULL,
-  `Food_Name` varchar(50) NOT NULL,
-  `Food_Cat` varchar(50) NOT NULL,
-  `Food_Price` int(50) NOT NULL,
-  `Ref_ID` int(50) NOT NULL,
-  `images_path` varchar(200) NOT NULL,
-  `options` varchar(10) NOT NULL DEFAULT 'ENABLE'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `foodmenu`
---
-
-INSERT INTO `foodmenu` (`Food_id`, `Food_Name`, `Food_Cat`,`Food_Price`, `Ref_ID`, `images_path`, `options`) VALUES
-(1, 'Chicken Slice', 'Sandwich', 10, 1, 'images/RPLC-all-sandwiches-slicedchicken-MY-594x334.jpg', 'ENABLE'),
-(2, 'Chicken Teriyaki', 'Sandwich', 10, 2, 'images/RPLC-all-sandwiches-chicken-teriyaki-PH-594x334.jpg', 'ENABLE'),
-(3, 'Italian B.M.T.™', 'Sandwich', 10, 3, 'images/RPLC-all-sandwiches-italian-bmt-PH-594x334.jpg', 'ENABLE'),
-(4, 'Meatball Marinara', 'Sandwich', 10, 4, 'images/RPLC-all-sandwiches-meatball-marinara-PH-594x334.jpg', 'ENABLE'),
-(5, 'Roasted Chicken', 'Sandwich', 10, 5, 'images/RPLC-all-sandwiches-roasted-chicken-PH-594x334.jpg', 'ENABLE'),
-(6, 'Roast Beef', 'Sandwich', 10, 6, 'images/RPLC-all-sandwiches-roast-beef-MY-594x334.jpg', 'ENABLE'),
-(7, 'Spicy Italian', 'Sandwich', 10, 7, 'images/RPLC-all-sandwiches-spicy-italian-MY-594x334.jpg', 'ENABLE'),
-(8, 'Steak & Cheese', 'Sandwich', 10, 8, 'images/RPLC-all-sandwiches-steakandcheese-MY-594x334.jpg', 'ENABLE'),
-(9, 'Subway Club™', 'Sandwich', 10, 9, 'images/RPLC-all-sandwiches-subway-club-MY-594x334.jpg', 'ENABLE'),
-(10, 'Subway Melt™', 'Sandwich', 10, 10, 'images/RPLC-all-sandwiches-subway-melt-PH-594x334.jpg', 'ENABLE'),
-(11, 'Tuna', 'Sandwich', 10, 11, 'images/RPLC-all-sandwiches-tuna-PH-594x334.jpg', 'ENABLE'),
-(12, 'Seafood & Crab', 'Sandwich', 10, 12, 'images/RPLC-all-sandwiches-seafood-sensation-MY-594x334.jpg', 'ENABLE'),
-(13, 'Turkey Breast', 'Sandwich', 10, 13, 'images/RPLC-all-sandwiches-turkey-MY-594x334.jpg', 'ENABLE'),
-(14, 'Turkey Breast & Chicken Slice', 'Sandwich', 10, 14, 'images/RPLC-all-sandwiches-sliced-chicken-ham-PH-594x334.jpg', 'ENABLE'),
-(15, 'Veggie Delite™', 'Sandwich', 10, 15, 'images/RPLC-all-sandwiches-veggie-delite-PH-594x334.jpg', 'ENABLE');
-
---
--- Indexes for table `admin`
---
-
-ALTER TABLE `foodmenu`
-  ADD PRIMARY KEY (`Food_id`);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE `orders` (
-  `order_ID` int(30) NOT NULL,
-  `Food_ID` int(30) NOT NULL,
-  `foodname` varchar(30) NOT NULL,
-  `price` int(30) NOT NULL,
-  `quantity` int(30) NOT NULL,
-  `username` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_ID`, `Food_ID`, `foodname`, `price`, `quantity`, `username`) VALUES
-(1, 10, 'Subway Melt™', 10, 1, 'user'),
-(2, 11, 'Tuna', 10, 2, 'user'),
-(3, 13, 'Turkey Breast', 10, 2, 'user'),
-(4, 14, 'Turkey Breast & Chicken Slice', 10, 4, 'user'),
-(5, 15, 'Veggie Delite™', 10, 7, 'user');
-
---
--- Indexes for table `orders`
---
-
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_ID`),
-  ADD KEY `Food_ID` (`Food_ID`),
-  ADD KEY `username` (`username`);
-
--- --------------------------------------------------------
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 06:09 PM
+-- Generation Time: Feb 11, 2023 at 07:57 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -109,7 +31,7 @@ CREATE TABLE `admin` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -135,14 +57,18 @@ CREATE TABLE `checkout` (
   `payment_method` varchar(20) NOT NULL COMMENT '1=Tng,2=card,3=cash',
   `total` int(11) NOT NULL,
   `table_number` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `checkout`
 --
 
 INSERT INTO `checkout` (`checkid`, `Name`, `Email`, `Phonenumber`, `payment_method`, `total`, `table_number`) VALUES
-(0, 'TENG DE HUI', 'dehui@gmail.com', '182027784', '2', 0, '2');
+(0, 'TENG DE HUI', 'dehui@gmail.com', '182027784', '2', 0, '2'),
+(0, 'TENG DE HUI', 'dehui@gmail.com', '182027784', '1', 160, '1'),
+(0, 'TENG DE HUI', 'dehui@gmail.com', '182027784', '2', 160, '1'),
+(0, 'TENG DE HUI', 'dehui@gmail.com', '182027784', '2', 0, '1'),
+(0, 'TENG DE HUI', 'dehui@gmail.com', '182027784', '1', 0, '1');
 
 -- --------------------------------------------------------
 
@@ -156,7 +82,7 @@ CREATE TABLE `comment` (
   `contact` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `comment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `comment`
@@ -168,6 +94,44 @@ INSERT INTO `comment` (`id`, `name`, `contact`, `email`, `comment`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `foodmenu`
+--
+
+CREATE TABLE `foodmenu` (
+  `Food_ID` int(50) NOT NULL,
+  `Food_Name` varchar(50) NOT NULL,
+  `Food_Cat` varchar(50) NOT NULL,
+  `Food_Price` int(50) NOT NULL,
+  `Ref_ID` int(50) NOT NULL,
+  `images_path` varchar(200) NOT NULL,
+  `options` varchar(10) NOT NULL DEFAULT 'ENABLE',
+  `stock` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `foodmenu`
+--
+
+INSERT INTO `foodmenu` (`Food_ID`, `Food_Name`, `Food_Cat`, `Food_Price`, `Ref_ID`, `images_path`, `options`, `stock`) VALUES
+(1, 'Chicken Slice', 'Sandwich', 10, 1, 'images/RPLC-all-sandwiches-slicedchicken-MY-594x334.jpg', 'ENABLE', 10),
+(2, 'Chicken Teriyaki', 'Sandwich', 10, 2, 'images/RPLC-all-sandwiches-chicken-teriyaki-PH-594x334.jpg', 'ENABLE', 0),
+(3, 'Italian B.M.T.™', 'Sandwich', 10, 3, 'images/RPLC-all-sandwiches-italian-bmt-PH-594x334.jpg', 'ENABLE', 0),
+(4, 'Meatball Marinara', 'Sandwich', 10, 4, 'images/RPLC-all-sandwiches-meatball-marinara-PH-594x334.jpg', 'ENABLE', 0),
+(5, 'Roasted Chicken', 'Sandwich', 10, 5, 'images/RPLC-all-sandwiches-roasted-chicken-PH-594x334.jpg', 'ENABLE', 0),
+(6, 'Roast Beef', 'Sandwich', 10, 6, 'images/RPLC-all-sandwiches-roast-beef-MY-594x334.jpg', 'ENABLE', 0),
+(7, 'Spicy Italian', 'Sandwich', 10, 7, 'images/RPLC-all-sandwiches-spicy-italian-MY-594x334.jpg', 'ENABLE', 0),
+(8, 'Steak & Cheese', 'Sandwich', 10, 8, 'images/RPLC-all-sandwiches-steakandcheese-MY-594x334.jpg', 'ENABLE', 0),
+(9, 'Subway Club™', 'Sandwich', 10, 9, 'images/RPLC-all-sandwiches-subway-club-MY-594x334.jpg', 'ENABLE', 0),
+(10, 'Subway Melt™', 'Sandwich', 10, 10, 'images/RPLC-all-sandwiches-subway-melt-PH-594x334.jpg', 'ENABLE', 0),
+(11, 'Tuna', 'Sandwich', 10, 11, 'images/RPLC-all-sandwiches-tuna-PH-594x334.jpg', 'ENABLE', 0),
+(12, 'Seafood & Crab', 'Sandwich', 10, 12, 'images/RPLC-all-sandwiches-seafood-sensation-MY-594x334.jpg', 'ENABLE', 0),
+(13, 'Turkey Breast', 'Sandwich', 10, 13, 'images/RPLC-all-sandwiches-turkey-MY-594x334.jpg', 'ENABLE', 0),
+(14, 'Turkey Breast & Chicken Slice', 'Sandwich', 10, 14, 'images/RPLC-all-sandwiches-sliced-chicken-ham-PH-594x334.jpg', 'ENABLE', 0),
+(15, 'Veggie Delite™', 'Sandwich', 10, 15, 'images/RPLC-all-sandwiches-veggie-delite-PH-594x334.jpg', 'ENABLE', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `host`
 --
 
@@ -175,7 +139,7 @@ CREATE TABLE `host` (
   `id` int(11) NOT NULL,
   `image` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `host`
@@ -194,7 +158,7 @@ INSERT INTO `host` (`id`, `image`, `name`) VALUES
 CREATE TABLE `imageofphp` (
   `id` int(11) NOT NULL,
   `imagecode` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `imageofphp`
@@ -212,6 +176,67 @@ INSERT INTO `imageofphp` (`id`, `imagecode`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orderorder`
+--
+
+CREATE TABLE `orderorder` (
+  `foodid` int(11) NOT NULL,
+  `foodname` varchar(40) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_ID` int(30) NOT NULL,
+  `Food_ID` int(30) NOT NULL,
+  `foodname` varchar(30) NOT NULL,
+  `price` int(30) NOT NULL,
+  `quantity` int(30) NOT NULL,
+  `username` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_ID`, `Food_ID`, `foodname`, `price`, `quantity`, `username`) VALUES
+(1, 10, 'Subway Melt™', 10, 1, 'user'),
+(2, 11, 'Tuna', 10, 2, 'user'),
+(3, 13, 'Turkey Breast', 10, 2, 'user'),
+(4, 14, 'Turkey Breast & Chicken Slice', 10, 4, 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `Prod_ID` int(50) NOT NULL,
+  `Prod_Name` varchar(50) NOT NULL,
+  `Prod_cate` varchar(50) NOT NULL,
+  `Prod_price` varchar(50) NOT NULL,
+  `Prod_stock` int(10) DEFAULT NULL,
+  `image` varchar(100) NOT NULL,
+  `code` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`Prod_ID`, `Prod_Name`, `Prod_cate`, `Prod_price`, `Prod_stock`, `image`, `code`) VALUES
+(30, 'Turkey Breast', 'Sandwi', '10', 10, 'Roasted_Chicken.jpg', 'S-001');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `staff`
 --
 
@@ -219,7 +244,7 @@ CREATE TABLE `staff` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
@@ -246,7 +271,7 @@ CREATE TABLE `user` (
   `Summary` text NOT NULL,
   `Password` varchar(100) NOT NULL,
   `Image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -269,7 +294,7 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `code` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -292,14 +317,16 @@ CREATE TABLE `wishlist` (
   `itemname` varchar(100) NOT NULL,
   `itemimage` varchar(100) NOT NULL,
   `itemprice` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `wishlist`
 --
 
 INSERT INTO `wishlist` (`id`, `itemname`, `itemimage`, `itemprice`) VALUES
-(3, 'Roasted Chicken Breast', 'Roasted_Chicken.jpg', 25);
+(17, 'Chicken Slice', 'images/RPLC-all-sandwiches-slicedchicken-MY-594x334.jpg', 10),
+(19, 'Chicken Slice', 'images/RPLC-all-sandwiches-slicedchicken-MY-594x334.jpg', 10),
+(20, 'Chicken Teriyaki', 'images/RPLC-all-sandwiches-chicken-teriyaki-PH-594x334.jpg', 10);
 
 --
 -- Indexes for dumped tables
@@ -312,6 +339,12 @@ ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `foodmenu`
+--
+ALTER TABLE `foodmenu`
+  ADD PRIMARY KEY (`Food_ID`);
+
+--
 -- Indexes for table `host`
 --
 ALTER TABLE `host`
@@ -322,6 +355,18 @@ ALTER TABLE `host`
 --
 ALTER TABLE `imageofphp`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_ID`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`Prod_ID`);
 
 --
 -- Indexes for table `staff`
@@ -358,6 +403,12 @@ ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
+-- AUTO_INCREMENT for table `foodmenu`
+--
+ALTER TABLE `foodmenu`
+  MODIFY `Food_ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
 -- AUTO_INCREMENT for table `host`
 --
 ALTER TABLE `host`
@@ -368,6 +419,18 @@ ALTER TABLE `host`
 --
 ALTER TABLE `imageofphp`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `Prod_ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -391,7 +454,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
