@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manage Payment | 1 Coin Sandwich</title>
+    <title>Manage Payment Rec | 1 Coin Sandwich</title>
 
 <style>
 *{
