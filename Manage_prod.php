@@ -506,6 +506,8 @@ tr a button:hover
             <div class="create">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <a href="addproduct.php?name=<?php echo $host_image['username']?>"><i class="fa fa-plus-circle"></i><span> Create a product</span></a>
+                        <br><button onclick="window.print()">Print this page</button>
+
                     </form>
             </div>
             <table>
