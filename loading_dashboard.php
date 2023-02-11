@@ -44,7 +44,7 @@
           }
           .main 
           {
-            margin-left: 200px; 
+            margin-left: 120px; 
             padding: 0px 10px;
             font-size: 28px;
           }
@@ -76,12 +76,12 @@
             float: right;
           }
 
-          container::after
+          /* .container::after
           {
             content: "";
             clear: both;
             display: table;
-          }
+          } */
           .order
           {
             float: left;

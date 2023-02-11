@@ -49,6 +49,7 @@
 <div class="middle">
     <fieldset>
     <?php
+      $name = $_GET['name'];
         $sql = "select * from user";
         $result = mysqli_query($conn,$sql);
 
@@ -81,7 +82,7 @@
           <td><?php echo $row["Role"];?></td>
           <td><?php echo $row["Status"];?></td>
           <td>           <a href="deletemanageuser.php?No=<?php echo $row['No']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
-            <a href="updatemanageuser.php?email=<?php echo $row['Email']; ?>&&name=<?php echo $host_image['username']?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
+            <a href="updatemanageuser.php?email=<?php echo $row['Email']; ?>&&name=<?php echo $name?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
             </td>
         </tr>
             <?php
@@ -96,9 +97,9 @@
       <button>3</button>
       <button>4</button>
       <button>5</button>
-      <button>Next Page</button><span class="left"><a href="insertmanageuser.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
+      <button>Next Page</button><span class="left"><a href="insertmanageuser.php?name=<?php echo $name?>" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
 
-      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Return Dashboard</a>
+      <a href="loading_dashboard.php?name=<?php echo $name?>">Return Dashboard</a>
       <span class="left"><br><button onclick="window.print()" header="">Generate User List</button></span>
 
     </fieldset>

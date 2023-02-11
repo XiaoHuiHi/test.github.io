@@ -96,7 +96,7 @@
     }
 </style>
 </head>
-
+<?php $name=$_GET['name']?>
   <body>
     <div class="middle">
         <fieldset>
@@ -119,7 +119,7 @@
                 <p><input type="file" id="file"  name="image" class="form-control" multiple></P>
                 <br>
                 <input type="submit" name="save" value="submit" onsubmit="validationForm()">
-                <a href="manageuser.php">Back to manage user list</a>
+                <a href="manageuser.php?name=<?php echo $name?>">Back to manage user list</a>
             </form>
         </fieldset>
     </div>

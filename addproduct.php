@@ -172,7 +172,7 @@ session_start();
         <br>
         <input type="submit" name="create" value="Create">
         <br>
-        <a href="Manage_prod.php?name=<?php echo $host_image['username']?>">Back To Manage Product</a>
+        <a href="Manage_prod.php?name=<?php echo $host_image['username']?>">Return Manage Product</a>
         
 
     </form>

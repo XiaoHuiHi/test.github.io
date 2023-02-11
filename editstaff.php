@@ -15,14 +15,11 @@ session_start();
         //     move_uploaded_file($_FILES['image']['tmp_name'],"$file");
         // }
         $imageName = $_FILES['image']['name'];
-            $imageTempName = $_FILES['image']['tmp_name'];
-            $targetPath = "./image/".$imageName;
-            if(move_uploaded_file($imageTempName,$targetPath))
-            {
+            
                 $sql = "UPDATE `admin` SET image ='$imageName' WHERE username='$id'";
                 // $sql = "INSERT INTO product(image) VALUES('$imageName') WHERE Prod_ID = '$id'";
                 $result = mysqli_query($conn,$sql);
-            }
+            
     }
             
     
@@ -163,7 +160,7 @@ session_start();
         
         <input type="submit" name="change" value="CHANGE">
         <br>
-        <a href="staff.php">Back To Manage Staff</a> <a href="editstaff.php?id=<?php echo $id?>">Refresh</a>
+        <a href="staff.php?name=<?php echo $id?>">Return Manage Staff</a> <a href="editstaff.php?id=<?php echo $id?>">Refresh</a>
 
     </form>
     </fieldset>

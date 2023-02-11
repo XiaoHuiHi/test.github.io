@@ -98,8 +98,11 @@
 <body>
 
     <div class="middle">
+
     <fieldset>
 		<?php
+            $name=$_GET['name'];
+
 			$id = $_REQUEST["email"];
 			$result = mysqli_query($conn, "select * from user where Email = '$id'");
 			$row = mysqli_fetch_assoc($result);
@@ -129,7 +132,7 @@
             <div style="padding-bottom:5px;">
             <i class="fa fa-mail-forward"></i>
 
-            <a href="manageuser.php">Back to manage user list</a>
+            <a href="manageuser.php?name=<?php echo $name?>">Back to manage user list</a>
 
 
             </div>

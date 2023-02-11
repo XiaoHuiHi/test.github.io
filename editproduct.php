@@ -168,7 +168,7 @@ session_start();
         <br>
         <input type="submit" name="change" value="CHANGE">
         <br>
-        <a href="Manage_prod.php?name=<?php echo $s['username']?>">Back To Manage Product</a>
+        <a href="Manage_prod.php?name=<?php echo $s['username']?>">Return Manage Product</a>
         <a href="editproduct.php?id=<?php echo $p['Food_ID']?>&&name=<?php echo $s['username']?>">Refresh</a>
 
     </form>
