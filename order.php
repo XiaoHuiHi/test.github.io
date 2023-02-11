@@ -45,8 +45,8 @@
         <?php
         $sql = "SELECT * FROM orders";
         $result = mysqli_query($conn,$sql);
-        $id = $_GET['name'];
-        $host = "SELECT * FROM `admin` where username = '$id'";
+        $id = $_GET['email'];
+        $host = "SELECT * FROM `user` where Email = '$id'";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
         ?>
@@ -81,8 +81,8 @@
       <button>3</button>
       <button>4</button>
       <button>5</button>
-      <button>Next Page</button><span class="left"><a href="add_order.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="Add-On"></span></p>
-      <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Return Home page
+      <button>Next Page</button><span class="left"><a href="Homepage.php?email=<?php echo $id?>" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="Add-On"></span></p>
+      <a href="Homepage.php?email=<?php echo $id?>">Return Home page
       <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>
