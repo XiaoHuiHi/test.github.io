@@ -185,8 +185,8 @@ if (isset($_POST["savebtn"]))
 
         if($mstatus == "Active")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email = '$id'");
-            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,"UPDATE user set Name='" . $_POST['name'] . "', Email='" . $_POST['email'] . "', Role='" . $_POST['role'] . "' ,Status='" . $_POST['status'] . "' where Email = '$id'");
+            $sql = "update user set Image='" . $_POST['image'] . "' where Email='$id'";
             mysqli_query($conn,$sql);
             if (mysqli_query($conn, $sql)) {
                 echo "Updated successfully !";
@@ -194,8 +194,8 @@ if (isset($_POST["savebtn"]))
         }
         else if($mstatus == "Inactive")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email = '$id'");
-            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,"UPDATE user set Name='" . $_POST['name'] . "', Email='" . $_POST['email'] . "', Role='" . $_POST['role'] . "' ,Status='" . $_POST['status'] . "' where Email = '$id'");
+            $sql = "update user set Image='" . $_POST['image'] . "' where Email='$id'";
             mysqli_query($conn,$sql);
             if (mysqli_query($conn, $sql)) {
                 echo "Updated successfully !";
@@ -211,8 +211,8 @@ if (isset($_POST["savebtn"]))
 
         if($mstatus == "Active")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "' where Email = '$id'");
-            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,"UPDATE user set Name='" . $_POST['name'] . "', Email='" . $_POST['email'] . "', Role='" . $_POST['role'] . "' ,Status='" . $_POST['status'] . "' where Email = '$id'");
+            $sql = "update user set Image='" . $_POST['image'] . "' where Email='$id'";
             mysqli_query($conn,$sql);
             if (mysqli_query($conn, $sql)) {
                 echo "Updated successfully !";
@@ -221,8 +221,8 @@ if (isset($_POST["savebtn"]))
         }
         else if($mstatus == "Inactive")
         {
-            mysqli_query($conn,"UPDATE user set name='" . $_POST['name'] . "', email='" . $_POST['email'] . "', role='" . $_POST['role'] . "' ,status='" . $_POST['status'] . "'where Email = '$id'");
-            $sql = "update user set image='" . $_POST['image'] . "' where Email='$id'";
+            mysqli_query($conn,"UPDATE user set Name='" . $_POST['name'] . "', Email='" . $_POST['email'] . "', Role='" . $_POST['role'] . "' ,Status='" . $_POST['status'] . "' where Email = '$id'");            
+            $sql = "update user set Image='" . $_POST['image'] . "' where Email='$id'";
             mysqli_query($conn,$sql);
             if (mysqli_query($conn, $sql)) {
                 echo "Updated successfully !";

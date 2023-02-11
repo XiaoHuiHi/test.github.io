@@ -75,7 +75,7 @@
       
         <tr>
           <td><?php echo $row["No"]; ?></td>
-          <td><img class='img' src="<?php echo "images/".$row['image'];?>" ></td>
+          <td><img class='img' src="<?php echo "images/".$row['Image'];?>" ></td>
           <td><?php echo $row["Name"];	?></td>
           <td><?php echo $row["Email"];?></td>
           <td><?php echo $row["Role"];?></td>
