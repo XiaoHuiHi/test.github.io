@@ -89,13 +89,17 @@ $query = "select * from user where Email = '$id'";
 $r = mysqli_query($conn,$query);
 $re = mysqli_fetch_assoc($r);
 
-$sql = "SELECT * FROM foodmenu Where Food_ID = '$id'";
-$query = mysqli_query($conn,$sql);
-$fn = mysqli_real_escape_string($conn,$_POST['foodname']);
-$quantity = mysqli_real_escape_string($conn,$_POST['quantity']);
-$price = mysqli_real_escape_string($conn,$_POST['price']);
-mysqli_query($conn,"INSERT INTO orders (foodname,quantity,price) VALUES ('{$fn}','{$quantity}','{$price}')");
-
+  if(isset($_POST['add']))
+  {
+  $ida = mysqli_real_escape_string($conn,$_POST['id']);
+  $fn = mysqli_real_escape_string($conn,$_POST['foodname']);
+  $quantity = mysqli_real_escape_string($conn,$_POST['quantity']);
+  $price = mysqli_real_escape_string($conn,$_POST['price']);
+  // $sqle = "SELECT * FROM foodmenu Where Food_Name = '$ida'";
+  // $query = mysqli_query($conn,$sqle);
+  
+  mysqli_query($conn,"INSERT INTO `orders`(foodname,quantity,price) VALUES ('$fn','$quantity','$price')");
+  }
   while($row = mysqli_fetch_assoc($result))
    {
 
@@ -103,17 +107,17 @@ mysqli_query($conn,"INSERT INTO orders (foodname,quantity,price) VALUES ('{$fn}'
             <div class="container" style="width: 100%;">
             
               <div class="homepage-card">
-              <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><img width="20px" class="love" src="<?php echo "images/love.png"?>" alt=""></a>
+              <a href="addintowishlist.php?email=<?php echo $id?>&&id=<?php echo $row['Food_ID']?>"><img width="20px" class="love" src="<?php echo "images/love.png"?>" alt=""></a>
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
                     <div class="mypanel" align="center";>
-                    <form method="post" action="order.php?action=add&id=<?php echo $row["Food_ID"]; ?>&&email=<?php echo $id?>">
+                    <form method="post">
                     <h5 class="text-info">Quantity: <input type="number" min="1" max="25" name="quantity" class="form-control" value="0" style="width: 60px;"> </h5>
-                    <input type="hidden" name="hidden_name" value="<?php echo $row["Food_Name"]; ?>">
-                    <input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
-                    <input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
+                    <input type="hidden" name="foodname" value="<?php echo $row["Food_Name"]; ?>">
+                    <input type="hidden" name="price" value="<?php echo $row["Food_Price"]; ?>">
                     <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+                    <input type="hidden" name="id" value="<?php echo $row['Food_Name']?>">
                     </div>
                     </form>
                     
