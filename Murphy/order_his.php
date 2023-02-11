@@ -89,7 +89,9 @@ $total =  $total + $subtotal;
         <br><br>
         <a href="#">
 				<i class="fa fa-edit">Home</i> 
-		</a>
+		    </a>
+        
+        <br><button onclick="window.print()">Print this page</button>
 	</fieldset>
 	
 </div>
