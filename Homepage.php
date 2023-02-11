@@ -95,7 +95,7 @@ $re = mysqli_fetch_assoc($r);
   $fn = mysqli_real_escape_string($conn,$_POST['foodname']);
   $quantity = mysqli_real_escape_string($conn,$_POST['quantity']);
   $price = mysqli_real_escape_string($conn,$_POST['price']);
-  // $sqle = "SELECT * FROM foodmenu Where Food_Name = '$ida'";
+  $sqle = "SELECT * FROM foodmenu Where Food_Name = '$ida'";
   // $query = mysqli_query($conn,$sqle);
   
   mysqli_query($conn,"INSERT INTO `orders`(foodname,quantity,price) VALUES ('$fn','$quantity','$price')");
@@ -117,7 +117,7 @@ $re = mysqli_fetch_assoc($r);
                     <input type="hidden" name="foodname" value="<?php echo $row["Food_Name"]; ?>">
                     <input type="hidden" name="price" value="<?php echo $row["Food_Price"]; ?>">
                     <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
-                    <input type="hidden" name="id" value="<?php echo $row['Food_Name']?>">
+                    <input type="hidden" name="id" value="<?php echo $row['Food_id']; ?>">
                     </div>
                     </form>
                     
