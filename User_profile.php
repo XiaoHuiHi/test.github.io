@@ -83,7 +83,7 @@
         <h1>User Profile</h1>
             <?php
             $id = $_GET['email']; 
-            // $login_no=$_REQUEST["no"]; --------------------- no user ------------   // put from the user check login  ( where no=$login_no ) // 
+            // $login_no=$_REQUEST["no"]; --------------------- no use ------------   // put from the user check login  ( where no=$login_no ) // 
             $sql = "select * from user where Email = '$id' "; 
             $result = mysqli_query($conn,$sql);
            
