@@ -423,7 +423,7 @@ nav:hover
 
 
                                     <div class="cart">
-                                        <img src="images/shoppingcart.png" alt=""><button type="submit" name="submit">Add to cart </button>
+                                        <img src="images/shoppingcart.png" alt=""><button type="submit" name="submit">Add to cart</button>
                                     </div>
                                 </div>
                                 </form>
