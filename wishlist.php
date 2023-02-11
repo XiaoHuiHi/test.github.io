@@ -399,7 +399,7 @@ nav:hover
                     <div class="formControl">
                                 <div class="imgoffood">
                                     <p class="title">
-                                        <form action="" method="POST">
+                                        
                                         <span class="item"><?php echo $fetch['itemname']?></span> 
                                             
                                             <div class="del">
@@ -413,14 +413,13 @@ nav:hover
                                 </div>
                                 
                                 <div class="add">
+                                <form action="" method="POST">
                                     <div class="stepper-input">
-                                        <button class="minus-btn">-</button>
-                                        <input id="range" name="range" type="text" min="1" max="5" value="1">
-                                        <button class="plus-btn">+</button>
+                                        <input id="range" name="range" type="number" min="1" max="5" value="1">
                                     </div>
-                                    <input type="text" name="foodname" value="<?php echo $fetch['itemname']?>">
-                                    <input type="text" name="foodprice" value="<?php echo $fetch['itemprice']?>">
-                                    <input type="text" name="food" value="<?php echo $fetch['itemname']?>">
+                                    <input type="hidden" name="foodname" value="<?php echo $fetch['itemname']?>">
+                                    <input type="hidden" name="foodprice" value="<?php echo $fetch['itemprice']?>">
+                                    
 
 
                                     <div class="cart">
@@ -447,8 +446,8 @@ nav:hover
                 {
                     // $d = "SELECT * From foodmenu where Food_ID = ";
 
-                    $foodname = $fetch['itemname'];
-                    $price = $fetch['itemprice'];
+                    $foodname = $_POST['foodname'];
+                    $price = $_POST['foodprice'];
                     $id = $fetch['id'];
                     $value = $_POST['range'];
                     mysqli_query($conn,"INSERT INTO `orders`(foodname,quantity,price) VALUES ('$foodname','$value','$price')");
@@ -475,46 +474,46 @@ nav:hover
         </div>
     </div>
     <script>
-        var incrementButton = document.getElementsByClassName('plus-btn');
-    var decrementButton = document.getElementsByClassName('minus-btn');
-    // console.log(incrementButton);
-    // console.log(decrementButton);
-    for(var i =0;i<incrementButton.length;i++)
-    {
-        var button = incrementButton[i];
-        button.addEventListener('click',function(event){
-            var buttonClicked =event.target;
-            // console.log(buttonClicked);
-            var input=buttonClicked.parentElement.children[1];
-            // console.log(input);
-            var inputValue = input.value;
-            // console.log(inputValue);
-            var newValue = parseInt(inputValue)+1;
-            // console.log(newValue);
-            input.value=newValue;
-        })
-    }
+    //     var incrementButton = document.getElementsByClassName('plus-btn');
+    // var decrementButton = document.getElementsByClassName('minus-btn');
+    // // console.log(incrementButton);
+    // // console.log(decrementButton);
+    // for(var i =0;i<incrementButton.length;i++)
+    // {
+    //     var button = incrementButton[i];
+    //     button.addEventListener('click',function(event){
+    //         var buttonClicked =event.target;
+    //         // console.log(buttonClicked);
+    //         var input=buttonClicked.parentElement.children[1];
+    //         // console.log(input);
+    //         var inputValue = input.value;
+    //         // console.log(inputValue);
+    //         var newValue = parseInt(inputValue)+1;
+    //         // console.log(newValue);
+    //         input.value=newValue;
+    //     })
+    // }
 
 
-    for(var i =0;i<decrementButton.length;i++)
-    {
-        var button = decrementButton[i];
-        button.addEventListener('click',function(event){
-            var buttonClicked =event.target;
-            // console.log(buttonClicked);
-            var input=buttonClicked.parentElement.children[1];
-            // console.log(input);
-            var inputValue = input.value;
-            // console.log(inputValue);
-            var newValue = parseInt(inputValue)-1;
-            // console.log(newValue);
-            if(newValue>=0)
-            {
-                input.value = newValue;
-            }
+    // for(var i =0;i<decrementButton.length;i++)
+    // {
+    //     var button = decrementButton[i];
+    //     button.addEventListener('click',function(event){
+    //         var buttonClicked =event.target;
+    //         // console.log(buttonClicked);
+    //         var input=buttonClicked.parentElement.children[1];
+    //         // console.log(input);
+    //         var inputValue = input.value;
+    //         // console.log(inputValue);
+    //         var newValue = parseInt(inputValue)-1;
+    //         // console.log(newValue);
+    //         if(newValue>=0)
+    //         {
+    //             input.value = newValue;
+    //         }
             
-        })
-    }
+    //     })
+    // }
     
     </script>
 </body>
