@@ -123,7 +123,7 @@
             </div>
         </div>
         <br><br><br><br><br><br>
-        <p>Recent Prodct</p>
+        <p>Recent Product</p>
         <table border="1px">
             <?php
             $sql = "select * from foodmenu;";
