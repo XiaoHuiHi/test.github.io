@@ -129,7 +129,7 @@
 			<p><input type="submit" name="savebtn" value="UPDATE">
 
             <div style="padding-bottom:5px;">
-            <a href="http://localhost/DWP_1Coin_Project/User_profile.php">Return user profile</a>
+            <a href="User_profile.php?email=<?php echo $id ?>">Return user profile</a>
             </div>
 
 
