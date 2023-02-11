@@ -11,7 +11,7 @@
         $name = $r['Food_Name'];
         $price = $r['Food_Price'];
         
-        mysqli_query($conn,"INSERT INTO orders()")
+        mysqli_query($conn,"INSERT INTO orders()");
     }
 
     

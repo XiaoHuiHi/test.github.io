@@ -88,6 +88,14 @@ $id = $_GET['email'];
 $query = "select * from user where Email = '$id'"; 
 $r = mysqli_query($conn,$query);
 $re = mysqli_fetch_assoc($r);
+
+$sql = "SELECT * FROM foodmenu Where Food_ID = '$id'";
+$query = mysqli_query($conn,$sql);
+$fn = mysqli_real_escape_string($conn,$_POST['foodname']);
+$quantity = mysqli_real_escape_string($conn,$_POST['quantity']);
+$price = mysqli_real_escape_string($conn,$_POST['price']);
+mysqli_query($conn,"INSERT INTO orders (foodname,quantity,price) VALUES ('{$fn}','{$quantity}','{$price}')");
+
   while($row = mysqli_fetch_assoc($result))
    {
 

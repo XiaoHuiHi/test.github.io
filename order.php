@@ -83,7 +83,7 @@
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="Homepage.php?email=<?php echo $id?>" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="Add-On"></span></p>
       <a href="Homepage.php?email=<?php echo $id?>">Return Home page
-      <div class="left"><a href="payment.php" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
+      <div class="left"><a href="payment.php?email=<?php echo $id?>" alt="payment"><i class="fa fa-plus-square"></i> <input type="button" value="Checkout"></div>
 
     </fieldset>
   </div>
