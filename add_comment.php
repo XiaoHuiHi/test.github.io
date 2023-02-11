@@ -37,9 +37,10 @@
         <textarea id="comment" name="comment" rows="5" cols="60"></textarea><br><br>
         <input type="submit" name="submit" value="Submit">
     </form> 
+    <?php $email = $_GET['email'];?>
     </fieldset>
     <i class="fa fa-sign-out"></i>
-                <span><a href="http://localhost/DWP_1Coin_Project/Murphy/comment/view_comment.php" >Back To Comment Page</a></span>
+                <span><a href="view_comment.php?email=<?php echo $email?>" >Back To Comment Page</a></span>
         </div>
 </body>
 </html>

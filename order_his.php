@@ -57,25 +57,25 @@ include("config.php");
                 <?php
    
 								
-
-   $sql = "SELECT * FROM orderorder";
+    $email = $_GET['email'];
+   $sql = "SELECT * FROM orders";
    $result = mysqli_query($conn,$sql);
    $total=0;
    
    while($row = mysqli_fetch_array($result))
    {
     $p=$row["price"];
-    $q=$row["qty"];
-$subtotal=$p*$q;
-$total =  $total + $subtotal;
+    $q=$row["quantity"];
+    $subtotal=$p*$q;
+    $total =  $total + $subtotal;
 
                   ?>
             
             <tr>
 								
-								<th><?php echo $row['foodid']; ?></th>
+								<th><?php echo $row['order_ID']; ?></th>
 								<th><?php echo $row['foodname']; ?></th>
-								<th><?php echo $row['qty']; ?></th>
+								<th><?php echo $row['quantity']; ?></th>
                 <th>RM<?php echo $row['price']; ?></th>
 								<th>RM <?php echo $subtotal; ?></th>
 								
@@ -87,8 +87,8 @@ $total =  $total + $subtotal;
           ?>
         </table>
         <br><br>
-        <a href="#">
-				<i class="fa fa-edit">Home</i> 
+        <a href="Homepage.php?email=<?php echo $email?>">
+				<i class="fa fa-edit">Return to Home page</i> 
 		    </a>
         
         <br><br><button onclick="window.print()">Print this page</button>
