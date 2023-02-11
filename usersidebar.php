@@ -255,8 +255,8 @@ ul ul {
                     
                 </li>
                 <li>
-                    <a href="User_profile.php?email=<?php echo $host_image['Email']?>">
-                        <i class="fa fa-info-circle"></i><span class="nav-item">Profile</span>
+                    <a href="contact.php?email=<?php echo $host_image['Email']?>">
+                        <i class="fa fa-info-circle"></i><span class="nav-item">Contact Us</span>
                     </a>
                     
                 </li>
