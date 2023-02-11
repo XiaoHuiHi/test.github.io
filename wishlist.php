@@ -156,15 +156,11 @@ body
     display: inline-block;
     margin-top: 10px;   
 }
-.cart a img
-{
-    width: 25px;
-}
-.cart a
+
+.cart button
 {
     background: linear-gradient(#ff7b00,#ffb700);
     height: 30px;
-    width: 150px;
     border: 1px solid black;
     border-radius: 20px;
     /* padding-top: 10px; */
@@ -175,7 +171,7 @@ body
     font-size: 15px;
 }
 
-.cart a:hover
+.cart button:hover
 {
     cursor: pointer;
     background: #72efdd;
@@ -397,7 +393,9 @@ nav:hover
                 $query = mysqli_query($conn,$wishlist);
                 while($fetch = mysqli_fetch_assoc($query))
                 {
+                    
                     ?>
+                    
                     <div class="formControl">
                                 <div class="imgoffood">
                                     <p class="title">
@@ -409,7 +407,6 @@ nav:hover
 
                                             </div>
                                             
-                                        </form>
                                         
                                         <img src="<?php echo $fetch['itemimage']?>" alt=""> </p> 
                                         <div class="price">Price: <?php echo "RM ".$fetch['itemprice']?></div> 
@@ -417,15 +414,17 @@ nav:hover
                                 
                                 <div class="add">
                                     <div class="stepper-input">
-                                    <form action="">
                                         <button class="minus-btn">-</button>
-                                        <input id="range" type="text" name="range" min="1" max="5" value="1">
+                                        <input id="range" name="range" type="text" min="1" max="5" value="1">
                                         <button class="plus-btn">+</button>
                                     </div>
+                                    <input type="text" name="foodname" value="<?php echo $fetch['itemname']?>">
+                                    <input type="text" name="foodprice" value="<?php echo $fetch['itemprice']?>">
+                                    <input type="text" name="food" value="<?php echo $fetch['itemname']?>">
+
+
                                     <div class="cart">
-                    
-                                    <a href="addtocart.php?email=<?php echo $id?>&&id=<?php echo $fetch['id']?>&&value=<?php echo $value ?>"><img src="images/shoppingcart.png" alt=""><span>Add to cart</span> </a>
-                                    <button name="submit"></button>
+                                        <img src="images/shoppingcart.png" alt=""><button type="submit" name="submit">Add to cart </button>
                                     </div>
                                 </div>
                                 </form>
@@ -433,7 +432,30 @@ nav:hover
                             </div>
                     <?php
                 }
+                // if(isset($_POST['add']))
+                // {
+                // $ida = mysqli_real_escape_string($conn,$_POST['id']);
+                // $fn = mysqli_real_escape_string($conn,$_POST['foodname']);
+                // $quantity = mysqli_real_escape_string($conn,$_POST['quantity']);
+                // $price = mysqli_real_escape_string($conn,$_POST['price']);
+                // // $sqle = "SELECT * FROM foodmenu Where Food_Name = '$ida'";
+                // // $query = mysqli_query($conn,$sqle);
                 
+                // mysqli_query($conn,"INSERT INTO `orders`(foodname,quantity,price) VALUES ('$fn','$quantity','$price')");
+                // }
+                if(isset($_POST['submit']))
+                {
+                    // $d = "SELECT * From foodmenu where Food_ID = ";
+
+                    $foodname = $fetch['itemname'];
+                    $price = $fetch['itemprice'];
+                    $id = $fetch['id'];
+                    $value = $_POST['range'];
+                    mysqli_query($conn,"INSERT INTO `orders`(foodname,quantity,price) VALUES ('$foodname','$value','$price')");
+                    
+
+                }
+
 
         ?>
         <?php
