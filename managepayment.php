@@ -10,6 +10,14 @@
     <title>Manage Payment | 1 Coin Sandwich</title>
 
 <style>
+*{
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center; 
+}
+
 .table {
     overflow-x: scroll;
     border-collapse: collapse;
@@ -57,7 +65,6 @@
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -80,15 +87,17 @@
 <body>
     <!--Sidebar!-->
     <?php include "adminsidebar.php" ?>
-
+    
+    <h1>Payment Record<h1>
     <div class="table-responsive">
               <table class="table">
                 <thead class="thead">
                   <tr>
                   <th width="10%">Payment ID</th>
-                  <th width="40%">Payment Name</th>
-                  <th width="20%">Total Payment</th>
-                  <th width="15%">Table</th>
+                  <th width="30%">Name</th>
+                  <th width="30%">Email</th>
+                  <th width="10%">Total Payment</th>
+                  <th width="20%">Table No.</th>
                   <th width="5%">Action</th>
                   </tr>
                 </thead>
@@ -105,7 +114,8 @@
             <tr class="active-row" >
                 <td style="font-weight:bold"><?php echo $row["checkid"];	?></td>
                 <td><?php echo $row["Name"];?></td>
-                <td><?php echo $row["total"];?></td>
+                <td><?php echo $row["Email"];?></td>
+                <td>RM <?php echo $row["total"];?></td>
                 <td><?php echo $row["table_number"];?></td>
                 <td><a href="deletepayment.php?checkid=<?php echo $row['checkid']; ?>&&name=<?php echo $name?>"><i class="fa fa-close" style="font-size:36px;color:#dc3545;"></i></a></td>
             </tr>
