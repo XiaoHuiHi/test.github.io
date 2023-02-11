@@ -35,7 +35,7 @@ fieldset
   background-color:transparent;
   width: 200px;
   height: 200px;
-  border: 1px solid #43FCFF;
+  /* border: 1px solid #43FCFF; */
   perspective: 1000px;
   margin-left:100px;
   margin-top:50px;
@@ -47,6 +47,7 @@ fieldset
   position: relative;
   width: 100%;
   height: 100%;
+  
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -60,6 +61,7 @@ fieldset
   position: absolute;
   width: 100%;
   height: 100%;
+  
   -webkit-backface-visibility: hidden; 
   backface-visibility: hidden;
 }
@@ -86,7 +88,7 @@ fieldset
 <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="img/dh.jpg" alt="Dehui" style="width:200px;height:200px;">
+        <img src="images/dehui.jpg" alt="Dehui" style="border-radius: 50%;width:200px;height:200px;">
       </div>
       <div class="flip-card-back">
         <h2>Teng De Hui</h2>
@@ -100,7 +102,7 @@ fieldset
 <div class="flip-card">																	
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="img/kh.jpg" alt="Khee Hern" style="width:200px;height:200px;">
+        <img src="img/kh.jpg" alt="Khee Hern" style="border-radius: 50%;width:200px;height:200px;">
       </div>
       <div class="flip-card-back">
         <h2>Lee Khee Hern</h2>
@@ -114,7 +116,7 @@ fieldset
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="img/cx.jpg" alt="Chorxiang" style="width:200px;height:200px;">
+        <img src="img/cx.jpg" alt="Chorxiang" style="border-radius: 50%;width:200px;height:200px;">
       </div>
       <div class="flip-card-back">
         <h2>Tan Chor Xiang</h2>
@@ -128,7 +130,8 @@ fieldset
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="img/ms.jpg" alt="Leyang" style="width:200px;height:200px;">
+  
+        <img src="images/leyang.jpg" alt="Leyang" style="border-radius: 50%; width:200px;height:200px;">
       </div>
       <div class="flip-card-back">
         <h2>Murphy Sim Le Yang</h2>
@@ -138,9 +141,10 @@ fieldset
       </div>
     </div> 
   </div>
-  <br><br><a href="Homepage.php?email=<?php echo $email;?>">Return Home page</a>
+  <br><br>
 </fieldset>
 </div>
+<a href="Homepage.php?email=<?php echo $email;?>">Return Home page</a>
 </body>
 
 </html>
