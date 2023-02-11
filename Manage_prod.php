@@ -450,9 +450,7 @@ tr a button:hover
 
 </style>
 <?php
-        $host = "SELECT * FROM staff";
-        $query = mysqli_query($conn,$host);
-        $host_image = mysqli_fetch_assoc($query);
+        
 ?>
 <body>
     <div class="container">
@@ -516,7 +514,7 @@ tr a button:hover
                     <th>PRODUCT_NAME</th>
                     <th>PRICE</th>
                     <th>CATEGORY</th>
-                    <th>stock</th>
+                    <th>OPTION</th>
                     <th>EDITING</th>
                 </tr>
                 <?php
@@ -531,7 +529,7 @@ tr a button:hover
                         <td><?php echo $product['Food_Name']?></td>
                         <td><?php echo "RM ".$product['Food_Price']?></td>
                         <td><?php echo $product['Food_Cat']?></td>
-                        <td><?php echo $product['stock']?></td>
+                        <td><?php echo $product['options']?></td>
                         <td class="button">
                             <form action="" method="POST">
                             <a href="editproduct.php?id=<?php echo $product['Food_ID']?>&&name=<?php echo $host_image['username']?>">Edit</a>

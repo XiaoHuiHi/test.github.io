@@ -2,7 +2,7 @@
 session_start();
     include 'config.php';
     $id = $_GET['id'];
-
+    $name = $_GET['name'];
     if(isset($_POST['change']))
     {
         // $file =$_FILES['image']['name'];
@@ -120,12 +120,6 @@ session_start();
         padding: 7px;
     }
 </style>
-<?php
-    $p = "SELECT * FROM product";
-    $query= mysqli_query($conn,$p);
-
-    $product = mysqli_fetch_assoc($query);
-?>
 <?php 
     
         $id = $_GET['id'];
@@ -160,7 +154,7 @@ session_start();
         
         <input type="submit" name="change" value="CHANGE">
         <br>
-        <a href="staff.php?name=<?php echo $id?>">Return Manage Staff</a> <a href="editstaff.php?id=<?php echo $id?>">Refresh</a>
+        <a href="staff.php?name=<?php echo $name?>">Return Manage Staff</a> <a href="editstaff.php?id=<?php echo $id?>">Refresh</a>
 
     </form>
     </fieldset>

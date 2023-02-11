@@ -12,14 +12,14 @@ session_start();
         $price = mysqli_real_escape_string($conn,$_POST['price']);
         $code = mysqli_real_escape_string($conn,$_POST['code']);
         $cate = mysqli_real_escape_string($conn,$_POST['cate']);
-        $stock = mysqli_real_escape_string($conn,$_POST['stock']);
+    
         $imageName = $_FILES['image']['name'];
         $imageTempName = $_FILES['image']['tmp_name'];
         $targetPath = "images/".$imageName;
         if(move_uploaded_file($imageTempName,$targetPath))
         {
             // $sql = "INSERT INTO product(image) VALUES('$imageName')";
-            $sql = "INSERT INTO foodmenu(Food_Name,Food_Price,Food_Cat,stock,images_path,options) VALUES ('$prodname','$price','$cate','$stock','images/$imageName','$code')";
+            $sql = "INSERT INTO foodmenu(Food_Name,Food_Price,Food_Cat,images_path,options) VALUES ('$prodname','$price','$cate','images/$imageName','$code')";
 
             $result = mysqli_query($conn,$sql);
         }
@@ -53,16 +53,11 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <?php
-    $p = "SELECT * FROM product";
-    $query= mysqli_query($conn,$p);
-
-    $product = mysqli_fetch_assoc($query);
 ?>
 <?php 
     
         // $id = $_GET['id'];
-        $query = mysqli_query($conn, "SELECT * FROM product");
-        $p = mysqli_fetch_assoc($query);
+    
     
     ?>
 
@@ -158,15 +153,13 @@ session_start();
         <label for=""><i class="fa fa-usd"></i> Price:</label>
         <input type="text" name="price" >
         <br>
-        <label for=""><i class="fa fa-code"></i> Options [ENABLE/DISENABLE]:</label>
+        <label for=""><i class="fa fa-code"></i> Options [ENABLE/DISABLE]:</label>
         <input name="code" type="text" >
         <br>
         <label for=""><i class="fa fa-archive"></i> Category:</label>
         <input type="text" name="cate" id="" >
         <br>
-        <label for=""><i class="fa fa-cubes"></i> Stock:</label>
-        <input type="number" name="stock" id="" >
-        <br>
+        
         <label for="file"  class="Choose"><i class="fa fa-camera"></i> Choose a Photo</label>
         <input type="file" id="file" name="image" class="form-control" multiple>
         <br>
@@ -190,7 +183,7 @@ session_start();
         $image= $_POST['image'];
         $stock= $_POST['stock'];
         $price = $_POST['price'];
-        mysqli_query($conn,"UPDATE product set Prod_Name='$prodname' , Prod_cate = '$cate',Prod_price='$price',Prod_stock = '$stock',code='$code' WHERE Prod_ID = '$id'");
+        mysqli_query($conn,"UPDATE product set Prod_Name='$prodname' , Prod_cate = '$cate',Prod_price='$price',code='$code' WHERE Prod_ID = '$id'");
         
 
             

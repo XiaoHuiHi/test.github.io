@@ -76,7 +76,7 @@ h1{
   position: relative;
   text-align: center;
   text-decoration: none;
-  float: right;
+  /* float: right; */
 }
 
 .btn:hover {

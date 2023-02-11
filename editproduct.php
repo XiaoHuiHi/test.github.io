@@ -155,8 +155,8 @@ session_start();
         <label for=""><i class="fa fa-archive"></i> Category:</label>
         <input type="text" name="cate" id="" value="<?php echo $p['Food_Cat']?>">
         <br>
-        <label for=""><i class="fa fa-cubes"></i> Stock:</label>
-        <input type="number" name="stock" id="" value="<?php echo $p['stock']?>">
+        <label for=""><i class="fa fa-cubes"></i> Option:</label>
+        <input type="text" name="stock" id="" value="<?php echo $p['options']?>">
         <br>
         <label for="file"  class="Choose"><i class="fa fa-camera"></i> Choose a Photo</label>
         <input type="file" id="file" name="image" class="form-control" multiple>
@@ -185,7 +185,7 @@ session_start();
         $image= $_POST['image'];
         $stock= $_POST['stock'];
         $price = $_POST['price'];
-        mysqli_query($conn,"UPDATE foodmenu set Food_NAme='$prodname' , Food_Cat = '$cate',Food_Price='$price',stock = '$stock' WHERE Food_ID = '$id'");
+        mysqli_query($conn,"UPDATE foodmenu set Food_NAme='$prodname' , Food_Cat = '$cate',Food_Price='$price',options = '$stock' WHERE Food_ID = '$id'");
         // header('location:Manage_prod.php');
 
             

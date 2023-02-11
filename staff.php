@@ -485,7 +485,7 @@ nav:hover
             <input type="hidden" name="del_image" value="<?php echo $fetch['image']?>">
                 <ul>
                     <li><a href="delstaff.php?id=<?php echo $fetch['username']?>&&name=<?php echo $id?>"><i class='fa fa-trash-o' ></i></a></li>
-                    <li><a href="editstaff.php?id=<?php echo $fetch['username']?>"><i class='fa fa-info-circle'></i></a></li>
+                    <li><a href="editstaff.php?id=<?php echo $fetch['username']?>&&name=<?php echo $id?>"><i class='fa fa-info-circle'></i></a></li>
                 </ul>
             </div>
             <h2 style="padding: 20px; padding-top:0;"><?php echo $fetch['username']?></h2>
