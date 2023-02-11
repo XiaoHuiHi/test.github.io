@@ -106,87 +106,24 @@
     <!--Sidebar!-->
     <?php include "adminsidebar.php" ?>
 
-    <div class="main">
-        <p><i class="fa fa-tasks"></i> My Dashboard</p>
-        <div class="container">
-            <div class="box">
-                <i class="fa fa-eye"></i> Views
-                <span class="insidebox"> 99</span>
-            </div>
-            <div class="box">
-                <i class="fa fa-share-alt"></i> Shares
-                <span class="insidebox"> 15</span>
-            </div>
-            <div class="box">
-                <i class="fa fa-thumbs-up"></i> Like
-                <span class="insidebox"> 20</span>
-            </div>
-        </div>
-        <br><br><br><br><br><br>
-        <p>Recent Product</p>
-
-        <table border="1px">
+        <p>P</p>
+        <table width="730" border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
             <?php
-            $sql = "select * from foodmenu;";
+            $sql = "select * from checkout;";
             $result = mysqli_query($conn,$sql);
             $row = mysqli_fetch_array($result)
             ?>
             <tr class="center">
-                <td>Product Name :</td>
-                <td>Product Category :</td>
-                <td>Product Price :</td>
+                <td>Payment ID</td>
+                <td>Payment Name</td>
+                <td>Table</td>
             </tr>
             <tr class="center">
-                <td><?php echo $row["Food_Name"];	?></td>
-                <td><?php echo $row["Food_Cat"];?></td>
-                <td><?php echo $row["Food_Price"];?></td>
-            </tr>
-
-        </table>
-        <br><br><br>
-        <p>Recent Order</p>
-        <table border="1px">
-            <?php
-            $sql = "select * from orders;";
-            $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
-            ?>
-            <tr class="center">
-                <td>Food Name :</td>
-                <td>Food Quantity :</td>
-                <td>Food Price :</td>
-
-            </tr>
-            <tr class="center">
-                <td><?php echo $row["foodname"];	?></td>
-                <td><?php echo $row["quantity"];?></td>
-                <td><?php echo $row["price"];?></td>
-
-            </tr>
-            
-        </table>
-        <br><br><br>
-        <p>Recent User</p>
-        <table border="1px">
-            <?php
-            $sql = "select * from user;";
-            $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
-            ?>
-            <tr class="center">
-                <td>User Name :</td>
-                <td>Date :</td>
-                <td>Status :</td>
-
-            </tr>
-            <tr class="center">
-
-                <td><?php echo $row["Name"];	?></td>
-                <td><?php echo $row["Date"];?></td>
-                <td><?php echo $row["Status"];?></td>
+                <td><?php echo $row["checkid"];	?></td>
+                <td><?php echo $row["Name"];?></td>
+                <td><?php echo $row["table_number"];?></td>
             </tr>
         </table>
-        <br>
     </div>
 </body>
 
