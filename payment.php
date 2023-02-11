@@ -1,4 +1,60 @@
-<?php include("config.php"); ?>
+<?php include("config.php"); 
+                    $email = $_GET['email'];
+                    ?>
+
+<?php
+    $msg = '';
+  if(isset($_POST['saveas']))
+  {	 
+    $mname = $_POST['Fullname'];
+    $memail = $_POST['Email'];
+    $mph = $_POST['Phonenumber'];
+    $tabletable = $_POST['tableno'];
+    $selected = $_POST['choice'];
+    
+    if (!$mname)
+    {
+        $msg= "Please Key in Name !";
+        
+    }
+    else if(!$memail)
+    {
+        $msg= "Please Key in Email !";
+        
+    }
+    else if(!$mph)
+    {
+        $msg= "Please Key in Phone Number !";
+        
+    }
+    else if(!isset($_POST['tick']))
+    {
+        $msg= "Must agree the Terms and Conditions";
+        
+    }
+    else if($selected==0)
+    {
+        $msg= "Please select the payment method";
+    }
+    else if($tabletable==0)
+    {
+        $msg= "Please select the table of your seet";        
+    }
+    else
+    {
+        $sql = "INSERT INTO checkout (Name,Email,Phonenumber,payment_method,table_number,total) VALUES ('$mname','$memail','$mph','$tabletable','$selected','$total')";
+        if (mysqli_query($conn, $sql)) {
+            $msg= "payment successfully !";
+            header("Location: Homepage.php?email=".$email);
+          } else {
+            $msg= "Error: " . $sql . "" . mysqli_error($conn);
+          }
+          mysqli_close($conn);
+    }
+
+    
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -214,63 +270,11 @@
                     <p>Total :<span class="price" style="color:black"><b>RM <?php echo $total;?></b></span></p>
                 </div>
             </div>
-            <p><a href="order.php">Return order page</p>
+            <p><a href="order.php?email=<?php echo $email?>">Return order page</p></a>
         </fieldset>
     </div>
 
 </body>
 </html>
+<?php echo $msg?>
 
-
-<?php
-  if(isset($_POST['saveas']))
-  {	 
-    $mname = $_POST['Fullname'];
-    $memail = $_POST['Email'];
-    $mph = $_POST['Phonenumber'];
-    $tabletable = $_POST['tableno'];
-    $selected = $_POST['choice'];
-    
-    if (!$mname)
-    {
-        echo "Please Key in Name !";
-        
-    }
-    else if(!$memail)
-    {
-        echo "Please Key in Email !";
-        
-    }
-    else if(!$mph)
-    {
-        echo "Please Key in Phone Number !";
-        
-    }
-    else if(!isset($_POST['tick']))
-    {
-        echo "Must agree the Terms and Conditions";
-        
-    }
-    else if($selected==0)
-    {
-        echo "Please select the payment method";
-    }
-    else if($tabletable==0)
-    {
-        echo "Please select the table of your seet";        
-    }
-    else
-    {
-        $sql = "INSERT INTO checkout (Name,Email,Phonenumber,payment_method,table_number,total) VALUES ('$mname','$memail','$mph','$tabletable','$selected','$total')";
-        if (mysqli_query($conn, $sql)) {
-            echo "payment successfully !";
-
-          } else {
-            echo "Error: " . $sql . "" . mysqli_error($conn);
-          }
-          mysqli_close($conn);
-    }
-
-    
-  }
-?>

@@ -156,11 +156,15 @@ body
     display: inline-block;
     margin-top: 10px;   
 }
-
-.cart button
+.cart a img
+{
+    width: 25px;
+}
+.cart a
 {
     background: linear-gradient(#ff7b00,#ffb700);
     height: 30px;
+    width: 150px;
     border: 1px solid black;
     border-radius: 20px;
     /* padding-top: 10px; */
@@ -171,7 +175,7 @@ body
     font-size: 15px;
 }
 
-.cart button:hover
+.cart a:hover
 {
     cursor: pointer;
     background: #72efdd;
@@ -349,6 +353,23 @@ nav:hover
    /* vertical-align: middle; */
    float: right;
 }
+.del a
+{
+    /* border: 1px solid black; */
+    /* float: right; */
+    vertical-align: top;
+    display: inline-block;
+    padding: 0;
+    width: 30px;
+}
+.del a:hover
+{
+    background: transparent;
+}
+.del a img:hover
+{
+    filter: grayscale(100%);
+}
 </style>
 <?php
         $id = $_GET['email'];
@@ -374,7 +395,6 @@ nav:hover
         <?php
                 $wishlist = "SELECT * FROM wishlist";
                 $query = mysqli_query($conn,$wishlist);
-            
                 while($fetch = mysqli_fetch_assoc($query))
                 {
                     ?>
@@ -383,9 +403,11 @@ nav:hover
                                     <p class="title">
                                         <form action="" method="POST">
                                         <span class="item"><?php echo $fetch['itemname']?></span> 
-                                            <input type="hidden" name="delete_id" value="<?php echo $fetch['id'];?>">
-                                            <input type="hidden" name="del_image" value="<?php echo $fetch['itemimage']?>">
-                                            <button type="submit" name ="delete" class="delete"><img class="love" src="<?php echo "images/love.png"?>" alt=""></button>
+                                            
+                                            <div class="del">
+                                            <a href="delwishlist.php?email=<?php echo $id?>&&id=<?php echo $fetch['id']?>"class="love1"><img class="love" src="<?php echo "images/love.png"?>" alt=""></a>
+
+                                            </div>
                                             
                                         </form>
                                         
@@ -395,23 +417,24 @@ nav:hover
                                 
                                 <div class="add">
                                     <div class="stepper-input">
+                                    <form action="">
                                         <button class="minus-btn">-</button>
-                                        <input id="range" type="text" min="1" max="5" value="1">
+                                        <input id="range" type="text" name="range" min="1" max="5" value="1">
                                         <button class="plus-btn">+</button>
                                     </div>
                                     <div class="cart">
-                                        <img src="images/shoppingcart.png" alt=""><button type="submit" name="submit">Add to cart </button>
+                    
+                                    <a href="addtocart.php?email=<?php echo $id?>&&id=<?php echo $fetch['id']?>&&value=<?php echo $value ?>"><img src="images/shoppingcart.png" alt=""><span>Add to cart</span> </a>
+                                    <button name="submit"></button>
                                     </div>
                                 </div>
+                                </form>
                                     
                             </div>
                     <?php
                 }
+                
 
-                if(isset($_POST['delete']))
-                {
-                    
-                }
         ?>
         <?php
                 if(isset($_SESSION['success'])&& $_SESSION['success'] != '')

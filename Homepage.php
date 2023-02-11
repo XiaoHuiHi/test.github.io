@@ -55,7 +55,17 @@
   float: right;
 } 
 
-
+.love
+{
+  filter: grayscale(100%);
+  /* position:absolute; */
+  float: right;
+}
+.love:hover
+{
+  cursor: pointer;
+  filter: grayscale(0%);
+}
 </style>
 <body>
 
@@ -91,16 +101,22 @@ mysqli_query($conn,"INSERT INTO orders (foodname,quantity,price) VALUES ('{$fn}'
 
 ?>
             <div class="container" style="width: 100%;">
+            
               <div class="homepage-card">
+              <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><img width="20px" class="love" src="<?php echo "images/love.png"?>" alt=""></a>
                 <img class="card-image" src="<?php echo $row["images_path"]; ?>">
                 <div class="card-detail">
                     <h4><?php echo $row["Food_Name"]; ?><span>RM<?php echo $row["Food_Price"]; ?></span></h4>
-                    <form action="" method="POST">
-                      <input type="hidden" name="foodname" value="<?php echo $r['Food_Name']?>">
-                      <input type="hidden" name="foodprice" value="<?php echo $r['Food_Price']?>">
-                      <input type="hidden" name="foodimage" value="<?php echo $r['images_path']?>">
+                    <div class="mypanel" align="center";>
+                    <form method="post" action="order.php?action=add&id=<?php echo $row["Food_ID"]; ?>&&email=<?php echo $id?>">
+                    <h5 class="text-info">Quantity: <input type="number" min="1" max="25" name="quantity" class="form-control" value="0" style="width: 60px;"> </h5>
+                    <input type="hidden" name="hidden_name" value="<?php echo $row["Food_Name"]; ?>">
+                    <input type="hidden" name="hidden_price" value="<?php echo $row["Food_Price"]; ?>">
+                    <input type="hidden" name="hidden_RID" value="<?php echo $row["Ref_ID"]; ?>">
+                    <input type="submit" name="add" style="margin-top:5px;" class="btn btn-success" value="Add to Cart">
+                    </div>
                     </form>
-                    <a href="addintowishlist.php?email=<?php echo $re['Email'];?>&&id=<?php echo $row['Food_ID']?>"><button class="las la-heart" style="font-size:15px"> Wishlist&nbsp;</button></a>
+                    
               </div>
             </div>
 </div>

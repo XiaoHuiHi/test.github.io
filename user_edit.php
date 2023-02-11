@@ -102,7 +102,7 @@
     <fieldset>
 		<?php
 		 
-			$id = $_REQUEST["email"];
+			$id = $_REQUEST["email"]; 
 
 			$result = mysqli_query($conn, "select * from user where Email = '$id'");
 			$row = mysqli_fetch_assoc($result);

@@ -97,7 +97,7 @@ nav
 }
 
 
- a
+a
 {
     color: rgb(85,83,83);
     font-size: 14px;
@@ -233,7 +233,7 @@ ul ul {
                     </a>
                 </li>
                 <li>
-                    <a href="order.php">
+                    <a href="order.php?email=<?php echo $host_image['Email']?>">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="nav-item">Order</span>
                     </a>
