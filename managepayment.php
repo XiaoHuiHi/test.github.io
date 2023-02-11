@@ -7,108 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Homepage | 1 Coin Sandwich</title>
+    <title>Manage Payment | 1 Coin Sandwich</title>
 
-    <style>
-        .nav
-        {
-            height: 100%; 
-            width: 200px; 
-            position: fixed; 
-            z-index: 1; 
-            top: 0; 
-            left: 0;
-            overflow-x: hidden; 
-            padding-top: 20px;
-            background-color:#f2f2f2;
-        }
-        .nav a 
-        {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-          }
-          .nav a:hover 
-          {
-            color: red;
-          }
-          .side
-          {
-            padding: 6px 8px 6px 16px;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-          }
-          .main 
-          {
-            margin-left: 200px; 
-            padding: 0px 10px;
-            font-size: 28px;
-          }
-          .user
-          {
-            display: block;
-            width: 50%;
-            margin-left: 50px;
-          }
-          table
-          {
-            width: 100%;
-          }
-          button:active
-          {
-            background-color: lightgray;
-          }
-          .box
-          {
-            width: 365px;
-            float: left;
-            border: 5px solid ;
-            background-color: lightblue;
-            padding: 50px;
-            margin: 20px;
-          }
-          .insidebox
-          {
-            float: right;
-          }
+<style>
+.table {
+    overflow-x: scroll;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
 
-          container::after
-          {
-            content: "";
-            clear: both;
-            display: table;
-          }
-          .order
-          {
-            float: left;
-            border: 3px solid ;
-            padding: 10px;
-            margin: 10px;
-          }
-          .insideorder
-          {
-            float: right;
-          }
-          img
-          {
-            height: 100px;
-          }
-          .center
-          {
-            text-align: center;
-          }
-    </style>
+.table thead th {
+    border: none;
+    padding: 30px;
+    font-size: 14px;
+    color: #fff; 
+    background-color: #009879;
+    text-align: center; 
+}
+
+.active-row{
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.active-row tr:hover {
+    font-weight: bold;
+    color: #009879;
+}
+
+.active-row td {
+    border: none;
+    padding: 30px;
+    font-size: 14px;
+    color: black; 
+    background-color: #fff;
+    text-align: center; 
+}
+
+
+</style>
 </head>
 <body>
     <!--Sidebar!-->
     <?php include "adminsidebar.php" ?>
 
     <div class="table-responsive">
-              <table class="table table-striped">
-                <thead class="thead-dark">
+              <table class="table">
+                <thead class="thead">
                   <tr>
                   <th width="10%">Payment ID</th>
                   <th width="40%">Payment Name</th>
@@ -127,12 +76,12 @@
             while($row = mysqli_fetch_assoc($result))
             {
             ?>
-            <tr class="center">
+            <tr class="active-row" >
                 <td><?php echo $row["checkid"];	?></td>
                 <td><?php echo $row["Name"];?></td>
                 <td><?php echo $row["total"];?></td>
                 <td><?php echo $row["table_number"];?></td>
-                <td><a href="deletepayment.php?checkid=<?php echo $row['checkid']; ?>&&name=<?php echo $name?>"><i class="fa fa-close" style="font-size:36px"></i></a></td>
+                <td><a href="deletepayment.php?checkid=<?php echo $row['checkid']; ?>&&name=<?php echo $name?>"><i class="fa fa-close" style="font-size:36px;color:#dc3545;"></i></a></td>
             </tr>
         <?php
             }
