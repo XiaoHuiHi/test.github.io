@@ -106,25 +106,40 @@
     <!--Sidebar!-->
     <?php include "adminsidebar.php" ?>
 
-        <p>P</p>
-        <table width="730" border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
+    <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                  <th width="10%">Payment ID</th>
+                  <th width="40%">Payment Name</th>
+                  <th width="20%">Total Payment</th>
+                  <th width="15%">Table</th>
+                  <th width="5%">Action</th>
+                  </tr>
+                </thead>
+                
             <?php
             $sql = "select * from checkout;";
             $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result)
+            // $row = mysqli_fetch_array($result);
+            $name = $_GET['name'];
+            
+            while($row = mysqli_fetch_assoc($result))
+            {
             ?>
-            <tr class="center">
-                <td>Payment ID</td>
-                <td>Payment Name</td>
-                <td>Table</td>
-            </tr>
             <tr class="center">
                 <td><?php echo $row["checkid"];	?></td>
                 <td><?php echo $row["Name"];?></td>
+                <td><?php echo $row["total"];?></td>
                 <td><?php echo $row["table_number"];?></td>
+                <td><a href="deletepayment.php?checkid=<?php echo $row['checkid']; ?>&&name=<?php echo $name?>"><i class="fa fa-close" style="font-size:36px"></i></a></td>
             </tr>
+        <?php
+            }
+        ?>
         </table>
     </div>
+    <br><br><button onclick="window.print()">Print this page</button>
 </body>
 
 </html>
