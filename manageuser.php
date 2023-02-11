@@ -51,8 +51,8 @@
     <?php
         $sql = "select * from user";
         $result = mysqli_query($conn,$sql);
-        $id = $_GET['name'];
-        $host = "SELECT * FROM `admin` where username = '$id'";
+
+        $host = "SELECT * FROM `admin`";
         $query = mysqli_query($conn,$host);
         $host_image = mysqli_fetch_assoc($query);
         ?>
@@ -75,7 +75,7 @@
       
         <tr>
           <td><?php echo $row["No"]; ?></td>
-          <td><img class='img' src="<?php echo "images/".$row['Image'];?>" ></td>
+          <td><img class='img' src="<?php echo "images/".$row['image'];?>" ></td>
           <td><?php echo $row["Name"];	?></td>
           <td><?php echo $row["Email"];?></td>
           <td><?php echo $row["Role"];?></td>
@@ -97,7 +97,9 @@
       <button>4</button>
       <button>5</button>
       <button>Next Page</button><span class="left"><a href="insertmanageuser.php" alt="insert"><i class="fa fa-plus-square"></i> <input type="button" value="ADD New User"></span></p>
+
       <a href="loading_dashboard.php?name=<?php echo $host_image['username']?>">Back to Dashboard
+      <span class="left"><br><button onclick="window.print()" header="">Generate user list report</button></span>
 
     </fieldset>
   </div>
