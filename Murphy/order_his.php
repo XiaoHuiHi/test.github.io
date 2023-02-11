@@ -91,7 +91,7 @@ $total =  $total + $subtotal;
 				<i class="fa fa-edit">Home</i> 
 		    </a>
         
-        <br><button onclick="window.print()">Print this page</button>
+        <br><br><button onclick="window.print()">Print this page</button>
 	</fieldset>
 	
 </div>
