@@ -1,3 +1,7 @@
+<?php include("config1.php"); 
+    $email=$_GET['email']
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -134,7 +138,7 @@ fieldset
       </div>
     </div> 
   </div>
-  <p></p>
+  <br><br><a href="Homepage.php?email=<?php echo $email;?>">Return Home page</a>
 </fieldset>
 </div>
 </body>
