@@ -156,15 +156,11 @@ body
     display: inline-block;
     margin-top: 10px;   
 }
-.cart a img
-{
-    width: 25px;
-}
-.cart a
+
+.cart button
 {
     background: linear-gradient(#ff7b00,#ffb700);
     height: 30px;
-    width: 150px;
     border: 1px solid black;
     border-radius: 20px;
     /* padding-top: 10px; */
@@ -175,7 +171,7 @@ body
     font-size: 15px;
 }
 
-.cart a:hover
+.cart button:hover
 {
     cursor: pointer;
     background: #72efdd;
@@ -395,6 +391,7 @@ nav:hover
         <?php
                 $wishlist = "SELECT * FROM wishlist";
                 $query = mysqli_query($conn,$wishlist);
+            
                 while($fetch = mysqli_fetch_assoc($query))
                 {
                     ?>
@@ -417,23 +414,25 @@ nav:hover
                                 
                                 <div class="add">
                                     <div class="stepper-input">
-                                    <form action="">
                                         <button class="minus-btn">-</button>
-                                        <input id="range" type="text" name="range" min="1" max="5" value="1">
+                                        <input id="range" type="text" min="1" max="5" value="1">
                                         <button class="plus-btn">+</button>
                                     </div>
                                     <div class="cart">
-                    
-                                    <a href="addtocart.php?email=<?php echo $id?>&&id=<?php echo $fetch['id']?>&&value=<?php echo $value ?>"><img src="images/shoppingcart.png" alt=""><span>Add to cart</span> </a>
-                                    <button name="submit"></button>
+                                        <img src="images/shoppingcart.png" alt=""><button type="submit" name="submit">Add to cart </button>
                                     </div>
                                 </div>
-                                </form>
                                     
                             </div>
                     <?php
                 }
-                
+                if(isset($_POST['submit']))
+                {
+                    $foodname = $fetch['itemname'];
+                    $price = $fetch['itemprice'];
+                    $id = $fetch
+                }
+
 
         ?>
         <?php
