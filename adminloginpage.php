@@ -20,6 +20,7 @@ if(isset($_SESSION['login_user1'])){
 
         <div class="container">
             <div class="login-box">
+                <label style="text-align: center;color: red;"><span> <?php echo $error;  ?> </span></label>
                 <form name="form" action="#" method="post">
                 <h4>Admin Login</h4>
                 <div class="box">
@@ -40,7 +41,7 @@ if(isset($_SESSION['login_user1'])){
                         <a style="padding-left: 150px;" href="./adminsignup.php">Create a new account</a>
                     </div>
                 </form>
-                    
+                
                 </div>
             </div>
         </div>
