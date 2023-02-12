@@ -102,7 +102,7 @@ fieldset
 <div class="flip-card">																	
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="img/kh.jpg" alt="Khee Hern" style="border-radius: 50%;width:200px;height:200px;">
+        <img src="images/hern.jpg" alt="Khee Hern" style="border-radius: 50%;width:200px;height:200px;">
       </div>
       <div class="flip-card-back">
         <h2>Lee Khee Hern</h2>
@@ -116,7 +116,7 @@ fieldset
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="img/cx.jpg" alt="Chorxiang" style="border-radius: 50%;width:200px;height:200px;">
+        <img src="images/cx.jpg" alt="Chorxiang" style="border-radius: 50%;width:200px;height:200px;">
       </div>
       <div class="flip-card-back">
         <h2>Tan Chor Xiang</h2>
