@@ -243,7 +243,7 @@ nav:hover
     
     background-color: rgba(0, 0, 0, 0.7);
     position:absolute;
-    width: 30%;
+    width: 200px;
     margin: auto;
     border: 1px solid black;
     right: 0;
@@ -294,7 +294,7 @@ nav:hover
 }
 .img-box img
 {
-    width: 30%;
+    width: 200px;
 }
 .img-box:hover::after
 {
@@ -393,6 +393,11 @@ nav:hover
     text-align: center;
 }
 
+.row
+{
+    display: grid;
+}
+
 /* .remove a
 {
     color: white;
@@ -451,24 +456,7 @@ nav:hover
                 <input type="submit" name="upload" value="UPLOAD">
             </form>
             <div class="row">
-
-                
-            </div>
-
-        </section>
-    <script>
-        const selected = document.querySelector(".selected")
-        const optionContainer = document.querySelector(".option-container")
-        const optionList = document.querySelector(".option")
-
-        selected.addEventListener("click",()=>{
-            optionContainer.classList.toggle("active")
-        })
-    </script>
-</body>
-</html>
-
-<?php
+            <?php
     $sql = "SELECT * FROM `admin`";
     $query = mysqli_query($conn,$sql);
     if(mysqli_num_rows($query)>0)
@@ -498,4 +486,23 @@ nav:hover
     }
     
 ?>
+                
+            </div>
+            
+
+
+        </section>
+        
+    <script>
+        const selected = document.querySelector(".selected")
+        const optionContainer = document.querySelector(".option-container")
+        const optionList = document.querySelector(".option")
+
+        selected.addEventListener("click",()=>{
+            optionContainer.classList.toggle("active")
+        })
+    </script>
+</body>
+</html>
+
 
