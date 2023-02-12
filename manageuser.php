@@ -81,7 +81,7 @@
           <td><?php echo $row["Email"];?></td>
           <td><?php echo $row["Role"];?></td>
           <td><?php echo $row["Status"];?></td>
-          <td>           <a href="deletemanageuser.php?No=<?php echo $row['No']; ?>"><i class="fa fa-close" style="font-size:36px"></i></a>
+          <td>           <a href="deletemanageuser.php?No=<?php echo $row['No']; ?>&&name=<?php echo $name?>"><i class="fa fa-close" style="font-size:36px"></i></a>
             <a href="updatemanageuser.php?email=<?php echo $row['Email']; ?>&&name=<?php echo $name?>" alt="update"><i class="fa fa-cog" style="font-size:36px"></i></a>
             </td>
         </tr>

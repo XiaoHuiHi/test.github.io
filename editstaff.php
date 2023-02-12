@@ -154,7 +154,7 @@ session_start();
         
         <input type="submit" name="change" value="CHANGE">
         <br>
-        <a href="staff.php?name=<?php echo $name?>">Return Manage Staff</a> <a href="editstaff.php?id=<?php echo $id?>">Refresh</a>
+        <a href="staff.php?name=<?php echo $name?>">Return Manage Staff</a> <a href="editstaff.php?id=<?php echo $id?>&&name=<?php echo $name?>">Refresh</a>
 
     </form>
     </fieldset>
