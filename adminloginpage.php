@@ -37,7 +37,6 @@ if(isset($_SESSION['login_user1'])){
                     </div>
                     <br>
                     <div class="forgot">
-                        <a href="./Forgot.php">Forgot Password ?</a>
                         <a style="padding-left: 150px;" href="./adminsignup.php">Create a new account</a>
                     </div>
                 </form>
