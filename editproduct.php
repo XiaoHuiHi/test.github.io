@@ -1,7 +1,7 @@
 <?php
 session_start();
     include 'config.php';
-    $id = $_GET['id'];
+    
 
     if(isset($_POST['change']))
     {
@@ -130,9 +130,8 @@ session_start();
     // $product = mysqli_fetch_assoc($query);
 ?>
 <?php 
-    
-        $id = $_GET['id'];
-        $query = mysqli_query($conn, "SELECT * FROM foodmenu WHERE Food_ID = $id");
+  
+        $query = mysqli_query($conn, "SELECT * FROM foodmenu ");
         $p = mysqli_fetch_assoc($query);
 
         $d= $_GET['name'];
